@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/A18A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:22 GMT -->
+<head>
+<title>Chaos: Routine at A18A</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="A188.html">A188</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#A18A">Map</a></td>
+<td class="next">
+Next: <a href="A1E6.html">A1E6</a>
+</td>
+</tr>
+</table>
+<div class="description">A18A: routine20</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="8357.html">routine04</a>, <a href="84F7.html">subversion_spell</a>, <a href="86C3.html">RAISDO</a>, <a href="8741.html">TUR_DO</a>, <a href="981A.html">routine13</a>, <a href="9975.html">creature_cast_spell</a>, <a href="99F1.html">disbelieve_spell</a>, <a href="9ADD.html">trees_castles_spell</a>, <a href="9BB3.html">routine18</a>, <a href="D588.html">routine73</a>, <a href="D686.html">routine77</a>, <a href="D732.html">routine79</a> and <a href="D82D.html">routine83</a>.
+</div>
+</div>
+<table class="input">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Spell address</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine20</td>
+<td class="address-2"><span id="A18A"></span>A18A</td>
+<td class="instruction">LD A,(IX+$02)</td>
+<td class="comment-1" rowspan="3">If max distance byte of spell is zero jump to <a href="A18A.html#A1A5">routine20_0</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A18D"></span>A18D</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A18E"></span>A18E</td>
+<td class="instruction">JR Z,<a href="A18A.html#A1A5">routine20_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A190"></span>A190</td>
+<td class="instruction">LD HL,<a href="912B.html">sound_effect_04</a></td>
+<td class="comment-1" rowspan="3">Else play <a href="912B.html">sound_effect_04</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A193"></span>A193</td>
+<td class="instruction">LD (<a href="C2F3.html">sound_effect_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A196"></span>A196</td>
+<td class="instruction">CALL <a href="C2F6.html">play_sound_effect_pointer</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A199"></span>A199</td>
+<td class="instruction">LD A,$03</td>
+<td class="comment-1" rowspan="2">Set <a href="B60B.html">unknown48</a> to 3 ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A19B"></span>A19B</td>
+<td class="instruction">LD (<a href="B60B.html">unknown48</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A19E"></span>A19E</td>
+<td class="instruction">CALL <a href="B626.html">routine28</a></td>
+<td class="comment-1" rowspan="1">Call <a href="B626.html">routine28</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1A1"></span>A1A1</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C0DD.html">routine50</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1A4"></span>A1A4</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="1">Wait for next interrupt.</td>
+</tr>
+<tr>
+<td class="asm-label">routine20_0</td>
+<td class="address-2"><span id="A1A5"></span>A1A5</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">Disable interrupts.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1A6"></span>A1A6</td>
+<td class="instruction">LD A,$45</td>
+<td class="comment-1" rowspan="2">Set ATTR-T to $45 (bright cyan on black).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1A8"></span>A1A8</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1AB"></span>A1AB</td>
+<td class="instruction">LD HL,<a href="910D.html">sound_effect_01</a></td>
+<td class="comment-1" rowspan="3">Play <a href="910D.html">sound_effect_01</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1AE"></span>A1AE</td>
+<td class="instruction">LD (<a href="C2F3.html">sound_effect_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1B1"></span>A1B1</td>
+<td class="instruction">CALL <a href="C2F6.html">play_sound_effect_pointer</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1B4"></span>A1B4</td>
+<td class="instruction">LD HL,<a href="A1E8.html">twirl_sprites_table</a></td>
+<td class="comment-1" rowspan="2">Set <a href="A1E6.html">twirl_sprite_pointer</a> to first entry in <a href="A1E8.html">twirl_sprites_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1B7"></span>A1B7</td>
+<td class="instruction">LD (<a href="A1E6.html">twirl_sprite_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1BA"></span>A1BA</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="3">Get coordinates from address of current object table entry.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1BD"></span>A1BD</td>
+<td class="instruction">LD (<a href="E005.html">temp_entry_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1C0"></span>A1C0</td>
+<td class="instruction">CALL <a href="E007.html">address_to_coordinate</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1C3"></span>A1C3</td>
+<td class="instruction">LD (<a href="DF4C.html">LC_POS</a>),HL</td>
+<td class="comment-1" rowspan="1">Store coordinates in <a href="DF4C.html">LC_POS</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1C6"></span>A1C6</td>
+<td class="instruction">LD B,$12</td>
+<td class="comment-1" rowspan="1">Set B to 18 as loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">routine20_1</td>
+<td class="address-2"><span id="A1C8"></span>A1C8</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1C9"></span>A1C9</td>
+<td class="instruction">LD HL,(<a href="A1E6.html">twirl_sprite_pointer</a>)</td>
+<td class="comment-1" rowspan="6">Load <a href="A1E8.html">twirl_sprites_table</a> entry into DE and increment pointer.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1CC"></span>A1CC</td>
+<td class="instruction">LD E,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1CD"></span>A1CD</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1CE"></span>A1CE</td>
+<td class="instruction">LD D,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1CF"></span>A1CF</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1D0"></span>A1D0</td>
+<td class="instruction">LD (<a href="A1E6.html">twirl_sprite_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1D3"></span>A1D3</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-1" rowspan="2">Swap sprite address into HL and store in <a href="DF4A.html">C_DATA</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1D4"></span>A1D4</td>
+<td class="instruction">LD (<a href="DF4A.html">C_DATA</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1D7"></span>A1D7</td>
+<td class="instruction">CALL <a href="DF4E.html">P_CHAR</a></td>
+<td class="comment-1" rowspan="1">Print the sprite.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1DA"></span>A1DA</td>
+<td class="instruction">CALL <a href="C2F6.html#C301">sound_effect_playback</a></td>
+<td class="comment-1" rowspan="1">Play <a href="912B.html">sound_effect_04</a> again.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1DD"></span>A1DD</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="3">Restore the loop counter and loop for 18 iterations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1DE"></span>A1DE</td>
+<td class="instruction">DJNZ <a href="A18A.html#A1C8">routine20_1</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1E0"></span>A1E0</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1E3"></span>A1E3</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="1">Enable interrupts.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1E4"></span>A1E4</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="2">Wait for next interrupt and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A1E5"></span>A1E5</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="A188.html">A188</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#A18A">Map</a></td>
+<td class="next">
+Next: <a href="A1E6.html">A1E6</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/A18A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:22 GMT -->
+</html>

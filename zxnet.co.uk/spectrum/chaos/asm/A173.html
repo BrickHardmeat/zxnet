@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/A173.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:24 GMT -->
+<head>
+<title>Chaos: Routine at A173</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="A172.html">A172</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#A173">Map</a></td>
+<td class="next">
+Next: <a href="A17E.html">A17E</a>
+</td>
+</tr>
+</table>
+<div class="description">A173: WALKYS</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="8741.html">TUR_DO</a>, <a href="89F9.html">main_routine</a> and <a href="9F50.html">INTERO</a>.
+</div>
+<div class="paragraph">
+Clear bit 7 of every entry in <a href="E200.html">map_object_properties_table</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">WALKYS</td>
+<td class="address-2"><span id="A173"></span>A173</td>
+<td class="instruction">LD HL,<a href="E200.html">map_object_properties_table</a></td>
+<td class="comment-1" rowspan="1">Set HL to address of <a href="E200.html">map_object_properties_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A176"></span>A176</td>
+<td class="instruction">LD B,$9F</td>
+<td class="comment-1" rowspan="1">Set B to 159 as loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">WALKYS_0</td>
+<td class="address-2"><span id="A178"></span>A178</td>
+<td class="instruction">RES 7,(HL)</td>
+<td class="comment-1" rowspan="4">Clear bit 7 ??? of every entry and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A17A"></span>A17A</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A17B"></span>A17B</td>
+<td class="instruction">DJNZ <a href="A173.html#A178">WALKYS_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="A17D"></span>A17D</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="A172.html">A172</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#A173">Map</a></td>
+<td class="next">
+Next: <a href="A17E.html">A17E</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/A173.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:24 GMT -->
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/ACC6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at ACC6</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="AC36.html">AC36</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#ACC6">Map</a></td>
+<td class="next">
+Next: <a href="ACED.html">ACED</a>
+</td>
+</tr>
+</table>
+<div class="description">ACC6: routine22</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="AC36.html">routine21</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine22</td>
+<td class="address-2"><span id="ACC6"></span>ACC6</td>
+<td class="instruction">LD HL,<a href="C33D.html">cursorsprite0</a></td>
+<td class="comment-1" rowspan="2">set system variable "UDG" to <a href="C33D.html">cursorsprite0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACC9"></span>ACC9</td>
+<td class="instruction">LD ($5C7B),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACCC"></span>ACCC</td>
+<td class="instruction">CALL <a href="BC96.html">routine41</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="BC96.html">routine41</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACCF"></span>ACCF</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">preserve BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACD0"></span>ACD0</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-1" rowspan="1">call KEYBOARD in Spectrum ROM</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACD3"></span>ACD3</td>
+<td class="instruction">CP $53</td>
+<td class="comment-1" rowspan="1">compare value returned with $53 (letter S)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACD5"></span>ACD5</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACD6"></span>ACD6</td>
+<td class="instruction">CALL Z,<a href="ACED.html">routine23</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="ACED.html">routine23</a> if "S" was pressed</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACD9"></span>ACD9</td>
+<td class="instruction">CP $30</td>
+<td class="comment-1" rowspan="2">jump to back to <a href="ACC6.html">routine22</a> if "0" was not pressed</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACDB"></span>ACDB</td>
+<td class="instruction">JR NZ,<a href="ACC6.html#ACC6">routine22</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACDD"></span>ACDD</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="C0DD.html">routine50</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACE0"></span>ACE0</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="2">wait for two interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACE1"></span>ACE1</td>
+<td class="instruction">HALT</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACE2"></span>ACE2</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="BED7.html">clear_bottom_row</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACE5"></span>ACE5</td>
+<td class="instruction">LD HL,<a href="C27F.html">sound_effect_14</a></td>
+<td class="comment-1" rowspan="1">set HL to address of sound effect at <a href="C27F.html">sound_effect_14</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACE8"></span>ACE8</td>
+<td class="instruction">CALL <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a></td>
+<td class="comment-1" rowspan="1">call play_sound_effect_in_HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACEB"></span>ACEB</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="1">enable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="ACEC"></span>ACEC</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="AC36.html">AC36</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#ACC6">Map</a></td>
+<td class="next">
+Next: <a href="ACED.html">ACED</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/ACC6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

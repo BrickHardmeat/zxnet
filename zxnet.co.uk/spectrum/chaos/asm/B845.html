@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/B845.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at B845</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="B844.html">B844</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#B845">Map</a></td>
+<td class="next">
+Next: <a href="B8BD.html">B8BD</a>
+</td>
+</tr>
+</table>
+<div class="description">B845: routine33</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="B7FD.html">routine31</a> and <a href="B81C.html">routine32</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine33</td>
+<td class="address-2"><span id="B845"></span>B845</td>
+<td class="instruction">LD A,(<a href="B844.html">unknown54</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B848"></span>B848</td>
+<td class="instruction">OR $80</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B84A"></span>B84A</td>
+<td class="instruction">LD (<a href="B844.html">unknown54</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="B84D"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="B7D3.html">routine30</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine33_0</td>
+<td class="address-2"><span id="B84D"></span>B84D</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B84E"></span>B84E</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B84F"></span>B84F</td>
+<td class="instruction">LD A,(<a href="B844.html">unknown54</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B852"></span>B852</td>
+<td class="instruction">AND $7F</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B854"></span>B854</td>
+<td class="instruction">CP $03</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B856"></span>B856</td>
+<td class="instruction">JR Z,<a href="B845.html#B85D">routine33_1</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B858"></span>B858</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B85B"></span>B85B</td>
+<td class="instruction">JR <a href="B845.html#B8AA">routine33_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine33_1</td>
+<td class="address-2"><span id="B85D"></span>B85D</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B860"></span>B860</td>
+<td class="instruction">INC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B861"></span>B861</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B864"></span>B864</td>
+<td class="instruction">DEC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B865"></span>B865</td>
+<td class="instruction">DEC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B866"></span>B866</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B869"></span>B869</td>
+<td class="instruction">INC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B86A"></span>B86A</td>
+<td class="instruction">INC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B86B"></span>B86B</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B86E"></span>B86E</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B86F"></span>B86F</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B870"></span>B870</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B873"></span>B873</td>
+<td class="instruction">LD A,(<a href="B60B.html">unknown48</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B876"></span>B876</td>
+<td class="instruction">AND $04</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B878"></span>B878</td>
+<td class="instruction">JR Z,<a href="B845.html#B8AA">routine33_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B87A"></span>B87A</td>
+<td class="instruction">INC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B87B"></span>B87B</td>
+<td class="instruction">INC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B87C"></span>B87C</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B87D"></span>B87D</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B880"></span>B880</td>
+<td class="instruction">INC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B881"></span>B881</td>
+<td class="instruction">INC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B882"></span>B882</td>
+<td class="instruction">INC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B883"></span>B883</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B886"></span>B886</td>
+<td class="instruction">DEC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B887"></span>B887</td>
+<td class="instruction">INC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B888"></span>B888</td>
+<td class="instruction">INC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B889"></span>B889</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B88C"></span>B88C</td>
+<td class="instruction">DEC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B88D"></span>B88D</td>
+<td class="instruction">DEC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B88E"></span>B88E</td>
+<td class="instruction">INC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B88F"></span>B88F</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B892"></span>B892</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B893"></span>B893</td>
+<td class="instruction">DEC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B894"></span>B894</td>
+<td class="instruction">DEC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B895"></span>B895</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B898"></span>B898</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B899"></span>B899</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B89A"></span>B89A</td>
+<td class="instruction">DEC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B89B"></span>B89B</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B89E"></span>B89E</td>
+<td class="instruction">INC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B89F"></span>B89F</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8A0"></span>B8A0</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8A1"></span>B8A1</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8A4"></span>B8A4</td>
+<td class="instruction">INC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8A5"></span>B8A5</td>
+<td class="instruction">INC B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8A6"></span>B8A6</td>
+<td class="instruction">DEC C</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8A7"></span>B8A7</td>
+<td class="instruction">CALL <a href="B8BD.html">routine34</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine33_2</td>
+<td class="address-2"><span id="B8AA"></span>B8AA</td>
+<td class="instruction">POP BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8AB"></span>B8AB</td>
+<td class="instruction">LD ($5C7D),BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8AF"></span>B8AF</td>
+<td class="instruction">POP DE</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8B0"></span>B8B0</td>
+<td class="instruction">LD A,(<a href="B844.html">unknown54</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8B3"></span>B8B3</td>
+<td class="instruction">AND $7F</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8B5"></span>B8B5</td>
+<td class="instruction">LD (<a href="B844.html">unknown54</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8B8"></span>B8B8</td>
+<td class="instruction">LD HL,<a href="B60C.html">unknown49</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8BB"></span>B8BB</td>
+<td class="instruction">INC (HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B8BC"></span>B8BC</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="B844.html">B844</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#B845">Map</a></td>
+<td class="next">
+Next: <a href="B8BD.html">B8BD</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/B845.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

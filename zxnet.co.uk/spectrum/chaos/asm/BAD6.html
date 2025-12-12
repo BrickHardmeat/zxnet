@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BAD6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at BAD6</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BABE.html">BABE</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BAD6">Map</a></td>
+<td class="next">
+Next: <a href="BAEE.html">BAEE</a>
+</td>
+</tr>
+</table>
+<div class="description">BAD6: DH_P</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="89B0.html">CHONUM</a>, <a href="89F9.html">main_routine</a>, <a href="9168.html">CAST_S</a>, <a href="9385.html">select_spell</a>, <a href="94A7.html">display_spell_info</a>, <a href="967A.html">display_wizard_spell_range</a>, <a href="ACED.html">routine23</a>, <a href="AECC.html">COUNTL</a>, <a href="B8DD.html">routine35</a>, <a href="BAEE.html">print_string_loop</a>, <a href="BC96.html">routine41</a>, <a href="C3B3.html">display_object_info</a>, <a href="C5FC.html">print_spell_property</a> and <a href="C612.html">print_creature_attribute</a>.
+</div>
+<div class="paragraph">
+Print double height font.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">DH_P</td>
+<td class="address-2"><span id="BAD6"></span>BAD6</td>
+<td class="instruction">LD HL,$D808</td>
+<td class="comment-1" rowspan="2">Set CHARS to <a href="D908.html">font_data_top</a> - $100 (data for top half of font).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAD9"></span>BAD9</td>
+<td class="instruction">LD ($5C36),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BADC"></span>BADC</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-1" rowspan="1">Preserve AF.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BADD"></span>BADD</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+<td class="comment-1" rowspan="1">Print top half of char in A.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAE0"></span>BAE0</td>
+<td class="instruction">POP AF</td>
+<td class="comment-1" rowspan="1">Restore AF.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAE1"></span>BAE1</td>
+<td class="instruction">INC B</td>
+<td class="comment-1" rowspan="1">Increment B to move one row down.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAE2"></span>BAE2</td>
+<td class="instruction">LD HL,$DB08</td>
+<td class="comment-1" rowspan="2">Set CHARS to <a href="D908.html#DC08">font_data_bottom</a> - $100 (data for bottom half of font).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAE5"></span>BAE5</td>
+<td class="instruction">LD ($5C36),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAE8"></span>BAE8</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+<td class="comment-1" rowspan="1">Print bottom half of char in A.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAEB"></span>BAEB</td>
+<td class="instruction">DEC B</td>
+<td class="comment-1" rowspan="1">Decrement B to return to original row.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAEC"></span>BAEC</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="2">Increment C to move right to next column and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAED"></span>BAED</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BABE.html">BABE</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BAD6">Map</a></td>
+<td class="next">
+Next: <a href="BAEE.html">BAEE</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BAD6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

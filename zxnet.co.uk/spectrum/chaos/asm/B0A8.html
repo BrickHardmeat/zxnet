@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/B0A8.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at B0A8</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="AECC.html">AECC</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#B0A8">Map</a></td>
+<td class="next">
+Next: <a href="B161.html">B161</a>
+</td>
+</tr>
+</table>
+<div class="description">B0A8: routine24</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="ACED.html">routine23</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine24</td>
+<td class="address-2"><span id="B0A8"></span>B0A8</td>
+<td class="instruction">LD A,(<a href="AC11.html">unknown28</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0AB"></span>B0AB</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0AC"></span>B0AC</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0AD"></span>B0AD</td>
+<td class="instruction">JR NZ,<a href="B0A8.html#B0CB">routine24_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0AF"></span>B0AF</td>
+<td class="instruction">LD A,$45</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0B1"></span>B0B1</td>
+<td class="instruction">LD ($5C8F),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0B4"></span>B0B4</td>
+<td class="instruction">LD A,$36</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0B6"></span>B0B6</td>
+<td class="instruction">LD BC,$1611</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0B9"></span>B0B9</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0BC"></span>B0BC</td>
+<td class="instruction">CALL <a href="BBCC.html">wait_no_key_seed</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0BF"></span>B0BF</td>
+<td class="instruction">CALL <a href="BBB0.html">wait_key_seed</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0C2"></span>B0C2</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0C5"></span>B0C5</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0C6"></span>B0C6</td>
+<td class="instruction">JR Z,<a href="B0A8.html#B0CB">routine24_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0C8"></span>B0C8</td>
+<td class="instruction">CALL <a href="C955.html">routine60</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine24_0</td>
+<td class="address-2"><span id="B0CB"></span>B0CB</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0CE"></span>B0CE</td>
+<td class="instruction">POP BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0CF"></span>B0CF</td>
+<td class="instruction">LD (<a href="AC04.html">unknown19</a>),BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0D3"></span>B0D3</td>
+<td class="instruction">LD A,(<a href="AC07.html">unknown21</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0D6"></span>B0D6</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0D7"></span>B0D7</td>
+<td class="instruction">JR Z,<a href="B0A8.html#B0DE">routine24_1</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0D9"></span>B0D9</td>
+<td class="instruction">LD A,$03</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0DB"></span>B0DB</td>
+<td class="instruction">LD (<a href="AC03.html">unknown18</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine24_1</td>
+<td class="address-2"><span id="B0DE"></span>B0DE</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0E1"></span>B0E1</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0E2"></span>B0E2</td>
+<td class="instruction">JR Z,<a href="B0A8.html#B0E9">routine24_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0E4"></span>B0E4</td>
+<td class="instruction">CALL <a href="C9D4.html#C9DC">routine61_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0E7"></span>B0E7</td>
+<td class="instruction">JR <a href="B0A8.html#B0F8">routine24_3</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine24_2</td>
+<td class="address-2"><span id="B0E9"></span>B0E9</td>
+<td class="instruction">LD HL,<a href="C33D.html#C35D">cursorsprite1</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0EC"></span>B0EC</td>
+<td class="instruction">LD ($5C7B),HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0EF"></span>B0EF</td>
+<td class="instruction">CALL <a href="BC96.html">routine41</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0F2"></span>B0F2</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0F5"></span>B0F5</td>
+<td class="instruction">LD (<a href="AC32.html">unknown31</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine24_3</td>
+<td class="address-2"><span id="B0F8"></span>B0F8</td>
+<td class="instruction">LD A,(<a href="AC32.html">unknown31</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0FB"></span>B0FB</td>
+<td class="instruction">CP $49</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B0FD"></span>B0FD</td>
+<td class="instruction">CALL Z,<a href="C3B3.html">display_object_info</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B100"></span>B100</td>
+<td class="instruction">CP $4B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B102"></span>B102</td>
+<td class="instruction">JR NZ,<a href="B0A8.html#B114">routine24_4</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B104"></span>B104</td>
+<td class="instruction">LD HL,<a href="C2B1.html">sound_effect_18</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B107"></span>B107</td>
+<td class="instruction">CALL <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B10A"></span>B10A</td>
+<td class="instruction">EI</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B10B"></span>B10B</td>
+<td class="instruction">LD HL,(<a href="AC14.html">D_ADD</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B10E"></span>B10E</td>
+<td class="instruction">LD (<a href="AC12.html">object_table_entry_pointer</a>),HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B111"></span>B111</td>
+<td class="instruction">JP <a href="AECC.html#B06F">COUNTL_13</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine24_4</td>
+<td class="address-2"><span id="B114"></span>B114</td>
+<td class="instruction">CP $53</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B116"></span>B116</td>
+<td class="instruction">JR NZ,<a href="B0A8.html#B0DE">routine24_1</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B118"></span>B118</td>
+<td class="instruction">LD BC,(<a href="AC04.html">unknown19</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B11C"></span>B11C</td>
+<td class="instruction">LD (<a href="BEE9.html">unknown75</a>),BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B120"></span>B120</td>
+<td class="instruction">LD BC,(<a href="BC94.html">cursor_coordinates</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B124"></span>B124</td>
+<td class="instruction">LD (<a href="BEEB.html">unknown76</a>),BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B128"></span>B128</td>
+<td class="instruction">LD A,(<a href="AC03.html">unknown18</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B12B"></span>B12B</td>
+<td class="instruction">CALL <a href="BEEF.html">calculate_distance</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B12E"></span>B12E</td>
+<td class="instruction">JP P,<a href="B0A8.html#B148">routine24_6</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B131"></span>B131</td>
+<td class="instruction">LD A,$46</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B133"></span>B133</td>
+<td class="instruction">LD ($5C8F),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B136"></span>B136</td>
+<td class="instruction">LD A,$35</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B138"></span>B138</td>
+<td class="instruction">LD BC,$1600</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B13B"></span>B13B</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B13E"></span>B13E</td>
+<td class="instruction">LD B,$14</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine24_5</td>
+<td class="address-2"><span id="B140"></span>B140</td>
+<td class="instruction">HALT</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B141"></span>B141</td>
+<td class="instruction">DJNZ <a href="B0A8.html#B140">routine24_5</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B143"></span>B143</td>
+<td class="instruction">CALL <a href="BBB0.html">wait_key_seed</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B146"></span>B146</td>
+<td class="instruction">JR <a href="B0A8.html#B0DE">routine24_1</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine24_6</td>
+<td class="address-2"><span id="B148"></span>B148</td>
+<td class="instruction">LD HL,<a href="C2BB.html">sound_effect_19</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B14B"></span>B14B</td>
+<td class="instruction">CALL <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B14E"></span>B14E</td>
+<td class="instruction">EI</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B14F"></span>B14F</td>
+<td class="instruction">LD HL,(<a href="AC04.html">unknown19</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B152"></span>B152</td>
+<td class="instruction">LD BC,(<a href="BC94.html">cursor_coordinates</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B156"></span>B156</td>
+<td class="instruction">LD (<a href="BC94.html">cursor_coordinates</a>),HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B159"></span>B159</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B15B"></span>B15B</td>
+<td class="instruction">LD (<a href="AC11.html">unknown28</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B15E"></span>B15E</td>
+<td class="instruction">JP <a href="ACED.html#AE7A">routine23_17</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="AECC.html">AECC</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#B0A8">Map</a></td>
+<td class="next">
+Next: <a href="B161.html">B161</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/B0A8.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

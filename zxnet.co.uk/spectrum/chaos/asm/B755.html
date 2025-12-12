@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/B755.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at B755</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="B754.html">B754</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#B755">Map</a></td>
+<td class="next">
+Next: <a href="B769.html">B769</a>
+</td>
+</tr>
+</table>
+<div class="description">B755: test_pixel</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="B746.html">routine29</a>.
+</div>
+<div class="paragraph">
+enter with coordinates in BC
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">test_pixel</td>
+<td class="address-2"><span id="B755"></span>B755</td>
+<td class="instruction">LD ($5C7D),BC</td>
+<td class="comment-1" rowspan="1">store BC in COORDS system variable (x-coordinate of last point plotted)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B759"></span>B759</td>
+<td class="instruction">CALL $22AA</td>
+<td class="comment-1" rowspan="1">call PIXEL-ADD in Spectrum ROM (get pixel address in HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B75C"></span>B75C</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-1" rowspan="2">set loop counter by loading position of pixel within byte into B and adding one</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B75D"></span>B75D</td>
+<td class="instruction">INC B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B75E"></span>B75E</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">load byte in screen bitmap from address in HL</td>
+</tr>
+<tr>
+<td class="asm-label">test_pixel_0</td>
+<td class="address-2"><span id="B75F"></span>B75F</td>
+<td class="instruction">RLCA</td>
+<td class="comment-1" rowspan="2">rotate A left 'B' times</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B760"></span>B760</td>
+<td class="instruction">DJNZ <a href="B755.html#B75F">test_pixel_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B762"></span>B762</td>
+<td class="instruction">AND $01</td>
+<td class="comment-1" rowspan="2">return if LSB is zero</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B764"></span>B764</td>
+<td class="instruction">RET Z</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B765"></span>B765</td>
+<td class="instruction">LD (<a href="B754.html">LOF_D</a>),A</td>
+<td class="comment-1" rowspan="2">else store $01 in <a href="B754.html">LOF_D</a> and return</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B768"></span>B768</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="B754.html">B754</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#B755">Map</a></td>
+<td class="next">
+Next: <a href="B769.html">B769</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/B755.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

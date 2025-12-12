@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/B81C.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at B81C</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="B7FD.html">B7FD</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#B81C">Map</a></td>
+<td class="next">
+Next: <a href="B844.html">B844</a>
+</td>
+</tr>
+</table>
+<div class="description">B81C: routine32</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="B7D3.html">routine30</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine32</td>
+<td class="address-2"><span id="B81C"></span>B81C</td>
+<td class="instruction">LD A,(<a href="B76A.html">unknown51</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B81F"></span>B81F</td>
+<td class="instruction">LD D,$00</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B821"></span>B821</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B822"></span>B822</td>
+<td class="instruction">SRL A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B824"></span>B824</td>
+<td class="instruction">ADD A,$02</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B826"></span>B826</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B827"></span>B827</td>
+<td class="instruction">LD HL,<a href="B76D.html">unknown_table_5</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B82A"></span>B82A</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B82B"></span>B82B</td>
+<td class="instruction">LD DE,$0002</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine32_0</td>
+<td class="address-2"><span id="B82E"></span>B82E</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B82F"></span>B82F</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B830"></span>B830</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B831"></span>B831</td>
+<td class="instruction">INC HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B832"></span>B832</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B833"></span>B833</td>
+<td class="instruction">CALL <a href="B845.html">routine33</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B836"></span>B836</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B837"></span>B837</td>
+<td class="instruction">CALL <a href="C2F6.html#C301">sound_effect_playback</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B83A"></span>B83A</td>
+<td class="instruction">POP DE</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B83B"></span>B83B</td>
+<td class="instruction">POP BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B83C"></span>B83C</td>
+<td class="instruction">POP HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B83D"></span>B83D</td>
+<td class="instruction">XOR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B83E"></span>B83E</td>
+<td class="instruction">SBC HL,DE</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B840"></span>B840</td>
+<td class="instruction">DJNZ <a href="B81C.html#B82E">routine32_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B842"></span>B842</td>
+<td class="instruction">POP HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="B843"></span>B843</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="B7FD.html">B7FD</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#B81C">Map</a></td>
+<td class="next">
+Next: <a href="B844.html">B844</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/B81C.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

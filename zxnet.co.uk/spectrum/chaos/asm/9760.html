@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/9760.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+<head>
+<title>Chaos: Routine at 9760</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="975F.html">975F</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#9760">Map</a></td>
+<td class="next">
+Next: <a href="9786.html">9786</a>
+</td>
+</tr>
+</table>
+<div class="description">9760: routine09</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="8357.html">routine04</a>, <a href="84B0.html">chaos_law_spell</a>, <a href="86C3.html">RAISDO</a>, <a href="8741.html">TUR_DO</a>, <a href="9975.html">creature_cast_spell</a>, <a href="9ADD.html">trees_castles_spell</a>, <a href="9BB3.html">routine18</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="D686.html">routine77</a>, <a href="D82D.html">routine83</a> and <a href="D8DE.html">routine85</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine09</td>
+<td class="address-2"><span id="9760"></span>9760</td>
+<td class="instruction">LD A,(<a href="9166.html">unknown02</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9763"></span>9763</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9764"></span>9764</td>
+<td class="instruction">JR NZ,<a href="9760.html#9778">routine09_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9766"></span>9766</td>
+<td class="instruction">CALL <a href="BE94.html">get_random</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9769"></span>9769</td>
+<td class="instruction">LD HL,<a href="9153.html">casting_chance</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="976C"></span>976C</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="976D"></span>976D</td>
+<td class="instruction">INC E</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="976E"></span>976E</td>
+<td class="instruction">CP E</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="976F"></span>976F</td>
+<td class="instruction">JP M,<a href="9760.html#9778">routine09_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9772"></span>9772</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9774"></span>9774</td>
+<td class="instruction">LD (<a href="9167.html">spell_success_flag</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9777"></span>9777</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine09_0</td>
+<td class="address-2"><span id="9778"></span>9778</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="977A"></span>977A</td>
+<td class="instruction">LD (<a href="9167.html">spell_success_flag</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="977D"></span>977D</td>
+<td class="instruction">LD A,(<a href="937F.html">spell_chaos_law</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9780"></span>9780</td>
+<td class="instruction">LD HL,<a href="C3A4.html">CH_LAW</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9783"></span>9783</td>
+<td class="instruction">ADD A,(HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9784"></span>9784</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9785"></span>9785</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="975F.html">975F</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#9760">Map</a></td>
+<td class="next">
+Next: <a href="9786.html">9786</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/9760.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+</html>

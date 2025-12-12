@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BABE.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at BABE</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BA77.html">BA77</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BABE">Map</a></td>
+<td class="next">
+Next: <a href="BAD6.html">BAD6</a>
+</td>
+</tr>
+</table>
+<div class="description">BABE: routine36</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="BA77.html">TEMP_C</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine36</td>
+<td class="address-2"><span id="BABE"></span>BABE</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-1" rowspan="1">preserve map object byte in A register</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BABF"></span>BABF</td>
+<td class="instruction">LD HL,(<a href="BA75.html">unknown55</a>)</td>
+<td class="comment-1" rowspan="1">load table entry address from <a href="BA75.html">unknown55</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAC2"></span>BAC2</td>
+<td class="instruction">LD (<a href="E005.html">temp_entry_pointer</a>),HL</td>
+<td class="comment-1" rowspan="2">Get screen coordinates for address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAC5"></span>BAC5</td>
+<td class="instruction">CALL <a href="E007.html">address_to_coordinate</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAC8"></span>BAC8</td>
+<td class="instruction">LD (<a href="DF4C.html">LC_POS</a>),HL</td>
+<td class="comment-1" rowspan="2">store returned value in <a href="DF4C.html">LC_POS</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BACB"></span>BACB</td>
+<td class="instruction">LD HL,<a href="EB51.html">nothingsprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BACE"></span>BACE</td>
+<td class="instruction">LD (<a href="DF4A.html">C_DATA</a>),HL</td>
+<td class="comment-1" rowspan="2">load value of <a href="DF4A.html">C_DATA</a> into HL and call <a href="DF4E.html">P_CHAR</a> to print the object</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAD1"></span>BAD1</td>
+<td class="instruction">CALL <a href="DF4E.html">P_CHAR</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAD4"></span>BAD4</td>
+<td class="instruction">POP AF</td>
+<td class="comment-1" rowspan="2">restore A register and return</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAD5"></span>BAD5</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BA77.html">BA77</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BABE">Map</a></td>
+<td class="next">
+Next: <a href="BAD6.html">BAD6</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BABE.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

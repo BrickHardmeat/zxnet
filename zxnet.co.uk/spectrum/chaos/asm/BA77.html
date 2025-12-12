@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BA77.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at BA77</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BA75.html">BA75</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BA77">Map</a></td>
+<td class="next">
+Next: <a href="BABE.html">BABE</a>
+</td>
+</tr>
+</table>
+<div class="description">BA77: TEMP_C</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="98DB.html">routine14</a>, <a href="B8DD.html">routine35</a> and <a href="D5EC.html">routine74</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">TEMP_C</td>
+<td class="address-2"><span id="BA77"></span>BA77</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">disable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA78"></span>BA78</td>
+<td class="instruction">LD HL,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-1" rowspan="1">set HL to first address in <a href="E01F.html">map_object_table</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA7B"></span>BA7B</td>
+<td class="instruction">LD B,$9F</td>
+<td class="comment-1" rowspan="1">set B to $9F as loop counter</td>
+</tr>
+<tr>
+<td class="asm-label">TEMP_C_loop</td>
+<td class="address-2"><span id="BA7D"></span>BA7D</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">preserve loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA7E"></span>BA7E</td>
+<td class="instruction">LD (<a href="BA75.html">unknown55</a>),HL</td>
+<td class="comment-1" rowspan="1">store address of table entry in <a href="BA75.html">unknown55</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA81"></span>BA81</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">load map object byte from table location</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA82"></span>BA82</td>
+<td class="instruction">CP $23</td>
+<td class="comment-1" rowspan="6">if byte is $23, $1D, or $1F, then call <a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA84"></span>BA84</td>
+<td class="instruction">CALL Z,<a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA87"></span>BA87</td>
+<td class="instruction">CP $1D</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA89"></span>BA89</td>
+<td class="instruction">CALL Z,<a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA8C"></span>BA8C</td>
+<td class="instruction">CP $1F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA8E"></span>BA8E</td>
+<td class="instruction">CALL Z,<a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA91"></span>BA91</td>
+<td class="instruction">LD DE,$0141</td>
+<td class="comment-1" rowspan="2">add $0141 to address to get address of same entry in <a href="E160.html">map_animation_frame_table</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA94"></span>BA94</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA95"></span>BA95</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">if byte at that location is $04 then call <a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA96"></span>BA96</td>
+<td class="instruction">CP $04</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA98"></span>BA98</td>
+<td class="instruction">CALL Z,<a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA9B"></span>BA9B</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="5">load address back from <a href="BA75.html">unknown55</a> and compare to value in <a href="AC12.html">object_table_entry_pointer</a>. If equal then call <a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA9C"></span>BA9C</td>
+<td class="instruction">LD HL,(<a href="BA75.html">unknown55</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BA9F"></span>BA9F</td>
+<td class="instruction">LD DE,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAA3"></span>BAA3</td>
+<td class="instruction">SBC HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAA5"></span>BAA5</td>
+<td class="instruction">CALL Z,<a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAA8"></span>BAA8</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="5">load address back from <a href="BA75.html">unknown55</a> and compare to value in <a href="AC14.html">D_ADD</a>. If equal then call <a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAA9"></span>BAA9</td>
+<td class="instruction">LD HL,(<a href="BA75.html">unknown55</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAAC"></span>BAAC</td>
+<td class="instruction">LD DE,(<a href="AC14.html">D_ADD</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAB0"></span>BAB0</td>
+<td class="instruction">SBC HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAB2"></span>BAB2</td>
+<td class="instruction">CALL Z,<a href="BABE.html">routine36</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAB5"></span>BAB5</td>
+<td class="instruction">LD HL,(<a href="BA75.html">unknown55</a>)</td>
+<td class="comment-1" rowspan="2">load address back from <a href="BA75.html">unknown55</a> and increment to next entry in <a href="E01F.html">map_object_table</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAB8"></span>BAB8</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAB9"></span>BAB9</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BABA"></span>BABA</td>
+<td class="instruction">DJNZ <a href="BA77.html#BA7D">TEMP_C_loop</a></td>
+<td class="comment-1" rowspan="1">execute loop 160 times</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BABC"></span>BABC</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="2">re-enable interrupts and return</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BABD"></span>BABD</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BA75.html">BA75</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BA77">Map</a></td>
+<td class="next">
+Next: <a href="BABE.html">BABE</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BA77.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

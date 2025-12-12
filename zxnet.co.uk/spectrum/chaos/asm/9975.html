@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/9975.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+<head>
+<title>Chaos: Routine at 9975</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9941.html">9941</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#9975">Map</a></td>
+<td class="next">
+Next: <a href="99F1.html">99F1</a>
+</td>
+</tr>
+</table>
+<div class="description">9975: CreatureCast spell</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="95C7.html">routine06</a> and <a href="96F3.html">routine08</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">creature_cast_spell</td>
+<td class="address-2"><span id="9975"></span>9975</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9977"></span>9977</td>
+<td class="instruction">LD (<a href="97CE.html">unknown11</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="997A"></span>997A</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="997D"></span>997D</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="997E"></span>997E</td>
+<td class="instruction">JR NZ,<a href="9975.html#9984">creature_cast_spell_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9980"></span>9980</td>
+<td class="instruction">CALL <a href="981A.html">routine13</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9983"></span>9983</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">creature_cast_spell_0</td>
+<td class="address-2"><span id="9984"></span>9984</td>
+<td class="instruction">CALL <a href="C78D.html">routine55</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9987"></span>9987</td>
+<td class="instruction">LD A,$03</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9989"></span>9989</td>
+<td class="instruction">LD (<a href="AC03.html">unknown18</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="998C"></span>998C</td>
+<td class="instruction">LD A,(<a href="937B.html">CURSP</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="998F"></span>998F</td>
+<td class="instruction">CP $22</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9991"></span>9991</td>
+<td class="instruction">JP M,<a href="9975.html#9999">creature_cast_spell_1</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9994"></span>9994</td>
+<td class="instruction">LD A,$0D</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9996"></span>9996</td>
+<td class="instruction">LD (<a href="AC03.html">unknown18</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="9999"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="D686.html">routine77</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">creature_cast_spell_1</td>
+<td class="address-2"><span id="9999"></span>9999</td>
+<td class="instruction">CALL <a href="C955.html">routine60</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">creature_cast_spell_2</td>
+<td class="address-2"><span id="999C"></span>999C</td>
+<td class="instruction">CALL <a href="C9D4.html#C9DC">routine61_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="999F"></span>999F</td>
+<td class="instruction">CP $4B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99A1"></span>99A1</td>
+<td class="instruction">JR NZ,<a href="9975.html#99A9">creature_cast_spell_3</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99A3"></span>99A3</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99A5"></span>99A5</td>
+<td class="instruction">LD (<a href="975F.html">unknown10</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99A8"></span>99A8</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">creature_cast_spell_3</td>
+<td class="address-2"><span id="99A9"></span>99A9</td>
+<td class="instruction">CALL <a href="980E.html">OFBORD</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99AC"></span>99AC</td>
+<td class="instruction">JR Z,<a href="9975.html#999C">creature_cast_spell_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99AE"></span>99AE</td>
+<td class="instruction">CALL <a href="98DB.html">routine14</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99B1"></span>99B1</td>
+<td class="instruction">JR NZ,<a href="9975.html#999C">creature_cast_spell_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99B3"></span>99B3</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99B6"></span>99B6</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99B7"></span>99B7</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99B8"></span>99B8</td>
+<td class="instruction">JR Z,<a href="9975.html#99C3">creature_cast_spell_4</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99BA"></span>99BA</td>
+<td class="instruction">LD DE,$0141</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99BD"></span>99BD</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99BE"></span>99BE</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99BF"></span>99BF</td>
+<td class="instruction">CP $04</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99C1"></span>99C1</td>
+<td class="instruction">JR NZ,<a href="9975.html#999C">creature_cast_spell_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">creature_cast_spell_4</td>
+<td class="address-2"><span id="99C3"></span>99C3</td>
+<td class="instruction">CALL <a href="967A.html">display_wizard_spell_range</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99C6"></span>99C6</td>
+<td class="instruction">CALL <a href="A18A.html">routine20</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99C9"></span>99C9</td>
+<td class="instruction">LD A,(<a href="937B.html">CURSP</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99CC"></span>99CC</td>
+<td class="instruction">CP $22</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99CE"></span>99CE</td>
+<td class="instruction">JP P,<a href="9975.html#99DE">creature_cast_spell_5</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99D1"></span>99D1</td>
+<td class="instruction">CALL <a href="BE94.html">get_random</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99D4"></span>99D4</td>
+<td class="instruction">CP $02</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99D6"></span>99D6</td>
+<td class="instruction">JP P,<a href="9975.html#99DE">creature_cast_spell_5</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99D9"></span>99D9</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99DB"></span>99DB</td>
+<td class="instruction">LD (<a href="9166.html">unknown02</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="99DE"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="D686.html">routine77</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">creature_cast_spell_5</td>
+<td class="address-2"><span id="99DE"></span>99DE</td>
+<td class="instruction">CALL <a href="9760.html">routine09</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99E1"></span>99E1</td>
+<td class="instruction">LD A,(<a href="9167.html">spell_success_flag</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99E4"></span>99E4</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99E5"></span>99E5</td>
+<td class="instruction">CALL NZ,<a href="9941.html">routine16</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99E8"></span>99E8</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99EA"></span>99EA</td>
+<td class="instruction">LD (<a href="9166.html">unknown02</a>),A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99ED"></span>99ED</td>
+<td class="instruction">CALL <a href="97A3.html">routine11</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="99F0"></span>99F0</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9941.html">9941</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#9975">Map</a></td>
+<td class="next">
+Next: <a href="99F1.html">99F1</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/9975.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+</html>

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/9385.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+<head>
+<title>Chaos: Routine at 9385</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9384.html">9384</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#9385">Map</a></td>
+<td class="next">
+Next: <a href="94A7.html">94A7</a>
+</td>
+</tr>
+</table>
+<div class="description">9385: Display list of possessed spells.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="9168.html">CAST_S</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">select_spell</td>
+<td class="address-2"><span id="9385"></span>9385</td>
+<td class="instruction">LD HL,<a href="C2E3.html">sound_effect_23</a></td>
+<td class="comment-1" rowspan="2">Play <a href="C2E3.html">sound_effect_23</a> and clear the screen.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9388"></span>9388</td>
+<td class="instruction">CALL <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="938B"></span>938B</td>
+<td class="instruction">CALL <a href="C5EE.html">CLS</a></td>
+<td class="comment-1" rowspan="3">Set ATTR-T to bright yellow on black.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="938E"></span>938E</td>
+<td class="instruction">LD A,$46</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9390"></span>9390</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9393"></span>9393</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+<td class="comment-1" rowspan="4">Print current player name at coordinates (0,0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9396"></span>9396</td>
+<td class="instruction">ADD A,$29</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9398"></span>9398</td>
+<td class="instruction">LD BC,$0000</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="939B"></span>939B</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="939E"></span>939E</td>
+<td class="instruction">LD A,$53</td>
+<td class="comment-1" rowspan="2">Print <a href="CFCB.html#D1A2">s_spells_string</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93A0"></span>93A0</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93A3"></span>93A3</td>
+<td class="instruction">LD B,$14</td>
+<td class="comment-1" rowspan="1">Set B to 20 as loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93A5"></span>93A5</td>
+<td class="instruction">LD A,$40</td>
+<td class="comment-1" rowspan="2">Set <a href="937E.html">spell_letter</a> to '@'. This is incremented to 'A' before printing in the first iteration of the loop.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93A7"></span>93A7</td>
+<td class="instruction">LD (<a href="937E.html">spell_letter</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93AA"></span>93AA</td>
+<td class="instruction">LD HL,$0010</td>
+<td class="comment-1" rowspan="2">Set <a href="937C.html">temp_coordinates</a> to coordinates (0,16).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93AD"></span>93AD</td>
+<td class="instruction">LD (<a href="937C.html">temp_coordinates</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93B0"></span>93B0</td>
+<td class="instruction">LD HL,(<a href="9154.html">HISPEL</a>)</td>
+<td class="comment-1" rowspan="2">Copy <a href="9154.html">HISPEL</a> to <a href="9382.html">temp_spell_pointer</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93B3"></span>93B3</td>
+<td class="instruction">LD (<a href="9382.html">temp_spell_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label">spells_loop</td>
+<td class="address-2"><span id="93B6"></span>93B6</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93B7"></span>93B7</td>
+<td class="instruction">LD HL,(<a href="9382.html">temp_spell_pointer</a>)</td>
+<td class="comment-1" rowspan="2">Load spell number from address in <a href="9382.html">temp_spell_pointer</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93BA"></span>93BA</td>
+<td class="instruction">LD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93BB"></span>93BB</td>
+<td class="instruction">OR A</td>
+<td class="comment-1" rowspan="2">If spell number is zero jump to <a href="9385.html#9419">skip_spell</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93BC"></span>93BC</td>
+<td class="instruction">JR Z,<a href="9385.html#9419">skip_spell</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93BE"></span>93BE</td>
+<td class="instruction">LD A,(<a href="937C.html">temp_coordinates</a>)</td>
+<td class="comment-1" rowspan="2">Else load the column value from <a href="937C.html">temp_coordinates</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93C1"></span>93C1</td>
+<td class="instruction">LD C,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93C2"></span>93C2</td>
+<td class="instruction">LD A,$10</td>
+<td class="comment-1" rowspan="3">Subtract value from 16 and store back in <a href="937C.html">temp_coordinates</a>. This causes the value to toggle between 0 and 16.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93C4"></span>93C4</td>
+<td class="instruction">SUB C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93C5"></span>93C5</td>
+<td class="instruction">LD (<a href="937C.html">temp_coordinates</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93C8"></span>93C8</td>
+<td class="instruction">OR A</td>
+<td class="comment-1" rowspan="5">If the new column value is zero, add 2 to row value of <a href="937C.html">temp_coordinates</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93C9"></span>93C9</td>
+<td class="instruction">JR NZ,<a href="9385.html#93D3">skip_new_row</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93CB"></span>93CB</td>
+<td class="instruction">LD A,($937D)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93CE"></span>93CE</td>
+<td class="instruction">ADD A,$02</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93D0"></span>93D0</td>
+<td class="instruction">LD ($937D),A</td>
+</tr>
+<tr>
+<td class="asm-label">skip_new_row</td>
+<td class="address-2"><span id="93D3"></span>93D3</td>
+<td class="instruction">LD HL,(<a href="9382.html">temp_spell_pointer</a>)</td>
+<td class="comment-1" rowspan="3">Copy spell number from address in <a href="9382.html">temp_spell_pointer</a> into <a href="937B.html">CURSP</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93D6"></span>93D6</td>
+<td class="instruction">LD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93D7"></span>93D7</td>
+<td class="instruction">LD (<a href="937B.html">CURSP</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93DA"></span>93DA</td>
+<td class="instruction">CALL <a href="92F9.html">CHAN_C</a></td>
+<td class="comment-1" rowspan="2">Call <a href="92F9.html">CHAN_C</a> to get casting chance of spell between 0 and 9 which also sets <a href="9380.html">current_spell_pointer</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93DD"></span>93DD</td>
+<td class="instruction">LD A,(<a href="9153.html">casting_chance</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93E0"></span>93E0</td>
+<td class="instruction">INC A</td>
+<td class="comment-1" rowspan="2">Add 1 and divide by 2, giving a value between 0 and 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93E1"></span>93E1</td>
+<td class="instruction">SRL A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93E3"></span>93E3</td>
+<td class="instruction">ADD A,$42</td>
+<td class="comment-1" rowspan="1">Add $42 to give a bright colour between red and white with black background.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93E5"></span>93E5</td>
+<td class="instruction">LD ($5C8F),A</td>
+<td class="comment-1" rowspan="1">Store in ATTR-T.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93E8"></span>93E8</td>
+<td class="instruction">LD A,(<a href="937E.html">spell_letter</a>)</td>
+<td class="comment-1" rowspan="3">Increment <a href="937E.html">spell_letter</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93EB"></span>93EB</td>
+<td class="instruction">INC A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93EC"></span>93EC</td>
+<td class="instruction">LD (<a href="937E.html">spell_letter</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93EF"></span>93EF</td>
+<td class="instruction">LD BC,(<a href="937C.html">temp_coordinates</a>)</td>
+<td class="comment-1" rowspan="1">Load <a href="937C.html">temp_coordinates</a> into BC.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93F3"></span>93F3</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="3">Print spell letter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93F4"></span>93F4</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93F7"></span>93F7</td>
+<td class="instruction">POP BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93F8"></span>93F8</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">Increment column.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93F9"></span>93F9</td>
+<td class="instruction">LD A,(<a href="937F.html">spell_chaos_law</a>)</td>
+<td class="comment-1" rowspan="5">If <a href="937F.html">spell_chaos_law</a> is zero (neutral) set A to '-'.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93FC"></span>93FC</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93FD"></span>93FD</td>
+<td class="instruction">JR NZ,<a href="9385.html#9403">spell_not_neutral</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="93FF"></span>93FF</td>
+<td class="instruction">LD A,$2D</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9401"></span>9401</td>
+<td class="instruction">JR <a href="9385.html#940C">print_symbol</a></td>
+</tr>
+<tr>
+<td class="asm-label">spell_not_neutral</td>
+<td class="address-2"><span id="9403"></span>9403</td>
+<td class="instruction">JP P,<a href="9385.html#940A">spell_not_chaotic</a></td>
+<td class="comment-1" rowspan="3">Else if negative (chaos) set A to '*'.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9406"></span>9406</td>
+<td class="instruction">LD A,$2A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9408"></span>9408</td>
+<td class="instruction">JR <a href="9385.html#940C">print_symbol</a></td>
+</tr>
+<tr>
+<td class="asm-label">spell_not_chaotic</td>
+<td class="address-2"><span id="940A"></span>940A</td>
+<td class="instruction">LD A,$5E</td>
+<td class="comment-1" rowspan="1">Else positive (law) set A to '&#8593;'.</td>
+</tr>
+<tr>
+<td class="asm-label">print_symbol</td>
+<td class="address-2"><span id="940C"></span>940C</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="3">Print the symbol.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="940D"></span>940D</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9410"></span>9410</td>
+<td class="instruction">POP BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9411"></span>9411</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="4">Print name of current spell.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9412"></span>9412</td>
+<td class="instruction">LD HL,(<a href="9380.html">current_spell_pointer</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9415"></span>9415</td>
+<td class="instruction">LD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9416"></span>9416</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label">skip_spell</td>
+<td class="address-2"><span id="9419"></span>9419</td>
+<td class="instruction">LD HL,(<a href="9382.html">temp_spell_pointer</a>)</td>
+<td class="comment-1" rowspan="4">Move <a href="9382.html">temp_spell_pointer</a> forward to next entry in <a href="7F47.html">possesssed_spell_tables</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="941C"></span>941C</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="941D"></span>941D</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="941E"></span>941E</td>
+<td class="instruction">LD (<a href="9382.html">temp_spell_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9421"></span>9421</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9422"></span>9422</td>
+<td class="instruction">DJNZ <a href="9385.html#93B6">spells_loop</a></td>
+<td class="comment-1" rowspan="1">Jump back to <a href="9385.html#93B6">spells_loop</a> for 20 iterations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9424"></span>9424</td>
+<td class="instruction">LD BC,$1600</td>
+<td class="comment-1" rowspan="1">Set coordinates to (0,22)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9427"></span>9427</td>
+<td class="instruction">LD A,$46</td>
+<td class="comment-1" rowspan="3">Set ATTR-T to bright yellow on black.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9429"></span>9429</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="942C"></span>942C</td>
+<td class="instruction">LD A,$58</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="942E"></span>942E</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+<td class="comment-1" rowspan="2">Print <a href="CFCB.html#D1F1">press_0_to_return_string</a> and wait for no key to be pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9431"></span>9431</td>
+<td class="instruction">CALL <a href="BBCC.html">wait_no_key_seed</a></td>
+</tr>
+<tr>
+<td class="asm-label">get_spell_key</td>
+<td class="address-2"><span id="9434"></span>9434</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-1" rowspan="1">Call KEYBOARD in ROM.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9437"></span>9437</td>
+<td class="instruction">CP $30</td>
+<td class="comment-1" rowspan="3">If '0' is pressed return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9439"></span>9439</td>
+<td class="instruction">JR NZ,<a href="9385.html#943C">not_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="943B"></span>943B</td>
+<td class="instruction">RET</td>
+</tr>
+<tr>
+<td class="asm-label">not_0</td>
+<td class="address-2"><span id="943C"></span>943C</td>
+<td class="instruction">LD HL,<a href="937E.html">spell_letter</a></td>
+<td class="comment-1" rowspan="3">Decrement key code and compare with last spell letter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="943F"></span>943F</td>
+<td class="instruction">DEC A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9440"></span>9440</td>
+<td class="instruction">CP (HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9441"></span>9441</td>
+<td class="instruction">JP P,<a href="9385.html#9434">get_spell_key</a></td>
+<td class="comment-1" rowspan="1">If greater than last spell ignore keypress and loop back to <a href="9385.html#9434">get_spell_key</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9444"></span>9444</td>
+<td class="instruction">SUB $3F</td>
+<td class="comment-1" rowspan="2">If key code is less than '?' ignore keypress and loop back to <a href="9385.html#9434">get_spell_key</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9446"></span>9446</td>
+<td class="instruction">JP M,<a href="9385.html#9434">get_spell_key</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9449"></span>9449</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-1" rowspan="1">Else copy choice to B as loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="944A"></span>944A</td>
+<td class="instruction">LD HL,(<a href="9154.html">HISPEL</a>)</td>
+<td class="comment-1" rowspan="1">Load <a href="9154.html">HISPEL</a> pointer into HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="944D"></span>944D</td>
+<td class="instruction">LD DE,$0002</td>
+<td class="comment-1" rowspan="1">Set DE to 2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9450"></span>9450</td>
+<td class="instruction">AND A</td>
+<td class="comment-1" rowspan="2">Clear carry flag and subtract 2 to compensate for addition in first iteration of loop.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9451"></span>9451</td>
+<td class="instruction">SBC HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label">find_spell_loop</td>
+<td class="address-2"><span id="9453"></span>9453</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-1" rowspan="1">Add 2 to address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9454"></span>9454</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="2">Load the spell number.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9455"></span>9455</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9456"></span>9456</td>
+<td class="instruction">JR Z,<a href="9385.html#9453">find_spell_loop</a></td>
+<td class="comment-1" rowspan="1">If spell number at address is zero loop back to <a href="9385.html#9453">find_spell_loop</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9458"></span>9458</td>
+<td class="instruction">DJNZ <a href="9385.html#9453">find_spell_loop</a></td>
+<td class="comment-1" rowspan="1">Loop the number of iterations selected by the keypress.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="945A"></span>945A</td>
+<td class="instruction">LD (<a href="937B.html">CURSP</a>),A</td>
+<td class="comment-1" rowspan="1">A now holds the spell number for the selected spell, store in <a href="937B.html">CURSP</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="945D"></span>945D</td>
+<td class="instruction">LD A,(<a href="9384.html">cast_spell_flag</a>)</td>
+<td class="comment-1" rowspan="3">If <a href="9384.html">cast_spell_flag</a> is set jump to <a href="9385.html#9469">cast_spell</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9460"></span>9460</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9461"></span>9461</td>
+<td class="instruction">JR NZ,<a href="9385.html#9469">cast_spell</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9463"></span>9463</td>
+<td class="instruction">CALL <a href="94A7.html">display_spell_info</a></td>
+<td class="comment-1" rowspan="1">Else Display information about the selected spell.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9466"></span>9466</td>
+<td class="instruction">JP <a href="9385.html#9385">select_spell</a></td>
+<td class="comment-1" rowspan="1">On return jump back to <a href="9385.html">select_spell</a>.</td>
+</tr>
+<tr>
+<td class="asm-label">cast_spell</td>
+<td class="address-2"><span id="9469"></span>9469</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+<td class="comment-1" rowspan="5">Set HL to address of current player's spell in <a href="9156.html">cast_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="946C"></span>946C</td>
+<td class="instruction">LD D,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="946E"></span>946E</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="946F"></span>946F</td>
+<td class="instruction">LD HL,<a href="9156.html">cast_table</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9472"></span>9472</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9473"></span>9473</td>
+<td class="instruction">LD A,(<a href="937B.html">CURSP</a>)</td>
+<td class="comment-1" rowspan="2">Store <a href="937B.html">CURSP</a> in casting table.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9476"></span>9476</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9477"></span>9477</td>
+<td class="instruction">CP $02</td>
+<td class="comment-1" rowspan="4">If spell number is less than 2 or greater than 33 return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9479"></span>9479</td>
+<td class="instruction">RET M</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="947A"></span>947A</td>
+<td class="instruction">CP $22</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="947C"></span>947C</td>
+<td class="instruction">RET P</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="947D"></span>947D</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-1" rowspan="3">Else clear bottom row and set ATTR-T to $47 (bright white on black).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9480"></span>9480</td>
+<td class="instruction">LD A,$47</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9482"></span>9482</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9485"></span>9485</td>
+<td class="instruction">LD A,$5E</td>
+<td class="comment-1" rowspan="3">Print <a href="CFCB.html#D25C">illusion_string</a> at coordinates (0,22).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9487"></span>9487</td>
+<td class="instruction">LD BC,$1600</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="948A"></span>948A</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="948D"></span>948D</td>
+<td class="instruction">CALL <a href="BBCC.html">wait_no_key_seed</a></td>
+<td class="comment-1" rowspan="1">Wait for no key to be pressed.</td>
+</tr>
+<tr>
+<td class="asm-label">get_illusion_key</td>
+<td class="address-2"><span id="9490"></span>9490</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-1" rowspan="1">Call KEYBOARD in ROM.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9493"></span>9493</td>
+<td class="instruction">CP $4E</td>
+<td class="comment-1" rowspan="2">If key code is 'N' return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9495"></span>9495</td>
+<td class="instruction">RET Z</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9496"></span>9496</td>
+<td class="instruction">CP $59</td>
+<td class="comment-1" rowspan="2">If key code is not 'Y' loop back and get another keypress.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9498"></span>9498</td>
+<td class="instruction">JR NZ,<a href="9385.html#9490">get_illusion_key</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="949A"></span>949A</td>
+<td class="instruction">LD HL,<a href="9156.html#915E">illusion_table</a></td>
+<td class="comment-1" rowspan="5">Else set HL to address of current player's spell in <a href="9156.html#915E">illusion_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="949D"></span>949D</td>
+<td class="instruction">LD D,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="949F"></span>949F</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="94A2"></span>94A2</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="94A3"></span>94A3</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="94A4"></span>94A4</td>
+<td class="instruction">LD (HL),$01</td>
+<td class="comment-1" rowspan="2">Set illusion flag and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="94A6"></span>94A6</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9384.html">9384</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#9385">Map</a></td>
+<td class="next">
+Next: <a href="94A7.html">94A7</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/9385.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+</html>
