@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/904B.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 904B</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="904A.html">904A</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#904B">Map</a></td>
+<td class="next">
+Next: <a href="907A.html">907A</a>
+</td>
+</tr>
+</table>
+<div class="description">904B: Generate a semi-random number.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="84F7.html">subversion_spell</a>, <a href="8741.html">TUR_DO</a>, <a href="89F9.html">main_routine</a>, <a href="8F9A.html">TREPUT</a> and <a href="96F3.html">routine08</a>.
+</div>
+<div class="paragraph">
+Stores a number with lower nibble less than 10 in <a href="907A.html">RANUM</a>, and returns value from 0 to 9 in A.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">RANDY</td>
+<td class="address-2"><span id="904B"></span>904B</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="1">Preserve HL.</td>
+</tr>
+<tr>
+<td class="asm-label">RANDO</td>
+<td class="address-2"><span id="904C"></span>904C</td>
+<td class="instruction">LD A,R</td>
+<td class="comment-1" rowspan="1">Copy R. register to A.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="904E"></span>904E</td>
+<td class="instruction">LD HL,$5C76</td>
+<td class="comment-1" rowspan="2">Add value of SEED system variable.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9051"></span>9051</td>
+<td class="instruction">ADD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9052"></span>9052</td>
+<td class="instruction">OR $80</td>
+<td class="comment-1" rowspan="1">Set most significant bit.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9054"></span>9054</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-1" rowspan="1">Copy value to B register as outer loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">PODER</td>
+<td class="address-2"><span id="9055"></span>9055</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9056"></span>9056</td>
+<td class="instruction">LD B,$0F</td>
+<td class="comment-1" rowspan="1">Set B to 15 as inner loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">PODEI</td>
+<td class="address-2"><span id="9058"></span>9058</td>
+<td class="instruction">NOP</td>
+<td class="comment-1" rowspan="2">Loop back and execute NOP for 15 iterations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9059"></span>9059</td>
+<td class="instruction">DJNZ <a href="904B.html#9058">PODEI</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="905B"></span>905B</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="905C"></span>905C</td>
+<td class="instruction">DJNZ <a href="904B.html#9055">PODER</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="904B.html#9055">PODER</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="905E"></span>905E</td>
+<td class="instruction">LD A,R</td>
+<td class="comment-1" rowspan="1">Copy R register to A.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9060"></span>9060</td>
+<td class="instruction">AND $07</td>
+<td class="comment-1" rowspan="2">Copy lowest three bits to H.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9062"></span>9062</td>
+<td class="instruction">LD H,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9063"></span>9063</td>
+<td class="instruction">LD A,R</td>
+<td class="comment-1" rowspan="2">Copy R register to L. HL now contains a semi-random address below $0800.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9065"></span>9065</td>
+<td class="instruction">LD L,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9066"></span>9066</td>
+<td class="instruction">LD A,R</td>
+<td class="comment-1" rowspan="3">Copy R register to A then add byte at the address in HL twice.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9068"></span>9068</td>
+<td class="instruction">ADD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9069"></span>9069</td>
+<td class="instruction">ADD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="906A"></span>906A</td>
+<td class="instruction">LD HL,$5C76</td>
+<td class="comment-1" rowspan="2">Add the SEED system variable.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="906D"></span>906D</td>
+<td class="instruction">ADD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="906E"></span>906E</td>
+<td class="instruction">LD (<a href="907A.html">RANUM</a>),A</td>
+<td class="comment-1" rowspan="1">Store result in <a href="907A.html">RANUM</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9071"></span>9071</td>
+<td class="instruction">AND $0F</td>
+<td class="comment-1" rowspan="3">If the lower nibble is greater than 9 jump back to <a href="904B.html#904C">RANDO</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9073"></span>9073</td>
+<td class="instruction">CP $0A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9075"></span>9075</td>
+<td class="instruction">JP P,<a href="904B.html#904C">RANDO</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9078"></span>9078</td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="2">Else restore HL and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9079"></span>9079</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="904A.html">904A</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#904B">Map</a></td>
+<td class="next">
+Next: <a href="907A.html">907A</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/904B.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

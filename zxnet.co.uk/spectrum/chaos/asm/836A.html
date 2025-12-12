@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/836A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 836A</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="8357.html">8357</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#836A">Map</a></td>
+<td class="next">
+Next: <a href="839C.html">839C</a>
+</td>
+</tr>
+</table>
+<div class="description">836A: MagicArmour spell.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">magic_armour_spell</td>
+<td class="address-2"><span id="836A"></span>836A</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-1" rowspan="3">Jump to <a href="836A.html#837D">magic_armour_spell_0</a> if player is human.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="836D"></span>836D</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="836E"></span>836E</td>
+<td class="instruction">JR Z,<a href="836A.html#837D">magic_armour_spell_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8370"></span>8370</td>
+<td class="instruction">CALL <a href="834B.html">routine03</a></td>
+<td class="comment-1" rowspan="1">Else call <a href="834B.html">routine03</a> to get byte from <a href="AC16.html">unknown_table_3</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8373"></span>8373</td>
+<td class="instruction">AND $80</td>
+<td class="comment-1" rowspan="2">Jump to <a href="839C.html#83AF">magic_sword_spell_0</a> if bit 7 is clear.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8375"></span>8375</td>
+<td class="instruction">JR Z,<a href="836A.html#837D">magic_armour_spell_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8377"></span>8377</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="3">Set <a href="975F.html">unknown10</a> variable to zero and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8379"></span>8379</td>
+<td class="instruction">LD (<a href="975F.html">unknown10</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="837C"></span>837C</td>
+<td class="instruction">RET</td>
+</tr>
+<tr>
+<td class="asm-label">magic_armour_spell_0</td>
+<td class="address-2"><span id="837D"></span>837D</td>
+<td class="instruction">CALL <a href="8357.html">routine04</a></td>
+<td class="comment-1" rowspan="1">Call <a href="8357.html">routine04</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8380"></span>8380</td>
+<td class="instruction">LD A,(<a href="9167.html">spell_success_flag</a>)</td>
+<td class="comment-1" rowspan="3">Jump to <a href="836A.html#8395">magic_armour_spell_1</a> if <a href="9167.html">spell_success_flag</a> is clear.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8383"></span>8383</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8384"></span>8384</td>
+<td class="instruction">JR Z,<a href="836A.html#8395">magic_armour_spell_1</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8386"></span>8386</td>
+<td class="instruction">LD HL,<a href="8290.html#82A0">modwizard_pointers_3</a></td>
+<td class="comment-1" rowspan="2">Set <a href="831F.html">current_character_pointer</a> to <a href="8290.html#82A0">modwizard_pointers_3</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8389"></span>8389</td>
+<td class="instruction">LD (<a href="831F.html">current_character_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="838C"></span>838C</td>
+<td class="instruction">CALL <a href="8324.html">routine02</a></td>
+<td class="comment-1" rowspan="1">Copy sprite pointers to wizard data.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="838F"></span>838F</td>
+<td class="instruction">CALL <a href="834B.html">routine03</a></td>
+<td class="comment-1" rowspan="1">Get byte from <a href="AC16.html">unknown_table_3</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8392"></span>8392</td>
+<td class="instruction">OR $C0</td>
+<td class="comment-1" rowspan="1">Set bits 6 and 7.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8394"></span>8394</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-1" rowspan="1">Store result back in <a href="AC16.html">unknown_table_3</a>.</td>
+</tr>
+<tr>
+<td class="asm-label">magic_armour_spell_1</td>
+<td class="address-2"><span id="8395"></span>8395</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C0DD.html">routine50</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8398"></span>8398</td>
+<td class="instruction">CALL <a href="97A3.html">routine11</a></td>
+<td class="comment-1" rowspan="2">Display SPELL FAILS or SPELL SUCCEEDS message and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="839B"></span>839B</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="8357.html">8357</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#836A">Map</a></td>
+<td class="next">
+Next: <a href="839C.html">839C</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/836A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

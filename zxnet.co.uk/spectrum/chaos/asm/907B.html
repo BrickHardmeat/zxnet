@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/907B.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 907B</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="907A.html">907A</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#907B">Map</a></td>
+<td class="next">
+Next: <a href="909F.html">909F</a>
+</td>
+</tr>
+</table>
+<div class="description">907B: NKEY2</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="89B0.html">CHONUM</a> and <a href="89F9.html">main_routine</a>.
+</div>
+<div class="paragraph">
+Generate four semi-random bytes at address held in <a href="CD86.html">BUFPNT</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">NKEY2</td>
+<td class="address-2"><span id="907B"></span>907B</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="3">preserve registers.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="907C"></span>907C</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="907D"></span>907D</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label">WAIT1</td>
+<td class="address-2"><span id="907E"></span>907E</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="3">Call KEY-SCAN in Spectrum ROM to see if a key was pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="907F"></span>907F</td>
+<td class="instruction">CALL $028E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9082"></span>9082</td>
+<td class="instruction">POP BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9083"></span>9083</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">Increment C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9084"></span>9084</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-1" rowspan="1">Copy key value to A.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9085"></span>9085</td>
+<td class="instruction">INC A</td>
+<td class="comment-1" rowspan="2">If a key is still being pressed jump back to <a href="907B.html#907E">WAIT1</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9086"></span>9086</td>
+<td class="instruction">JR NZ,<a href="907B.html#907E">WAIT1</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9088"></span>9088</td>
+<td class="instruction">LD HL,(<a href="CD86.html">BUFPNT</a>)</td>
+<td class="comment-1" rowspan="2">Store C at address in <a href="CD86.html">BUFPNT</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="908B"></span>908B</td>
+<td class="instruction">LD (HL),C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="908C"></span>908C</td>
+<td class="instruction">SLA C</td>
+<td class="comment-1" rowspan="3">Double value in C register and store at next address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="908E"></span>908E</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="908F"></span>908F</td>
+<td class="instruction">LD (HL),C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9090"></span>9090</td>
+<td class="instruction">LD A,R</td>
+<td class="comment-1" rowspan="3">Copy R register into A and store at next address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9092"></span>9092</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9093"></span>9093</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9094"></span>9094</td>
+<td class="instruction">RLCA</td>
+<td class="comment-1" rowspan="3">Double the value in A and store at next address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9095"></span>9095</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9096"></span>9096</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9097"></span>9097</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Set <a href="CD86.html">BUFPNT</a> to next address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9098"></span>9098</td>
+<td class="instruction">LD (<a href="CD86.html">BUFPNT</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="909B"></span>909B</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="4">Restore registers and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="909C"></span>909C</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="909D"></span>909D</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="909E"></span>909E</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="907A.html">907A</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#907B">Map</a></td>
+<td class="next">
+Next: <a href="909F.html">909F</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/907B.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

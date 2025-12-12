@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/7D60.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:16 GMT -->
+<head>
+<title>Chaos: Data at 7D60</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="7D04.html">7D04</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#7D60">Map</a></td>
+<td class="next">
+Next: <a href="7F27.html">7F27</a>
+</td>
+</tr>
+</table>
+<div class="description">7D60: Spells table.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+5 bytes of spell data followed by address of spell routine.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">spells_table</td>
+<td class="address-1"><span id="7D60"></span>7D60</td>
+<td class="instruction">DEFB $5D,$09,$FF,$00,$00</td>
+<td class="comment-1" rowspan="1">Spell $01: Message $5D (<a href="CFCB.html#D252">disbelieve_string</a>), Casting chance=9, Max distance=127, Chaos/Law=0, ???=0</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D65"></span>7D65</td>
+<td class="instruction">DEFW <a href="99F1.html">disbelieve_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D67"></span>7D67</td>
+<td class="instruction">DEFB $02,$08,$03,$01,$12</td>
+<td class="comment-1" rowspan="1">Spell $02: Message $02 (<a href="E440.html#E463">king_cobra</a>), Casting chance=8, Max distance=1, Chaos/Law=1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D6C"></span>7D6C</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D6E"></span>7D6E</td>
+<td class="instruction">DEFB $03,$08,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $03: Message $03 (<a href="E440.html#E4D5">dire_wolf</a>), Casting chance=8, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D73"></span>7D73</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D75"></span>7D75</td>
+<td class="instruction">DEFB $04,$08,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $04: Message $04 (<a href="E440.html#E521">goblin</a>), Casting chance=8, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D7A"></span>7D7A</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D7C"></span>7D7C</td>
+<td class="instruction">DEFB $05,$07,$03,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $05: Message $05 (<a href="E440.html#E547">crocodile</a>), Casting chance=7, Max distance=1, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D81"></span>7D81</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D83"></span>7D83</td>
+<td class="instruction">DEFB $06,$07,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $06: Message $06 (<a href="E440.html#E5B9">faun</a>), Casting chance=7, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D88"></span>7D88</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D8A"></span>7D8A</td>
+<td class="instruction">DEFB $07,$05,$03,$01,$12</td>
+<td class="comment-1" rowspan="1">Spell $07: Message $07 (<a href="E440.html#E5DF">lion</a>), Casting chance=5, Max distance=1, Chaos/Law=1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D8F"></span>7D8F</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D91"></span>7D91</td>
+<td class="instruction">DEFB $08,$06,$03,$02,$12</td>
+<td class="comment-1" rowspan="1">Spell $08: Message $08 (<a href="E440.html#E62B">elf</a>), Casting chance=6, Max distance=1, Chaos/Law=2, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D96"></span>7D96</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D98"></span>7D98</td>
+<td class="instruction">DEFB $09,$09,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $09: Message $09 (<a href="E440.html#E677">orc</a>), Casting chance=9, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D9D"></span>7D9D</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7D9F"></span>7D9F</td>
+<td class="instruction">DEFB $0A,$05,$03,$01,$12</td>
+<td class="comment-1" rowspan="1">Spell $0A: Message $0A (<a href="E440.html#E79F">bear</a>), Casting chance=5, Max distance=1, Chaos/Law=1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DA4"></span>7DA4</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DA6"></span>7DA6</td>
+<td class="instruction">DEFB $0B,$06,$03,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $0B: Message $0B (<a href="E440.html#E7C5">gorilla</a>), Casting chance=6, Max distance=1, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DAB"></span>7DAB</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DAD"></span>7DAD</td>
+<td class="instruction">DEFB $0C,$06,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $0C: Message $0C (<a href="E440.html#E80E">ogre</a>), Casting chance=6, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DB2"></span>7DB2</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DB4"></span>7DB4</td>
+<td class="instruction">DEFB $0D,$04,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $0D: Message $0D (<a href="E440.html#E8C9">hydra</a>), Casting chance=4, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DB9"></span>7DB9</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DBB"></span>7DBB</td>
+<td class="instruction">DEFB $0E,$09,$03,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $0E: Message $0E (<a href="E440.html#E8EF">giant_rat</a>), Casting chance=9, Max distance=1, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DC0"></span>7DC0</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DC2"></span>7DC2</td>
+<td class="instruction">DEFB $0F,$03,$03,$01,$12</td>
+<td class="comment-1" rowspan="1">Spell $0F: Message $0F (<a href="E440.html#E93B">giant</a>), Casting chance=3, Max distance=1, Chaos/Law=1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DC7"></span>7DC7</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DC9"></span>7DC9</td>
+<td class="instruction">DEFB $10,$08,$03,$01,$12</td>
+<td class="comment-1" rowspan="1">Spell $10: Message $10 (<a href="E440.html#E651">horse</a>), Casting chance=8, Max distance=1, Chaos/Law=1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DCE"></span>7DCE</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DD0"></span>7DD0</td>
+<td class="instruction">DEFB $11,$05,$03,$02,$12</td>
+<td class="comment-1" rowspan="1">Spell $11: Message $11 (<a href="E440.html#E733">unicorn</a>), Casting chance=5, Max distance=1, Chaos/Law=2, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DD5"></span>7DD5</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DD7"></span>7DD7</td>
+<td class="instruction">DEFB $12,$06,$03,$01,$12</td>
+<td class="comment-1" rowspan="1">Spell $12: Message $12 (<a href="E440.html#E915">centaur</a>), Casting chance=6, Max distance=1, Chaos/Law=1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DDC"></span>7DDC</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DDE"></span>7DDE</td>
+<td class="instruction">DEFB $13,$05,$03,$02,$12</td>
+<td class="comment-1" rowspan="1">Spell $13: Message $13 (<a href="E440.html#E87D">pegasus</a>), Casting chance=5, Max distance=1, Chaos/Law=2, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DE3"></span>7DE3</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DE5"></span>7DE5</td>
+<td class="instruction">DEFB $14,$05,$03,$01,$12</td>
+<td class="comment-1" rowspan="1">Spell $14: Message $14 (<a href="E440.html#E605">gryphon</a>), Casting chance=5, Max distance=1, Chaos/Law=1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DEA"></span>7DEA</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DEC"></span>7DEC</td>
+<td class="instruction">DEFB $15,$03,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $15: Message $15 (<a href="E440.html#E6E6">manticore</a>), Casting chance=3, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DF1"></span>7DF1</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DF3"></span>7DF3</td>
+<td class="instruction">DEFB $16,$07,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $16: Message $16 (<a href="E440.html#E489">bat</a>), Casting chance=7, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DF8"></span>7DF8</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DFA"></span>7DFA</td>
+<td class="instruction">DEFB $17,$00,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $17: Message $17 (<a href="E440.html#E56D">green_dragon</a>), Casting chance=0, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7DFF"></span>7DFF</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E01"></span>7E01</td>
+<td class="instruction">DEFB $18,$00,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $18: Message $18 (<a href="E440.html#E69D">red_dragon</a>), Casting chance=0, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E06"></span>7E06</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E08"></span>7E08</td>
+<td class="instruction">DEFB $19,$00,$03,$02,$12</td>
+<td class="comment-1" rowspan="1">Spell $19: Message $19 (<a href="E440.html#E961">golden_dragon</a>), Casting chance=0, Max distance=1, Chaos/Law=2, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E0D"></span>7E0D</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E0F"></span>7E0F</td>
+<td class="instruction">DEFB $1A,$05,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $1A: Message $1A (<a href="E440.html#E857">harpy</a>), Casting chance=5, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E14"></span>7E14</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E16"></span>7E16</td>
+<td class="instruction">DEFB $1B,$06,$03,$01,$12</td>
+<td class="comment-1" rowspan="1">Spell $1B: Message $1B (<a href="E440.html#E8A3">eagle</a>), Casting chance=6, Max distance=1, Chaos/Law=1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E1B"></span>7E1B</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E1D"></span>7E1D</td>
+<td class="instruction">DEFB $1C,$01,$03,$FE,$12</td>
+<td class="comment-1" rowspan="1">Spell $1C: Message $1C (<a href="E440.html#E593">vampire</a>), Casting chance=1, Max distance=1, Chaos/Law=-2, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E22"></span>7E22</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E24"></span>7E24</td>
+<td class="instruction">DEFB $1D,$04,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $1D: Message $1D (<a href="E440.html#E759">ghost</a>), Casting chance=4, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E29"></span>7E29</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E2B"></span>7E2B</td>
+<td class="instruction">DEFB $1E,$05,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $1E: Message $1E (<a href="E440.html#E4FB">spectre</a>), Casting chance=5, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E30"></span>7E30</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E32"></span>7E32</td>
+<td class="instruction">DEFB $1F,$04,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $1F: Message $1F (<a href="E440.html#E77C">wraith</a>), Casting chance=4, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E37"></span>7E37</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E39"></span>7E39</td>
+<td class="instruction">DEFB $20,$06,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $20: Message $20 (<a href="E440.html#E7EB">skeleton</a>), Casting chance=6, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E3E"></span>7E3E</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E40"></span>7E40</td>
+<td class="instruction">DEFB $21,$08,$03,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $21: Message $21 (<a href="E440.html#E834">zombie</a>), Casting chance=8, Max distance=1, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E45"></span>7E45</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E47"></span>7E47</td>
+<td class="instruction">DEFB $61,$08,$0D,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $22: Message $61 (<a href="CFCB.html#D28A">goey_blob_string</a>), Casting chance=8, Max distance=6, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E4C"></span>7E4C</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E4E"></span>7E4E</td>
+<td class="instruction">DEFB $60,$07,$0D,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $23: Message $60 (<a href="CFCB.html#D280">magic_fire_string</a>), Casting chance=7, Max distance=6, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E53"></span>7E53</td>
+<td class="instruction">DEFW <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E55"></span>7E55</td>
+<td class="instruction">DEFB $24,$07,$11,$01,$11</td>
+<td class="comment-1" rowspan="1">Spell $24: Message $24 (<a href="E440.html#E9F3">magic_wood</a>), Casting chance=7, Max distance=8, Chaos/Law=1, ???=17</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E5A"></span>7E5A</td>
+<td class="instruction">DEFW <a href="9ADD.html">trees_castles_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E5C"></span>7E5C</td>
+<td class="instruction">DEFB $25,$03,$11,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $25: Message $25 (<a href="E440.html#E9D0">shadow_wood</a>), Casting chance=3, Max distance=8, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E61"></span>7E61</td>
+<td class="instruction">DEFW <a href="9ADD.html">trees_castles_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E63"></span>7E63</td>
+<td class="instruction">DEFB $26,$04,$11,$01,$17</td>
+<td class="comment-1" rowspan="1">Spell $26: Message $26 (<a href="E440.html#E9AD">magic_castle</a>), Casting chance=4, Max distance=8, Chaos/Law=1, ???=23</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E68"></span>7E68</td>
+<td class="instruction">DEFW <a href="9ADD.html">trees_castles_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E6A"></span>7E6A</td>
+<td class="instruction">DEFB $27,$04,$11,$FF,$17</td>
+<td class="comment-1" rowspan="1">Spell $27: Message $27 (<a href="E440.html#E987">dark_citadel</a>), Casting chance=4, Max distance=8, Chaos/Law=-1, ???=23</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E6F"></span>7E6F</td>
+<td class="instruction">DEFW <a href="9ADD.html">trees_castles_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E71"></span>7E71</td>
+<td class="instruction">DEFB $28,$07,$0D,$00,$0C</td>
+<td class="comment-1" rowspan="1">Spell $28: Message $28 (<a href="E440.html#EA16">wall</a>), Casting chance=7, Max distance=6, Chaos/Law=0, ???=12</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E76"></span>7E76</td>
+<td class="instruction">DEFW <a href="9B76.html">wall_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E78"></span>7E78</td>
+<td class="instruction">DEFB $70,$09,$0D,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $29: Message $70 (<a href="CFCB.html#D311">magic_bolt_string</a>), Casting chance=9, Max distance=6, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E7D"></span>7E7D</td>
+<td class="instruction">DEFW <a href="9C59.html">lightning_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E7F"></span>7E7F</td>
+<td class="instruction">DEFB $70,$09,$0D,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $2A: Message $70 (<a href="CFCB.html#D311">magic_bolt_string</a>), Casting chance=9, Max distance=6, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E84"></span>7E84</td>
+<td class="instruction">DEFW <a href="9C59.html">lightning_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E86"></span>7E86</td>
+<td class="instruction">DEFB $62,$09,$09,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $2B: Message $62 (<a href="CFCB.html#D294">lightning_string</a>), Casting chance=9, Max distance=4, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E8B"></span>7E8B</td>
+<td class="instruction">DEFW <a href="9C59.html">lightning_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E8D"></span>7E8D</td>
+<td class="instruction">DEFB $62,$09,$09,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $2C: Message $62 (<a href="CFCB.html#D294">lightning_string</a>), Casting chance=9, Max distance=4, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E92"></span>7E92</td>
+<td class="instruction">DEFW <a href="9C59.html">lightning_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E94"></span>7E94</td>
+<td class="instruction">DEFB $63,$07,$1E,$FF,$0C</td>
+<td class="comment-1" rowspan="1">Spell $2D: Message $63 (<a href="CFCB.html#D29D">vengeance_string</a>), Casting chance=7, Max distance=15, Chaos/Law=-1, ???=12</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E99"></span>7E99</td>
+<td class="instruction">DEFW <a href="9DE0.html">dark_power_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7E9B"></span>7E9B</td>
+<td class="instruction">DEFB $65,$07,$1E,$01,$0C</td>
+<td class="comment-1" rowspan="1">Spell $2E: Message $65 (<a href="CFCB.html#D2B0">decree_string</a>), Casting chance=7, Max distance=15, Chaos/Law=1, ???=12</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EA0"></span>7EA0</td>
+<td class="instruction">DEFW <a href="9DE0.html">dark_power_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EA2"></span>7EA2</td>
+<td class="instruction">DEFB $64,$04,$1E,$FE,$0B</td>
+<td class="comment-1" rowspan="1">Spell $2F: Message $64 (<a href="CFCB.html#D2A6">dark_power_string</a>), Casting chance=4, Max distance=15, Chaos/Law=-2, ???=11</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EA7"></span>7EA7</td>
+<td class="instruction">DEFW <a href="9DE0.html">dark_power_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EA9"></span>7EA9</td>
+<td class="instruction">DEFB $66,$04,$1E,$02,$0B</td>
+<td class="comment-1" rowspan="1">Spell $30: Message $66 (<a href="CFCB.html#D2B6">justice_string</a>), Casting chance=4, Max distance=15, Chaos/Law=2, ???=11</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EAE"></span>7EAE</td>
+<td class="instruction">DEFW <a href="9DE0.html">dark_power_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EB0"></span>7EB0</td>
+<td class="instruction">DEFB $6B,$06,$00,$01,$17</td>
+<td class="comment-1" rowspan="1">Spell $31: Message $6B (<a href="CFCB.html#D2D5">magic_shield_string</a>), Casting chance=6, Max distance=0, Chaos/Law=1, ???=23</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EB5"></span>7EB5</td>
+<td class="instruction">DEFW <a href="8404.html">magic_shield_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EB7"></span>7EB7</td>
+<td class="instruction">DEFB $6C,$03,$00,$01,$17</td>
+<td class="comment-1" rowspan="1">Spell $32: Message $6C (<a href="CFCB.html#D2E1">magic_armour_string</a>), Casting chance=3, Max distance=0, Chaos/Law=1, ???=23</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EBC"></span>7EBC</td>
+<td class="instruction">DEFW <a href="836A.html">magic_armour_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EBE"></span>7EBE</td>
+<td class="instruction">DEFB $6D,$03,$00,$01,$10</td>
+<td class="comment-1" rowspan="1">Spell $33: Message $6D (<a href="CFCB.html#D2ED">magic_sword_string</a>), Casting chance=3, Max distance=0, Chaos/Law=1, ???=16</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EC3"></span>7EC3</td>
+<td class="instruction">DEFW <a href="839C.html">magic_sword_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EC5"></span>7EC5</td>
+<td class="instruction">DEFB $6E,$06,$00,$01,$10</td>
+<td class="comment-1" rowspan="1">Spell $34: Message $6E (<a href="CFCB.html#D2F8">magic_knife_string</a>), Casting chance=6, Max distance=0, Chaos/Law=1, ???=16</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7ECA"></span>7ECA</td>
+<td class="instruction">DEFW <a href="83D0.html">magic_knife_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7ECC"></span>7ECC</td>
+<td class="instruction">DEFB $6F,$04,$00,$01,$11</td>
+<td class="comment-1" rowspan="1">Spell $35: Message $6F (<a href="CFCB.html#D303">magic_bow_string</a>), Casting chance=4, Max distance=0, Chaos/Law=1, ???=17</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7ED1"></span>7ED1</td>
+<td class="instruction">DEFW <a href="846A.html">magic_bow_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7ED3"></span>7ED3</td>
+<td class="instruction">DEFB $7B,$04,$00,$00,$0E</td>
+<td class="comment-1" rowspan="1">Spell $36: Message $7B (<a href="CFCB.html#D370">magic_wings_string</a>), Casting chance=4, Max distance=0, Chaos/Law=0, ???=14</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7ED8"></span>7ED8</td>
+<td class="instruction">DEFW <a href="8438.html">magic_wings_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EDA"></span>7EDA</td>
+<td class="instruction">DEFB $67,$07,$00,$02,$05</td>
+<td class="comment-1" rowspan="1">Spell $37: Message $67 (<a href="CFCB.html#D2BD">law_1_string</a>), Casting chance=7, Max distance=0, Chaos/Law=2, ???=5</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EDF"></span>7EDF</td>
+<td class="instruction">DEFW <a href="84B0.html">chaos_law_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EE1"></span>7EE1</td>
+<td class="instruction">DEFB $68,$05,$00,$04,$06</td>
+<td class="comment-1" rowspan="1">Spell $38: Message $68 (<a href="CFCB.html#D2C2">law_2_string</a>), Casting chance=5, Max distance=0, Chaos/Law=4, ???=6</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EE6"></span>7EE6</td>
+<td class="instruction">DEFW <a href="84B0.html">chaos_law_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EE8"></span>7EE8</td>
+<td class="instruction">DEFB $69,$07,$00,$FE,$05</td>
+<td class="comment-1" rowspan="1">Spell $39: Message $69 (<a href="CFCB.html#D2C7">chaos_1_string</a>), Casting chance=7, Max distance=0, Chaos/Law=-2, ???=5</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EED"></span>7EED</td>
+<td class="instruction">DEFW <a href="84B0.html">chaos_law_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EEF"></span>7EEF</td>
+<td class="instruction">DEFB $6A,$05,$00,$FC,$06</td>
+<td class="comment-1" rowspan="1">Spell $3A: Message $6A (<a href="CFCB.html#D2CE">chaos_2_string</a>), Casting chance=5, Max distance=0, Chaos/Law=-4, ???=6</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EF4"></span>7EF4</td>
+<td class="instruction">DEFW <a href="84B0.html">chaos_law_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EF6"></span>7EF6</td>
+<td class="instruction">DEFB $7D,$06,$00,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $3B: Message $7D (<a href="CFCB.html#D386">shadow_form_string</a>), Casting chance=6, Max distance=0, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EFB"></span>7EFB</td>
+<td class="instruction">DEFW <a href="84C0.html">shadow_form_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7EFD"></span>7EFD</td>
+<td class="instruction">DEFB $75,$09,$0F,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $3C: Message $75 (<a href="CFCB.html#D334">subversion_string</a>), Casting chance=9, Max distance=7, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F02"></span>7F02</td>
+<td class="instruction">DEFW <a href="84F7.html">subversion_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F04"></span>7F04</td>
+<td class="instruction">DEFB $75,$09,$0F,$00,$12</td>
+<td class="comment-1" rowspan="1">Spell $3D: Message $75 (<a href="CFCB.html#D334">subversion_string</a>), Casting chance=9, Max distance=7, Chaos/Law=0, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F09"></span>7F09</td>
+<td class="instruction">DEFW <a href="84F7.html">subversion_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F0B"></span>7F0B</td>
+<td class="instruction">DEFB $73,$04,$09,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $3E: Message $73 (<a href="CFCB.html#D322">raise_dead_string</a>), Casting chance=4, Max distance=4, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F10"></span>7F10</td>
+<td class="instruction">DEFW <a href="85F6.html">raise_dead_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F12"></span>7F12</td>
+<td class="instruction">DEFB $73,$04,$09,$FF,$12</td>
+<td class="comment-1" rowspan="1">Spell $3F: Message $73 (<a href="CFCB.html#D322">raise_dead_string</a>), Casting chance=4, Max distance=4, Chaos/Law=-1, ???=18</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F17"></span>7F17</td>
+<td class="instruction">DEFW <a href="85F6.html">raise_dead_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F19"></span>7F19</td>
+<td class="instruction">DEFB $76,$09,$14,$FF,$11</td>
+<td class="comment-1" rowspan="1">Spell $40: Message $76 (<a href="CFCB.html#D33E">turmoil_string</a>), Casting chance=9, Max distance=10, Chaos/Law=-1, ???=17</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F1E"></span>7F1E</td>
+<td class="instruction">DEFW <a href="86EF.html">turmoil_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F20"></span>7F20</td>
+<td class="instruction">DEFB $76,$09,$14,$FF,$11</td>
+<td class="comment-1" rowspan="1">Spell $41: Message $76 (<a href="CFCB.html#D33E">turmoil_string</a>), Casting chance=9, Max distance=10, Chaos/Law=-1, ???=17</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="7F25"></span>7F25</td>
+<td class="instruction">DEFW <a href="86EF.html">turmoil_spell</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="7D04.html">7D04</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#7D60">Map</a></td>
+<td class="next">
+Next: <a href="7F27.html">7F27</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/7D60.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:16 GMT -->
+</html>

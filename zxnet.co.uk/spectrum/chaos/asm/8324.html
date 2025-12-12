@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8324.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+<head>
+<title>Chaos: Routine at 8324</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="8323.html">8323</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8324">Map</a></td>
+<td class="next">
+Next: <a href="834B.html">834B</a>
+</td>
+</tr>
+</table>
+<div class="description">8324: routine02</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="836A.html">magic_armour_spell</a>, <a href="839C.html">magic_sword_spell</a>, <a href="83D0.html">magic_knife_spell</a>, <a href="8404.html">magic_shield_spell</a>, <a href="8438.html">magic_wings_spell</a>, <a href="846A.html">magic_bow_spell</a> and <a href="89F9.html">main_routine</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine02</td>
+<td class="address-2"><span id="8324"></span>8324</td>
+<td class="instruction">CALL <a href="8300.html">get_wizard_object</a></td>
+<td class="comment-1" rowspan="1">Get address of first sprite pointer in wizard object data of current player.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8327"></span>8327</td>
+<td class="instruction">LD B,$04</td>
+<td class="comment-1" rowspan="2">Set B to four as a loop counter and push to stack.</td>
+</tr>
+<tr>
+<td class="asm-label">routine02_0</td>
+<td class="address-2"><span id="8329"></span>8329</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="832A"></span>832A</td>
+<td class="instruction">LD B,$02</td>
+<td class="comment-1" rowspan="2">Set B to two as another counter and push to stack.</td>
+</tr>
+<tr>
+<td class="asm-label">routine02_1</td>
+<td class="address-2"><span id="832C"></span>832C</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="832D"></span>832D</td>
+<td class="instruction">LD HL,(<a href="831F.html">current_character_pointer</a>)</td>
+<td class="comment-1" rowspan="1">Load <a href="831F.html">current_character_pointer</a> into HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8330"></span>8330</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">Read low byte of sprite data pointer to A first time, high byte on second time around loop.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8331"></span>8331</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Increment HL and store back in <a href="831F.html">current_character_pointer</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8332"></span>8332</td>
+<td class="instruction">LD (<a href="831F.html">current_character_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8335"></span>8335</td>
+<td class="instruction">LD HL,(<a href="8321.html">temp_pointer</a>)</td>
+<td class="comment-1" rowspan="2">Store the low byte of sprite data pointer in wizard data object at the address held in <a href="8321.html">temp_pointer</a>. Second time around loop high byte is stored.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8338"></span>8338</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8339"></span>8339</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Increment HL and store back in <a href="8321.html">temp_pointer</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="833A"></span>833A</td>
+<td class="instruction">LD (<a href="8321.html">temp_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="833D"></span>833D</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="2">Pop loop counter and repeat inner loop.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="833E"></span>833E</td>
+<td class="instruction">DJNZ <a href="8324.html#832C">routine02_1</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8340"></span>8340</td>
+<td class="instruction">LD HL,(<a href="8321.html">temp_pointer</a>)</td>
+<td class="comment-1" rowspan="3">Increment address in <a href="8321.html">temp_pointer</a> because there is a byte gap between each sprite pointer in wizard object data.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8343"></span>8343</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8344"></span>8344</td>
+<td class="instruction">LD (<a href="8321.html">temp_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8347"></span>8347</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="3">Pop loop counter and repeat outer loop three times before returning.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8348"></span>8348</td>
+<td class="instruction">DJNZ <a href="8324.html#8329">routine02_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="834A"></span>834A</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="8323.html">8323</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8324">Map</a></td>
+<td class="next">
+Next: <a href="834B.html">834B</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8324.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+</html>

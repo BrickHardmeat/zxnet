@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/967A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 967A</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="95C7.html">95C7</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#967A">Map</a></td>
+<td class="next">
+Next: <a href="96D1.html">96D1</a>
+</td>
+</tr>
+</table>
+<div class="description">967A: Display wizard name, spell being cast, and spell casting range</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="8357.html">routine04</a>, <a href="84B0.html">chaos_law_spell</a>, <a href="84F7.html">subversion_spell</a>, <a href="85F6.html">raise_dead_spell</a>, <a href="86EF.html">turmoil_spell</a>, <a href="95C7.html">routine06</a>, <a href="9975.html">creature_cast_spell</a>, <a href="99F1.html">disbelieve_spell</a>, <a href="9ADD.html">trees_castles_spell</a>, <a href="9BB3.html">routine18</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="D686.html">routine77</a>, <a href="D7A6.html">routine81</a>, <a href="D82D.html">routine83</a> and <a href="D8DE.html">routine85</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">display_wizard_spell_range</td>
+<td class="address-2"><span id="967A"></span>967A</td>
+<td class="instruction">LD A,$46</td>
+<td class="comment-1" rowspan="2">set ATTR-T to $46 (bright yellow on black)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="967C"></span>967C</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="967F"></span>967F</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+<td class="comment-1" rowspan="2">load value of <a href="AC0E.html">current_player</a> variable and add 41</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9682"></span>9682</td>
+<td class="instruction">ADD A,$29</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9684"></span>9684</td>
+<td class="instruction">LD BC,$1600</td>
+<td class="comment-1" rowspan="2">print wizard name at coordinates (0,22)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9687"></span>9687</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="968A"></span>968A</td>
+<td class="instruction">CALL <a href="96D1.html">routine07</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="96D1.html">routine07</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="968D"></span>968D</td>
+<td class="instruction">LD A,$44</td>
+<td class="comment-1" rowspan="2">set ATTR-T to $44 (bright green on black)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="968F"></span>968F</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9692"></span>9692</td>
+<td class="instruction">LD A,(IX+$00)</td>
+<td class="comment-1" rowspan="1">load byte at IX+0</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9695"></span>9695</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+<td class="comment-1" rowspan="1">Print spell being cast</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9698"></span>9698</td>
+<td class="instruction">CALL <a href="96D1.html">routine07</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="96D1.html">routine07</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="969B"></span>969B</td>
+<td class="instruction">LD A,$47</td>
+<td class="comment-1" rowspan="2">set ATTR-T to $47 (bright white on black)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="969D"></span>969D</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96A0"></span>96A0</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">increment C to move right one column</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96A1"></span>96A1</td>
+<td class="instruction">LD A,(IX+$02)</td>
+<td class="comment-1" rowspan="1">load byte at IX+2</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96A4"></span>96A4</td>
+<td class="instruction">SRL A</td>
+<td class="comment-1" rowspan="1">divide it by 2</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96A6"></span>96A6</td>
+<td class="instruction">CP $0A</td>
+<td class="comment-1" rowspan="2">if spell casting range is greater than nine, then jump to <a href="967A.html#96B2">display_wizard_spell_range_0</a> to print the number twenty.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96A8"></span>96A8</td>
+<td class="instruction">JP P,<a href="967A.html#96B2">display_wizard_spell_range_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96AB"></span>96AB</td>
+<td class="instruction">ADD A,$30</td>
+<td class="comment-1" rowspan="1">add 48 to A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96AD"></span>96AD</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+<td class="comment-1" rowspan="1">call <a href="BAD6.html">DH_P</a> to display a number from 0-9</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96B0"></span>96B0</td>
+<td class="instruction">JR <a href="967A.html#96BF">display_wizard_spell_range_1</a></td>
+<td class="comment-1" rowspan="1">jump to <a href="967A.html#96BF">display_wizard_spell_range_1</a></td>
+</tr>
+<tr>
+<td class="asm-label">display_wizard_spell_range_0</td>
+<td class="address-2"><span id="96B2"></span>96B2</td>
+<td class="instruction">LD A,$32</td>
+<td class="comment-1" rowspan="1">load A with $32 ('2')</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96B4"></span>96B4</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">preserve BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96B5"></span>96B5</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+<td class="comment-1" rowspan="1">call <a href="BAD6.html">DH_P</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96B8"></span>96B8</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96B9"></span>96B9</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">increment C to move right one column</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96BA"></span>96BA</td>
+<td class="instruction">LD A,$30</td>
+<td class="comment-1" rowspan="1">load A with $30 ('0')</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96BC"></span>96BC</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+<td class="comment-1" rowspan="1">call <a href="BAD6.html">DH_P</a></td>
+</tr>
+<tr>
+<td class="asm-label">display_wizard_spell_range_1</td>
+<td class="address-2"><span id="96BF"></span>96BF</td>
+<td class="instruction">CALL <a href="96D1.html">routine07</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="96D1.html">routine07</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96C2"></span>96C2</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-1" rowspan="3">return if <a href="AC2E.html">computer_player_flag</a> is zero</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96C5"></span>96C5</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96C6"></span>96C6</td>
+<td class="instruction">RET Z</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96C7"></span>96C7</td>
+<td class="instruction">LD B,$08</td>
+<td class="comment-1" rowspan="1">set B to 8 as loop counter</td>
+</tr>
+<tr>
+<td class="asm-label">display_wizard_spell_range_2</td>
+<td class="address-2"><span id="96C9"></span>96C9</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">stack loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96CA"></span>96CA</td>
+<td class="instruction">CALL <a href="96E6.html">PAUSER</a></td>
+<td class="comment-1" rowspan="1">call <a href="96E6.html">PAUSER</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96CD"></span>96CD</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96CE"></span>96CE</td>
+<td class="instruction">DJNZ <a href="967A.html#96C9">display_wizard_spell_range_2</a></td>
+<td class="comment-1" rowspan="1">loop back to <a href="967A.html#96C9">display_wizard_spell_range_2</a> seven times</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96D0"></span>96D0</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="95C7.html">95C7</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#967A">Map</a></td>
+<td class="next">
+Next: <a href="96D1.html">96D1</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/967A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

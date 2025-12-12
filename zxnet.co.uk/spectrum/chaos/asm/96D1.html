@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/96D1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 96D1</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="967A.html">967A</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#96D1">Map</a></td>
+<td class="next">
+Next: <a href="96E6.html">96E6</a>
+</td>
+</tr>
+</table>
+<div class="description">96D1: routine07</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="967A.html">display_wizard_spell_range</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine07</td>
+<td class="address-2"><span id="96D1"></span>96D1</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">stack BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96D2"></span>96D2</td>
+<td class="instruction">LD HL,<a href="9117.html">sound_effect_02</a></td>
+<td class="comment-1" rowspan="1">set HL to address of sound effect at <a href="9117.html">sound_effect_02</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96D5"></span>96D5</td>
+<td class="instruction">CALL <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a></td>
+<td class="comment-1" rowspan="1">call play_sound_effect_in_HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96D8"></span>96D8</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="1">enable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96D9"></span>96D9</td>
+<td class="instruction">LD B,$FF</td>
+<td class="comment-1" rowspan="1">set B to 255 as outer loop counter</td>
+</tr>
+<tr>
+<td class="asm-label">routine07_0</td>
+<td class="address-2"><span id="96DB"></span>96DB</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">stack outer loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96DC"></span>96DC</td>
+<td class="instruction">LD B,$3C</td>
+<td class="comment-1" rowspan="1">set B to 60 as inner loop counter</td>
+</tr>
+<tr>
+<td class="asm-label">routine07_1</td>
+<td class="address-2"><span id="96DE"></span>96DE</td>
+<td class="instruction">DJNZ <a href="96D1.html#96DE">routine07_1</a></td>
+<td class="comment-1" rowspan="1">loop 59 times</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96E0"></span>96E0</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore outer loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96E1"></span>96E1</td>
+<td class="instruction">DJNZ <a href="96D1.html#96DB">routine07_0</a></td>
+<td class="comment-1" rowspan="1">loop back to <a href="96D1.html#96DB">routine07_0</a> 254 times</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96E3"></span>96E3</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96E4"></span>96E4</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="2">increment C and return</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96E5"></span>96E5</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="967A.html">967A</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#96D1">Map</a></td>
+<td class="next">
+Next: <a href="96E6.html">96E6</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/96D1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

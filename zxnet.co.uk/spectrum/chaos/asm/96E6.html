@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/96E6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 96E6</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="96D1.html">96D1</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#96E6">Map</a></td>
+<td class="next">
+Next: <a href="96F3.html">96F3</a>
+</td>
+</tr>
+</table>
+<div class="description">96E6: PAUSER</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="84F7.html">subversion_spell</a>, <a href="89F9.html">main_routine</a>, <a href="8F9A.html">TREPUT</a> and <a href="967A.html">display_wizard_spell_range</a>.
+</div>
+<div class="paragraph">
+Loop 40800 times to delay for approximately 0.15 seconds.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">PAUSER</td>
+<td class="address-2"><span id="96E6"></span>96E6</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve BC.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96E7"></span>96E7</td>
+<td class="instruction">LD B,$FF</td>
+<td class="comment-1" rowspan="1">Set B to 255 as outer loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">PAUSER_0</td>
+<td class="address-2"><span id="96E9"></span>96E9</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve outer loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96EA"></span>96EA</td>
+<td class="instruction">LD B,$A0</td>
+<td class="comment-1" rowspan="1">Set B to 160 as inner loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">PAUSER_1</td>
+<td class="address-2"><span id="96EC"></span>96EC</td>
+<td class="instruction">DJNZ <a href="96E6.html#96EC">PAUSER_1</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="96E6.html#96EC">PAUSER_1</a> for 160 iterations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96EE"></span>96EE</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore outer loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96EF"></span>96EF</td>
+<td class="instruction">DJNZ <a href="96E6.html#96E9">PAUSER_0</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="96E6.html#96E9">PAUSER_0</a> for 255 iterations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96F1"></span>96F1</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="2">Restore BC and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="96F2"></span>96F2</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="96D1.html">96D1</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#96E6">Map</a></td>
+<td class="next">
+Next: <a href="96F3.html">96F3</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/96E6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

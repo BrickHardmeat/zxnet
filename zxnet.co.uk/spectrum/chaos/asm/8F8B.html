@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8F8B.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:17 GMT -->
+<head>
+<title>Chaos: Routine at 8F8B</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="89F9.html">89F9</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8F8B">Map</a></td>
+<td class="next">
+Next: <a href="8F9A.html">8F9A</a>
+</td>
+</tr>
+</table>
+<div class="description">8F8B: ATTRDO</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="89F9.html">main_routine</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">ATTRDO</td>
+<td class="address-2"><span id="8F8B"></span>8F8B</td>
+<td class="instruction">LD A,($5C8F)</td>
+<td class="comment-1" rowspan="3">Increment ATTR-T.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8F8E"></span>8F8E</td>
+<td class="instruction">INC A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8F8F"></span>8F8F</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8F92"></span>8F92</td>
+<td class="instruction">CP $08</td>
+<td class="comment-1" rowspan="2">If ATTR-T is not $08 return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8F94"></span>8F94</td>
+<td class="instruction">RET NZ</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8F95"></span>8F95</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-1" rowspan="2">Else set ATTR-T to $01 (dark blue on black) and fall through to <a href="8F9A.html">TREPUT</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8F97"></span>8F97</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="89F9.html">89F9</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8F8B">Map</a></td>
+<td class="next">
+Next: <a href="8F9A.html">8F9A</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8F8B.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:17 GMT -->
+</html>

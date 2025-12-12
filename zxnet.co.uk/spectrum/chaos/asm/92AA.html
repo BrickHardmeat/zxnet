@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/92AA.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 92AA</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9168.html">9168</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#92AA">Map</a></td>
+<td class="next">
+Next: <a href="92BE.html">92BE</a>
+</td>
+</tr>
+</table>
+<div class="description">92AA: Calculate address of spells for current player.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="89F9.html">main_routine</a>, <a href="8F9A.html">TREPUT</a>, <a href="9168.html">CAST_S</a>, <a href="95C7.html">routine06</a> and <a href="96F3.html">routine08</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">GETHIS</td>
+<td class="address-2"><span id="92AA"></span>92AA</td>
+<td class="instruction">LD HL,<a href="7F47.html">possesssed_spell_tables</a></td>
+<td class="comment-1" rowspan="1">Set HL to address of <a href="7F47.html">possesssed_spell_tables</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92AD"></span>92AD</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+<td class="comment-1" rowspan="3">Load <a href="AC0E.html">current_player</a> into DE.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92B0"></span>92B0</td>
+<td class="instruction">LD D,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92B2"></span>92B2</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92B3"></span>92B3</td>
+<td class="instruction">LD B,$28</td>
+<td class="comment-1" rowspan="1">Set B to $28 (length of spell data for each wizard) as loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92B5"></span>92B5</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1">Set A to zero.</td>
+</tr>
+<tr>
+<td class="asm-label">GETHIS_0</td>
+<td class="address-2"><span id="92B6"></span>92B6</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-1" rowspan="1">Add player number to address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92B7"></span>92B7</td>
+<td class="instruction">DJNZ <a href="92AA.html#92B6">GETHIS_0</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="92AA.html#92B6">GETHIS_0</a> for $28 iterations so that HL points to correct wizard's spells.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92B9"></span>92B9</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Increment HL and store in <a href="9154.html">HISPEL</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92BA"></span>92BA</td>
+<td class="instruction">LD (<a href="9154.html">HISPEL</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92BD"></span>92BD</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9168.html">9168</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#92AA">Map</a></td>
+<td class="next">
+Next: <a href="92BE.html">92BE</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/92AA.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

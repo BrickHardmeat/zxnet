@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/9BB3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:17 GMT -->
+<head>
+<title>Chaos: Routine at 9BB3</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9B85.html">9B85</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#9BB3">Map</a></td>
+<td class="next">
+Next: <a href="9C0E.html">9C0E</a>
+</td>
+</tr>
+</table>
+<div class="description">9BB3: routine18</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="9B85.html">routine17</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine18</td>
+<td class="address-2"><span id="9BB3"></span>9BB3</td>
+<td class="instruction">LD D,$00</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BB5"></span>9BB5</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BB6"></span>9BB6</td>
+<td class="instruction">LD HL,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BB9"></span>9BB9</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BBA"></span>9BBA</td>
+<td class="instruction">LD (<a href="AC12.html">object_table_entry_pointer</a>),HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BBD"></span>9BBD</td>
+<td class="instruction">LD (<a href="C8B7.html">AIM</a>),HL</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BC0"></span>9BC0</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BC1"></span>9BC1</td>
+<td class="instruction">CP $1E</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BC3"></span>9BC3</td>
+<td class="instruction">JP P,<a href="9BB3.html#9BCD">routine18_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BC6"></span>9BC6</td>
+<td class="instruction">CP $13</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BC8"></span>9BC8</td>
+<td class="instruction">JP M,<a href="9BB3.html#9BCD">routine18_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BCB"></span>9BCB</td>
+<td class="instruction">JR <a href="9B85.html#9BA6">routine17_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="9BCD"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="D887.html">routine84</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine18_0</td>
+<td class="address-2"><span id="9BCD"></span>9BCD</td>
+<td class="instruction">CALL <a href="9760.html">routine09</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BD0"></span>9BD0</td>
+<td class="instruction">CALL <a href="967A.html">display_wizard_spell_range</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BD3"></span>9BD3</td>
+<td class="instruction">LD B,$04</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine18_1</td>
+<td class="address-2"><span id="9BD5"></span>9BD5</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BD6"></span>9BD6</td>
+<td class="instruction">CALL <a href="C955.html">routine60</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine18_2</td>
+<td class="address-2"><span id="9BD9"></span>9BD9</td>
+<td class="instruction">CALL <a href="C9D4.html#C9DC">routine61_0</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BDC"></span>9BDC</td>
+<td class="instruction">CP $4B</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BDE"></span>9BDE</td>
+<td class="instruction">JR Z,<a href="9BB3.html#9C02">routine18_3</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BE0"></span>9BE0</td>
+<td class="instruction">CALL <a href="980E.html">OFBORD</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BE3"></span>9BE3</td>
+<td class="instruction">JR Z,<a href="9BB3.html#9BD9">routine18_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BE5"></span>9BE5</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BE8"></span>9BE8</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BE9"></span>9BE9</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BEA"></span>9BEA</td>
+<td class="instruction">JR NZ,<a href="9BB3.html#9BD9">routine18_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BEC"></span>9BEC</td>
+<td class="instruction">CALL <a href="9C0F.html">routine19</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BEF"></span>9BEF</td>
+<td class="instruction">JR NZ,<a href="9BB3.html#9BD9">routine18_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BF1"></span>9BF1</td>
+<td class="instruction">CALL <a href="98DB.html">routine14</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BF4"></span>9BF4</td>
+<td class="instruction">JR NZ,<a href="9BB3.html#9BD9">routine18_2</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BF6"></span>9BF6</td>
+<td class="instruction">CALL <a href="A18A.html">routine20</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BF9"></span>9BF9</td>
+<td class="instruction">LD A,(<a href="9167.html">spell_success_flag</a>)</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BFC"></span>9BFC</td>
+<td class="instruction">OR A</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BFD"></span>9BFD</td>
+<td class="instruction">JR Z,<a href="9BB3.html#9C09">routine18_4</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9BFF"></span>9BFF</td>
+<td class="instruction">CALL <a href="9941.html">routine16</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine18_3</td>
+<td class="address-2"><span id="9C02"></span>9C02</td>
+<td class="instruction">POP BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9C03"></span>9C03</td>
+<td class="instruction">DJNZ <a href="9BB3.html#9BD5">routine18_1</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9C05"></span>9C05</td>
+<td class="instruction">CALL <a href="97A3.html">routine11</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9C08"></span>9C08</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">routine18_4</td>
+<td class="address-2"><span id="9C09"></span>9C09</td>
+<td class="instruction">CALL <a href="97A3.html">routine11</a></td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9C0C"></span>9C0C</td>
+<td class="instruction">POP BC</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9C0D"></span>9C0D</td>
+<td class="instruction">RET</td>
+<td class="comment-0" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9B85.html">9B85</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#9BB3">Map</a></td>
+<td class="next">
+Next: <a href="9C0E.html">9C0E</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/9BB3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:17 GMT -->
+</html>

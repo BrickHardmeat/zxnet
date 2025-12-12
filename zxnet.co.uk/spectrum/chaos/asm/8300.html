@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8300.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+<head>
+<title>Chaos: Routine at 8300</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="82C0.html">82C0</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8300">Map</a></td>
+<td class="next">
+Next: <a href="831F.html">831F</a>
+</td>
+</tr>
+</table>
+<div class="description">8300: Get address of the wizard object data of the current player.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="8324.html">routine02</a>, <a href="846A.html">magic_bow_spell</a>, <a href="84C0.html">shadow_form_spell</a> and <a href="89F9.html">main_routine</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">get_wizard_object</td>
+<td class="address-2"><span id="8300"></span>8300</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="1">Preserve contents of HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8301"></span>8301</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+<td class="comment-1" rowspan="3">Add 40 to <a href="AC0E.html">current_player</a> variable.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8304"></span>8304</td>
+<td class="instruction">LD B,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8306"></span>8306</td>
+<td class="instruction">ADD A,$28</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8308"></span>8308</td>
+<td class="instruction">SLA A</td>
+<td class="comment-1" rowspan="1">Multiply by two.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="830A"></span>830A</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-1" rowspan="3">Add to address of <a href="E3E0.html">object address table</a> to give address of current player's object pointer in HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="830B"></span>830B</td>
+<td class="instruction">LD HL,<a href="E3E0.html">nothing_pointer</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="830E"></span>830E</td>
+<td class="instruction">ADD HL,BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="830F"></span>830F</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-1" rowspan="3">Read address of wizard object into DE.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8310"></span>8310</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8311"></span>8311</td>
+<td class="instruction">LD D,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8312"></span>8312</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-1" rowspan="3">Swap address into HL and store in <a href="89AA.html">player_name_string</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8313"></span>8313</td>
+<td class="instruction">LD DE,$0017</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8316"></span>8316</td>
+<td class="instruction">LD (<a href="89AA.html">player_name_string</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8319"></span>8319</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-1" rowspan="2">Add $17 to address and store in <a href="8321.html">temp_pointer</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="831A"></span>831A</td>
+<td class="instruction">LD (<a href="8321.html">temp_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="831D"></span>831D</td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="2">Restore contents of HL and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="831E"></span>831E</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="82C0.html">82C0</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8300">Map</a></td>
+<td class="next">
+Next: <a href="831F.html">831F</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8300.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/95C7.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 95C7</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="95B8.html">95B8</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#95C7">Map</a></td>
+<td class="next">
+Next: <a href="967A.html">967A</a>
+</td>
+</tr>
+</table>
+<div class="description">95C7: routine06</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="9168.html">CAST_S</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine06</td>
+<td class="address-2"><span id="95C7"></span>95C7</td>
+<td class="instruction">CALL <a href="C5EE.html">CLS</a></td>
+<td class="comment-1" rowspan="1">call <a href="C5EE.html">CLS</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95CA"></span>95CA</td>
+<td class="instruction">CALL <a href="FE56.html">set_IM2_mode</a></td>
+<td class="comment-1" rowspan="1">switch to interrupt mode 2</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95CD"></span>95CD</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+<td class="comment-1" rowspan="1">call <a href="C0DD.html">routine50</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95D0"></span>95D0</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="2">do nothing for two video frames</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95D1"></span>95D1</td>
+<td class="instruction">HALT</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95D2"></span>95D2</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="2">set <a href="AC0E.html">current_player</a> to zero</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95D4"></span>95D4</td>
+<td class="instruction">LD (<a href="AC0E.html">current_player</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label">routine06_0</td>
+<td class="address-2"><span id="95D7"></span>95D7</td>
+<td class="instruction">LD HL,<a href="AC16.html">unknown_table_3</a></td>
+<td class="comment-1" rowspan="1">set HL to address of <a href="AC16.html">unknown_table_3</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95DA"></span>95DA</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+<td class="comment-1" rowspan="4">add <a href="AC0E.html">current_player</a> to address as offset</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95DD"></span>95DD</td>
+<td class="instruction">LD D,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95DF"></span>95DF</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95E0"></span>95E0</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95E1"></span>95E1</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">load at HL into A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95E2"></span>95E2</td>
+<td class="instruction">BIT 4,(HL)</td>
+<td class="comment-1" rowspan="2">if bit 4 is set then jump to <a href="95C7.html#9665">routine06_6</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95E4"></span>95E4</td>
+<td class="instruction">JP NZ,<a href="95C7.html#9665">routine06_6</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95E7"></span>95E7</td>
+<td class="instruction">CALL <a href="97D1.html">routine12</a></td>
+<td class="comment-1" rowspan="1">else call <a href="97D1.html">routine12</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95EA"></span>95EA</td>
+<td class="instruction">CALL <a href="95B8.html">get_player_controlled_flag</a></td>
+<td class="comment-1" rowspan="3">if player is computer controlled then jump to <a href="96F3.html">routine08</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95ED"></span>95ED</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95EE"></span>95EE</td>
+<td class="instruction">JP NZ,<a href="96F3.html">routine08</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95F1"></span>95F1</td>
+<td class="instruction">LD HL,<a href="9156.html">cast_table</a></td>
+<td class="comment-1" rowspan="5">else set HL to the sixteen byte table used by <a href="9168.html">CAST_S</a> ??? and add <a href="AC0E.html">current_player</a> as an offset ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95F4"></span>95F4</td>
+<td class="instruction">LD D,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95F6"></span>95F6</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95F9"></span>95F9</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95FA"></span>95FA</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95FB"></span>95FB</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="2">copy byte from table into <a href="937B.html">CURSP</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95FC"></span>95FC</td>
+<td class="instruction">LD (<a href="937B.html">CURSP</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95FF"></span>95FF</td>
+<td class="instruction">OR A</td>
+<td class="comment-1" rowspan="2">if zero then jump forward to <a href="95C7.html#9665">routine06_6</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9600"></span>9600</td>
+<td class="instruction">JP Z,<a href="95C7.html#9665">routine06_6</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9603"></span>9603</td>
+<td class="instruction">CALL <a href="92AA.html">GETHIS</a></td>
+<td class="comment-1" rowspan="1">call <a href="92AA.html">GETHIS</a> which updates <a href="9154.html">HISPEL</a> and returns with the address of the player's spell table in HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9606"></span>9606</td>
+<td class="instruction">LD B,$13</td>
+<td class="comment-1" rowspan="1">set B to 19 as a loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9608"></span>9608</td>
+<td class="instruction">LD A,(<a href="937B.html">CURSP</a>)</td>
+<td class="comment-1" rowspan="3">if <a href="937B.html">CURSP</a> equals one then jump forward to <a href="95C7.html#961B">routine06_3</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="960B"></span>960B</td>
+<td class="instruction">CP $01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="960D"></span>960D</td>
+<td class="instruction">JR Z,<a href="95C7.html#961B">routine06_3</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine06_1</td>
+<td class="address-2"><span id="960F"></span>960F</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-1" rowspan="1">load spell number from the address in HL into E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9610"></span>9610</td>
+<td class="instruction">CP E</td>
+<td class="comment-1" rowspan="2">if the spell number in E is equal to <a href="937B.html">CURSP</a> then jump forward to <a href="95C7.html#9617">routine06_2</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9611"></span>9611</td>
+<td class="instruction">JR NZ,<a href="95C7.html#9617">routine06_2</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9613"></span>9613</td>
+<td class="instruction">LD (HL),$00</td>
+<td class="comment-1" rowspan="2">else zero that entry in spell table (two bytes) and jump out of loop to <a href="95C7.html#961B">routine06_3</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9615"></span>9615</td>
+<td class="instruction">JR <a href="95C7.html#961B">routine06_3</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine06_2</td>
+<td class="address-2"><span id="9617"></span>9617</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">address to move on two bytes to next spell in player's spell table</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9618"></span>9618</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9619"></span>9619</td>
+<td class="instruction">DJNZ <a href="95C7.html#960F">routine06_1</a></td>
+<td class="comment-1" rowspan="1">loop back to <a href="95C7.html#960F">routine06_1</a> 18 times</td>
+</tr>
+<tr>
+<td class="asm-label">routine06_3</td>
+<td class="address-2"><span id="961B"></span>961B</td>
+<td class="instruction">CALL <a href="92F9.html">CHAN_C</a></td>
+<td class="comment-1" rowspan="1">call <a href="92F9.html">CHAN_C</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="961E"></span>961E</td>
+<td class="instruction">CALL <a href="967A.html">display_wizard_spell_range</a></td>
+<td class="comment-1" rowspan="1">Display wizard name, the spell being cast, and spell casting range</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9621"></span>9621</td>
+<td class="instruction">CALL <a href="BBB0.html">wait_key_seed</a></td>
+<td class="comment-1" rowspan="1">wait for a keypress</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9624"></span>9624</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-1" rowspan="1">clear bottom of screen (line 22)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9627"></span>9627</td>
+<td class="instruction">LD HL,<a href="9156.html#915E">illusion_table</a></td>
+<td class="comment-1" rowspan="1">set HL to <a href="9156.html">cast_table</a>+8 (second half of 16 byte table used by <a href="9168.html">CAST_S</a>) ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="962A"></span>962A</td>
+<td class="instruction">LD D,$00</td>
+<td class="comment-1" rowspan="4">add <a href="AC0E.html">current_player</a> as offset in table</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="962C"></span>962C</td>
+<td class="instruction">LD A,(<a href="AC0E.html">current_player</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="962F"></span>962F</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9630"></span>9630</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9631"></span>9631</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">copy byte at offset into <a href="9166.html">unknown02</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9632"></span>9632</td>
+<td class="instruction">LD (<a href="9166.html">unknown02</a>),A</td>
+<td class="comment-1" rowspan="3">if byte is non zero then jump forward to <a href="95C7.html#964C">routine06_4</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9635"></span>9635</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9636"></span>9636</td>
+<td class="instruction">JR NZ,<a href="95C7.html#964C">routine06_4</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9638"></span>9638</td>
+<td class="instruction">CALL <a href="BE94.html">get_random</a></td>
+<td class="comment-1" rowspan="1">else get a random number from 0 to 9 in A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="963B"></span>963B</td>
+<td class="instruction">LD HL,<a href="9153.html">casting_chance</a></td>
+<td class="comment-1" rowspan="4">load <a href="9153.html">casting_chance</a> into E, increment it, and compare with random value</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="963E"></span>963E</td>
+<td class="instruction">LD E,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="963F"></span>963F</td>
+<td class="instruction">INC E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9640"></span>9640</td>
+<td class="instruction">CP E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9641"></span>9641</td>
+<td class="instruction">JP M,<a href="95C7.html#964C">routine06_4</a></td>
+<td class="comment-1" rowspan="1">if <a href="9153.html">casting_chance</a> + 1 is greater than random value then skip to <a href="95C7.html#964C">routine06_4</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9644"></span>9644</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="3">else set spell successful flag to zero and skip forward to <a href="95C7.html#9659">routine06_5</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9646"></span>9646</td>
+<td class="instruction">LD (<a href="9167.html">spell_success_flag</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9649"></span>9649</td>
+<td class="instruction">JP <a href="95C7.html#9659">routine06_5</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine06_4</td>
+<td class="address-2"><span id="964C"></span>964C</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-1" rowspan="2">set spell successful flag to one</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="964E"></span>964E</td>
+<td class="instruction">LD (<a href="9167.html">spell_success_flag</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9651"></span>9651</td>
+<td class="instruction">LD A,(<a href="937F.html">spell_chaos_law</a>)</td>
+<td class="comment-1" rowspan="4">add <a href="937F.html">spell_chaos_law</a> to <a href="C3A4.html">CH_LAW</a> and store result in <a href="C3A4.html">CH_LAW</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9654"></span>9654</td>
+<td class="instruction">LD HL,<a href="C3A4.html">CH_LAW</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9657"></span>9657</td>
+<td class="instruction">ADD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9658"></span>9658</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label">routine06_5</td>
+<td class="address-2"><span id="9659"></span>9659</td>
+<td class="instruction">LD L,(IX+$05)</td>
+<td class="comment-1" rowspan="2">load call address for spell from spell table into HL (IX set by earlier call to <a href="92F9.html">CHAN_C</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="965C"></span>965C</td>
+<td class="instruction">LD H,(IX+$06)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="965F"></span>965F</td>
+<td class="instruction">LD ($9663),HL</td>
+<td class="comment-1" rowspan="1">overwrite the address of the following CALL instruction (self modifying code)</td>
+</tr>
+<tr>
+<td class="asm-label">spell_cast_function_call</td>
+<td class="address-1"><span id="9662"></span>9662</td>
+<td class="instruction">CALL <a href="9975.html">creature_cast_spell</a></td>
+<td class="comment-1" rowspan="1">call CreatureCast spell</td>
+</tr>
+<tr>
+<td class="asm-label">routine06_6</td>
+<td class="address-2"><span id="9665"></span>9665</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-1" rowspan="1">clear bottom of screen (line 22)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="9668"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="96F3.html">routine08</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine06_7</td>
+<td class="address-2"><span id="9668"></span>9668</td>
+<td class="instruction">LD HL,<a href="A172.html">STRENG</a></td>
+<td class="comment-1" rowspan="2">set HL to address of <a href="A172.html">STRENG</a> and call <a href="7D04.html">routine01</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="966B"></span>966B</td>
+<td class="instruction">CALL <a href="7D04.html">routine01</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="966E"></span>966E</td>
+<td class="instruction">LD HL,<a href="AC0E.html">current_player</a></td>
+<td class="comment-1" rowspan="2">increment <a href="AC0E.html">current_player</a> variable</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9671"></span>9671</td>
+<td class="instruction">INC (HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9672"></span>9672</td>
+<td class="instruction">LD A,(<a href="AC0F.html">NO_PLA</a>)</td>
+<td class="comment-1" rowspan="4">if <a href="AC0E.html">current_player</a> equals <a href="AC0F.html">NO_PLA</a> then return else loop back to <a href="95C7.html#95D7">routine06_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9675"></span>9675</td>
+<td class="instruction">CP (HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9676"></span>9676</td>
+<td class="instruction">JP NZ,<a href="95C7.html#95D7">routine06_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9679"></span>9679</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="95B8.html">95B8</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#95C7">Map</a></td>
+<td class="next">
+Next: <a href="967A.html">967A</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/95C7.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

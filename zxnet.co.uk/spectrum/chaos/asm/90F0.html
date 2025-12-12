@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/90F0.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 90F0</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="90E0.html">90E0</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#90F0">Map</a></td>
+<td class="next">
+Next: <a href="910D.html">910D</a>
+</td>
+</tr>
+</table>
+<div class="description">90F0: PR_CHR</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="89F9.html">main_routine</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">PR_CHR</td>
+<td class="address-2"><span id="90F0"></span>90F0</td>
+<td class="instruction">LD A,(<a href="90DF.html">ROMP</a>)</td>
+<td class="comment-1" rowspan="1">read <a href="90DF.html">ROMP</a> into A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90F3"></span>90F3</td>
+<td class="instruction">LD HL,<a href="90E0.html">W_TAB</a></td>
+<td class="comment-1" rowspan="1">set HL to <a href="90E0.html">W_TAB</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90F6"></span>90F6</td>
+<td class="instruction">LD D,$00</td>
+<td class="comment-1" rowspan="4">get address of desired entry in table of pointers to character sprite data by doubling A to and adding to address of table</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90F8"></span>90F8</td>
+<td class="instruction">SLA A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90FA"></span>90FA</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90FB"></span>90FB</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90FC"></span>90FC</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-1" rowspan="4">read the table entry and store in <a href="DF4A.html">C_DATA</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90FD"></span>90FD</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90FE"></span>90FE</td>
+<td class="instruction">LD B,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="90FF"></span>90FF</td>
+<td class="instruction">LD (<a href="DF4A.html">C_DATA</a>),BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9103"></span>9103</td>
+<td class="instruction">LD HL,(<a href="89AC.html">POSPRI</a>)</td>
+<td class="comment-1" rowspan="2">copy <a href="89AC.html">POSPRI</a> to <a href="DF4C.html">LC_POS</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9106"></span>9106</td>
+<td class="instruction">LD (<a href="DF4C.html">LC_POS</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9109"></span>9109</td>
+<td class="instruction">CALL <a href="DF4E.html">P_CHAR</a></td>
+<td class="comment-1" rowspan="2">call <a href="DF4E.html">P_CHAR</a> then return</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="910C"></span>910C</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="90E0.html">90E0</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#90F0">Map</a></td>
+<td class="next">
+Next: <a href="910D.html">910D</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/90F0.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

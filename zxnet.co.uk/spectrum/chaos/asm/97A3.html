@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/97A3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 97A3</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9786.html">9786</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#97A3">Map</a></td>
+<td class="next">
+Next: <a href="97CE.html">97CE</a>
+</td>
+</tr>
+</table>
+<div class="description">97A3: routine11</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="836A.html">magic_armour_spell</a>, <a href="839C.html">magic_sword_spell</a>, <a href="83D0.html">magic_knife_spell</a>, <a href="8404.html">magic_shield_spell</a>, <a href="8438.html">magic_wings_spell</a>, <a href="846A.html">magic_bow_spell</a>, <a href="84B0.html">chaos_law_spell</a>, <a href="84C0.html">shadow_form_spell</a>, <a href="84F7.html">subversion_spell</a>, <a href="86C3.html">RAISDO</a>, <a href="8741.html">TUR_DO</a>, <a href="981A.html">routine13</a>, <a href="9975.html">creature_cast_spell</a>, <a href="99F1.html">disbelieve_spell</a>, <a href="9ADD.html">trees_castles_spell</a>, <a href="9BB3.html">routine18</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="D588.html">routine73</a>, <a href="D686.html">routine77</a>, <a href="D732.html">routine79</a> and <a href="D82D.html">routine83</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine11</td>
+<td class="address-2"><span id="97A3"></span>97A3</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-1" rowspan="1">call <a href="BED7.html">clear_bottom_row</a> to clear line 22 of the display</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97A6"></span>97A6</td>
+<td class="instruction">LD A,(<a href="9167.html">spell_success_flag</a>)</td>
+<td class="comment-1" rowspan="3">jump to <a href="97A3.html#97BB">routine11_0</a> if spell successful flag is set</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97A9"></span>97A9</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97AA"></span>97AA</td>
+<td class="instruction">JR NZ,<a href="97A3.html#97BB">routine11_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97AC"></span>97AC</td>
+<td class="instruction">LD A,$43</td>
+<td class="comment-1" rowspan="2">set ATTR-T to bright magenta on black</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97AE"></span>97AE</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97B1"></span>97B1</td>
+<td class="instruction">LD A,$54</td>
+<td class="comment-1" rowspan="3">Print <a href="CFCB.html#D1AB">spell_fails_string</a> at coordinates (0,22)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97B3"></span>97B3</td>
+<td class="instruction">LD BC,$1600</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97B6"></span>97B6</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97B9"></span>97B9</td>
+<td class="instruction">JR <a href="97A3.html#97C8">routine11_1</a></td>
+<td class="comment-1" rowspan="1">jump to <a href="97A3.html#97C8">routine11_1</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine11_0</td>
+<td class="address-2"><span id="97BB"></span>97BB</td>
+<td class="instruction">LD A,$47</td>
+<td class="comment-1" rowspan="2">set ATTR-T to bright white on black</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97BD"></span>97BD</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97C0"></span>97C0</td>
+<td class="instruction">LD BC,$1600</td>
+<td class="comment-1" rowspan="3">Print <a href="CFCB.html#D1B6">spell_succeeds_string</a> at coordinates (0,22)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97C3"></span>97C3</td>
+<td class="instruction">LD A,$55</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97C5"></span>97C5</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine11_1</td>
+<td class="address-2"><span id="97C8"></span>97C8</td>
+<td class="instruction">LD B,$64</td>
+<td class="comment-1" rowspan="1">set loop counter to $64</td>
+</tr>
+<tr>
+<td class="asm-label">routine11_2</td>
+<td class="address-2"><span id="97CA"></span>97CA</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="1">HALT</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97CB"></span>97CB</td>
+<td class="instruction">DJNZ <a href="97A3.html#97CA">routine11_2</a></td>
+<td class="comment-1" rowspan="1">loop back to <a href="97A3.html#97CA">routine11_2</a> ninety-nine times (pause for two seconds)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97CD"></span>97CD</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9786.html">9786</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#97A3">Map</a></td>
+<td class="next">
+Next: <a href="97CE.html">97CE</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/97A3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/89B0.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 89B0</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="89AF.html">89AF</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#89B0">Map</a></td>
+<td class="next">
+Next: <a href="89EF.html">89EF</a>
+</td>
+</tr>
+</table>
+<div class="description">89B0: CHONUM</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="89F9.html">main_routine</a>.
+</div>
+<div class="paragraph">
+Get a number from user between 1-8 or 2-8 depending on state of flag, print it at coordinates in BC, and return number-1 in A.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">CHONUM</td>
+<td class="address-2"><span id="89B0"></span>89B0</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label">KEYIT</td>
+<td class="address-2"><span id="89B1"></span>89B1</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-1" rowspan="1">Call KEYBOARD routine in Spectrum ROM.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89B4"></span>89B4</td>
+<td class="instruction">CP $31</td>
+<td class="comment-1" rowspan="4">Jump back to <a href="89B0.html#89B1">KEYIT</a> until a number between 1 and 9 is pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89B6"></span>89B6</td>
+<td class="instruction">JP M,<a href="89B0.html#89B1">KEYIT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89B9"></span>89B9</td>
+<td class="instruction">CP $39</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89BB"></span>89BB</td>
+<td class="instruction">JP P,<a href="89B0.html#89B1">KEYIT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89BE"></span>89BE</td>
+<td class="instruction">LD (<a href="89A8.html">NUM</a>),A</td>
+<td class="comment-1" rowspan="1">Store key code in <a href="89A8.html">NUM</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89C1"></span>89C1</td>
+<td class="instruction">LD A,(<a href="8323.html">no_less_than_2_flag</a>)</td>
+<td class="comment-1" rowspan="3">If <a href="8323.html">no_less_than_2_flag</a> is clear jump to <a href="89B0.html#89CF">NOADD</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89C4"></span>89C4</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89C5"></span>89C5</td>
+<td class="instruction">JR Z,<a href="89B0.html#89CF">NOADD</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89C7"></span>89C7</td>
+<td class="instruction">LD A,(<a href="89A8.html">NUM</a>)</td>
+<td class="comment-1" rowspan="1">Else load <a href="89A8.html">NUM</a> into A (key code of key pressed).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89CA"></span>89CA</td>
+<td class="instruction">CP $32</td>
+<td class="comment-1" rowspan="2">Jump back to <a href="89B0.html#89B1">KEYIT</a> if the number was less than 2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89CC"></span>89CC</td>
+<td class="instruction">JP M,<a href="89B0.html#89B1">KEYIT</a></td>
+</tr>
+<tr>
+<td class="asm-label">NOADD</td>
+<td class="address-2"><span id="89CF"></span>89CF</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89D0"></span>89D0</td>
+<td class="instruction">LD A,$47</td>
+<td class="comment-1" rowspan="2">Set ATTR-T to $47 (bright white on black).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89D2"></span>89D2</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89D5"></span>89D5</td>
+<td class="instruction">LD A,(<a href="89A8.html">NUM</a>)</td>
+<td class="comment-1" rowspan="2">Load <a href="89A8.html">NUM</a> into A and call <a href="BAD6.html">DH_P</a> to print it at coordinates in BC.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89D8"></span>89D8</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89DB"></span>89DB</td>
+<td class="instruction">LD HL,<a href="89EF.html">S60</a></td>
+<td class="comment-1" rowspan="2">Play key bloop sound effect.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89DE"></span>89DE</td>
+<td class="instruction">CALL <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89E1"></span>89E1</td>
+<td class="instruction">CALL <a href="907B.html">NKEY2</a></td>
+<td class="comment-1" rowspan="1">Call <a href="907B.html">NKEY2</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89E4"></span>89E4</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="2">Clear flag byte that prevents entering a number less than 2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89E6"></span>89E6</td>
+<td class="instruction">LD (<a href="8323.html">no_less_than_2_flag</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89E9"></span>89E9</td>
+<td class="instruction">LD A,(<a href="89A8.html">NUM</a>)</td>
+<td class="comment-1" rowspan="3">Load <a href="89A8.html">NUM</a> into A and subtract $31 so that A = number pressed-1 and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89EC"></span>89EC</td>
+<td class="instruction">SUB $31</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="89EE"></span>89EE</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="89AF.html">89AF</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#89B0">Map</a></td>
+<td class="next">
+Next: <a href="89EF.html">89EF</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/89B0.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

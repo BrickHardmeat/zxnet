@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/92BE.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 92BE</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="92AA.html">92AA</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#92BE">Map</a></td>
+<td class="next">
+Next: <a href="92F9.html">92F9</a>
+</td>
+</tr>
+</table>
+<div class="description">92BE: user selected "Examine board" from options in <a href="9168.html">CAST_S</a> routine</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="9168.html">CAST_S</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">examine_board</td>
+<td class="address-2"><span id="92BE"></span>92BE</td>
+<td class="instruction">CALL <a href="C5EE.html">CLS</a></td>
+<td class="comment-1" rowspan="1">call <a href="C5EE.html">CLS</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92C1"></span>92C1</td>
+<td class="instruction">CALL <a href="FE56.html">set_IM2_mode</a></td>
+<td class="comment-1" rowspan="1">call <a href="FE56.html">set_IM2_mode</a> to switch to IM2 interrupt handler</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92C4"></span>92C4</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="2">set ATTR-P to zero</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92C6"></span>92C6</td>
+<td class="instruction">LD ($5C8D),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92C9"></span>92C9</td>
+<td class="instruction">LD A,$FF</td>
+<td class="comment-1" rowspan="2">set MASK-P to 0xFF (print using existing attributes instead of ATTR-P)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92CB"></span>92CB</td>
+<td class="instruction">LD ($5C8E),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92CE"></span>92CE</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+<td class="comment-1" rowspan="1">call <a href="C0DD.html">routine50</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92D1"></span>92D1</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="2">enable interrupts and wait for the next interrupt</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92D2"></span>92D2</td>
+<td class="instruction">HALT</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92D3"></span>92D3</td>
+<td class="instruction">LD A,$03</td>
+<td class="comment-1" rowspan="2">set P-FLAGS to $03 (OVER mode).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92D5"></span>92D5</td>
+<td class="instruction">LD ($5C91),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92D8"></span>92D8</td>
+<td class="instruction">CALL <a href="BBCC.html">wait_no_key_seed</a></td>
+<td class="comment-1" rowspan="1">wait for no key to be pressed</td>
+</tr>
+<tr>
+<td class="asm-label">examine_board_0</td>
+<td class="address-2"><span id="92DB"></span>92DB</td>
+<td class="instruction">CALL <a href="BC96.html">routine41</a></td>
+<td class="comment-1" rowspan="1">call <a href="BC96.html">routine41</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92DE"></span>92DE</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-1" rowspan="1">call KEYBOARD routine in ROM returning character code in A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92E1"></span>92E1</td>
+<td class="instruction">CP $30</td>
+<td class="comment-1" rowspan="2">if A equals '0' then jump to <a href="92BE.html#92EC">examine_board_1</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92E3"></span>92E3</td>
+<td class="instruction">JR Z,<a href="92BE.html#92EC">examine_board_1</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92E5"></span>92E5</td>
+<td class="instruction">CP $49</td>
+<td class="comment-1" rowspan="2">else if A equals 'I' then jump to <a href="C3B3.html">display_object_info</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92E7"></span>92E7</td>
+<td class="instruction">CALL Z,<a href="C3B3.html">display_object_info</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92EA"></span>92EA</td>
+<td class="instruction">JR <a href="92BE.html#92DB">examine_board_0</a></td>
+<td class="comment-1" rowspan="1">else jump back to <a href="92BE.html#92DB">examine_board_0</a></td>
+</tr>
+<tr>
+<td class="asm-label">examine_board_1</td>
+<td class="address-2"><span id="92EC"></span>92EC</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">disable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92ED"></span>92ED</td>
+<td class="instruction">LD HL,<a href="7F27.html">s_cursor_sprite</a></td>
+<td class="comment-1" rowspan="2">set UDG system variable to address of S cursor sprite</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92F0"></span>92F0</td>
+<td class="instruction">LD ($5C7B),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92F3"></span>92F3</td>
+<td class="instruction">CALL <a href="C5EE.html">CLS</a></td>
+<td class="comment-1" rowspan="2">call <a href="C5EE.html">CLS</a> and jump back to <a href="9168.html#919C">cast_s_menu_loop</a> in <a href="9168.html">CAST_S</a> routine</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="92F6"></span>92F6</td>
+<td class="instruction">JP <a href="9168.html#919C">cast_s_menu_loop</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="92AA.html">92AA</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#92BE">Map</a></td>
+<td class="next">
+Next: <a href="92F9.html">92F9</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/92BE.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

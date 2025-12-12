@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/86EF.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 86EF</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="86C3.html">86C3</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#86EF">Map</a></td>
+<td class="next">
+Next: <a href="873C.html">873C</a>
+</td>
+</tr>
+</table>
+<div class="description">86EF: Turmoil spell.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">turmoil_spell</td>
+<td class="address-2"><span id="86EF"></span>86EF</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-1" rowspan="3">Jump to <a href="86EF.html#86F9">TURART</a> if player is human.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="86F2"></span>86F2</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="86F3"></span>86F3</td>
+<td class="instruction">JR NZ,<a href="86EF.html#86F9">TURART</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="86F5"></span>86F5</td>
+<td class="instruction">CALL <a href="8741.html">TUR_DO</a></td>
+<td class="comment-1" rowspan="2">Else call <a href="8741.html">TUR_DO</a> and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="86F8"></span>86F8</td>
+<td class="instruction">RET</td>
+</tr>
+<tr>
+<td class="asm-label">TURART</td>
+<td class="address-2"><span id="86F9"></span>86F9</td>
+<td class="instruction">LD HL,(<a href="AC14.html">D_ADD</a>)</td>
+<td class="comment-1" rowspan="2">Copy <a href="AC14.html">D_ADD</a> into <a href="C78B.html">TEMADD</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="86FC"></span>86FC</td>
+<td class="instruction">LD (<a href="C78B.html">TEMADD</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="86FF"></span>86FF</td>
+<td class="instruction">CALL <a href="C7BC.html">EN_AN</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C7BC.html">EN_AN</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8702"></span>8702</td>
+<td class="instruction">LD HL,(<a href="C78B.html">TEMADD</a>)</td>
+<td class="comment-1" rowspan="2">Copy <a href="C78B.html">TEMADD</a> to <a href="AC14.html">D_ADD</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8705"></span>8705</td>
+<td class="instruction">LD (<a href="AC14.html">D_ADD</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8708"></span>8708</td>
+<td class="instruction">LD HL,<a href="D3F2.html">INBUF</a></td>
+<td class="comment-1" rowspan="2">Set <a href="CD86.html">BUFPNT</a> to address of <a href="D3F2.html">INBUF</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="870B"></span>870B</td>
+<td class="instruction">LD (<a href="CD86.html">BUFPNT</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="870E"></span>870E</td>
+<td class="instruction">LD A,(<a href="C7BB.html">SRTCNT</a>)</td>
+<td class="comment-1" rowspan="2">Load <a href="C7BB.html">SRTCNT</a> to A and add 1.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8711"></span>8711</td>
+<td class="instruction">INC A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8712"></span>8712</td>
+<td class="instruction">CALL <a href="C64C.html">SORT</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C64C.html">SORT</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8715"></span>8715</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="2">Set <a href="A172.html">STRENG</a> to zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8717"></span>8717</td>
+<td class="instruction">LD (<a href="A172.html">STRENG</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label">LOOTUR</td>
+<td class="address-2"><span id="871A"></span>871A</td>
+<td class="instruction">LD HL,(<a href="CD86.html">BUFPNT</a>)</td>
+<td class="comment-1" rowspan="1">Load <a href="CD86.html">BUFPNT</a> into HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="871D"></span>871D</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">Load byte from address in <a href="CD86.html">BUFPNT</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="871E"></span>871E</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Increment address in <a href="CD86.html">BUFPNT</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="871F"></span>871F</td>
+<td class="instruction">LD (<a href="CD86.html">BUFPNT</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8722"></span>8722</td>
+<td class="instruction">OR A</td>
+<td class="comment-1" rowspan="2">If byte read is not zero jump to <a href="86EF.html#872B">ADD_ON</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8723"></span>8723</td>
+<td class="instruction">JR NZ,<a href="86EF.html#872B">ADD_ON</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8725"></span>8725</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="3">Else set <a href="975F.html">unknown10</a> to zero and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8727"></span>8727</td>
+<td class="instruction">LD (<a href="975F.html">unknown10</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="872A"></span>872A</td>
+<td class="instruction">RET</td>
+</tr>
+<tr>
+<td class="asm-label">ADD_ON</td>
+<td class="address-2"><span id="872B"></span>872B</td>
+<td class="instruction">LD HL,(<a href="A172.html">STRENG</a>)</td>
+<td class="comment-1" rowspan="3">Add value in A to <a href="86EF.html#872B">ADD_ON</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="872E"></span>872E</td>
+<td class="instruction">ADD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="872F"></span>872F</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8730"></span>8730</td>
+<td class="instruction">CP $1E</td>
+<td class="comment-1" rowspan="2">If <a href="86EF.html#872B">ADD_ON</a> &lt; 30 then jump back to <a href="86EF.html#871A">LOOTUR</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8732"></span>8732</td>
+<td class="instruction">JP M,<a href="86EF.html#871A">LOOTUR</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8735"></span>8735</td>
+<td class="instruction">CALL <a href="967A.html">display_wizard_spell_range</a></td>
+<td class="comment-1" rowspan="1">Display wizard name, spell being cast, and spell casting range.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8738"></span>8738</td>
+<td class="instruction">CALL <a href="8741.html">TUR_DO</a></td>
+<td class="comment-1" rowspan="2">Call <a href="8741.html">TUR_DO</a> and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="873B"></span>873B</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="86C3.html">86C3</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#86EF">Map</a></td>
+<td class="next">
+Next: <a href="873C.html">873C</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/86EF.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

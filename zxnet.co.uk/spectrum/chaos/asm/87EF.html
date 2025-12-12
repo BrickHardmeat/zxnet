@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/87EF.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 87EF</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="8741.html">8741</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#87EF">Map</a></td>
+<td class="next">
+Next: <a href="8809.html">8809</a>
+</td>
+</tr>
+</table>
+<div class="description">87EF: Print a message from <a href="8809.html">game messages table 2</a>.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="89F9.html">main_routine</a> and <a href="8F9A.html">TREPUT</a>.
+</div>
+</div>
+<table class="input">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Message number</td>
+</tr>
+<tr>
+<td class="register">BC</td>
+<td class="register-desc">Coordinates</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label">M2PRIN</td>
+<td class="address-2"><span id="87EF"></span>87EF</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="3">Preserve HL, DE, and BC.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87F0"></span>87F0</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87F1"></span>87F1</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87F2"></span>87F2</td>
+<td class="instruction">LD H,$00</td>
+<td class="comment-1" rowspan="2">Set HL to value in A (message number).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87F4"></span>87F4</td>
+<td class="instruction">LD L,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87F5"></span>87F5</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-1" rowspan="2">Multiply HL by four because each row is 4 bytes.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87F6"></span>87F6</td>
+<td class="instruction">ADD HL,HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87F7"></span>87F7</td>
+<td class="instruction">LD DE,<a href="8809.html">M2ESAG</a></td>
+<td class="comment-1" rowspan="2">Add address of <a href="8809.html">M2ESAG</a> to get address of desired row in <a href="8809.html">game messages table 2</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87FA"></span>87FA</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87FB"></span>87FB</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-1" rowspan="3">Load address of message into DE.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87FC"></span>87FC</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87FD"></span>87FD</td>
+<td class="instruction">LD D,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87FE"></span>87FE</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Load message length into C.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="87FF"></span>87FF</td>
+<td class="instruction">LD C,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8800"></span>8800</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-1" rowspan="1">Swap DE into HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8801"></span>8801</td>
+<td class="instruction">LD E,C</td>
+<td class="comment-1" rowspan="1">Copy message length into E.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8802"></span>8802</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore coordinates in BC.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8803"></span>8803</td>
+<td class="instruction">CALL <a href="BAEE.html">print_string_loop</a></td>
+<td class="comment-1" rowspan="1">Print string.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8806"></span>8806</td>
+<td class="instruction">POP DE</td>
+<td class="comment-1" rowspan="3">Restore DE and HL, and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8807"></span>8807</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8808"></span>8808</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="8741.html">8741</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#87EF">Map</a></td>
+<td class="next">
+Next: <a href="8809.html">8809</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/87EF.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

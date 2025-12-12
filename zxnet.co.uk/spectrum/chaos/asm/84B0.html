@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/84B0.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+<head>
+<title>Chaos: Routine at 84B0</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="846A.html">846A</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#84B0">Map</a></td>
+<td class="next">
+Next: <a href="84C0.html">84C0</a>
+</td>
+</tr>
+</table>
+<div class="description">84B0: ChaosOrLawSpell.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">chaos_law_spell</td>
+<td class="address-2"><span id="84B0"></span>84B0</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-1" rowspan="3">Jump to <a href="84B0.html#84B9">chaos_law_spell_0</a> if player is human.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="84B3"></span>84B3</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="84B4"></span>84B4</td>
+<td class="instruction">JR Z,<a href="84B0.html#84B9">chaos_law_spell_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="84B6"></span>84B6</td>
+<td class="instruction">CALL <a href="967A.html">display_wizard_spell_range</a></td>
+<td class="comment-1" rowspan="1">Else display wizard name, spell being cast, and spell casting range.</td>
+</tr>
+<tr>
+<td class="asm-label">chaos_law_spell_0</td>
+<td class="address-2"><span id="84B9"></span>84B9</td>
+<td class="instruction">CALL <a href="9760.html">routine09</a></td>
+<td class="comment-1" rowspan="1">Call <a href="9760.html">routine09</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="84BC"></span>84BC</td>
+<td class="instruction">CALL <a href="97A3.html">routine11</a></td>
+<td class="comment-1" rowspan="2">Display SPELL FAILS or SPELL SUCCEEDS message and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="84BF"></span>84BF</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="846A.html">846A</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#84B0">Map</a></td>
+<td class="next">
+Next: <a href="84C0.html">84C0</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/84B0.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:20 GMT -->
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8F9A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:17 GMT -->
+<head>
+<title>Chaos: Routine at 8F9A</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="8F8B.html">8F8B</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8F9A">Map</a></td>
+<td class="next">
+Next: <a href="903E.html">903E</a>
+</td>
+</tr>
+</table>
+<div class="description">8F9A: TREPUT</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="89F9.html">main_routine</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">TREPUT</td>
+<td class="address-2"><span id="8F9A"></span>8F9A</td>
+<td class="instruction">LD HL,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-1" rowspan="1">Set HL to address of <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8F9D"></span>8F9D</td>
+<td class="instruction">LD (<a href="AC12.html">object_table_entry_pointer</a>),HL</td>
+<td class="comment-1" rowspan="1">Store in <a href="AC12.html">object_table_entry_pointer</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FA0"></span>8FA0</td>
+<td class="instruction">LD B,$9F</td>
+<td class="comment-1" rowspan="1">Set B to 159 as loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">TRFILO</td>
+<td class="address-2"><span id="8FA2"></span>8FA2</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FA3"></span>8FA3</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">If object is not $24 (Magic Wood) jump to <a href="8F9A.html#9031">N_HERE</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FA4"></span>8FA4</td>
+<td class="instruction">CP $24</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FA6"></span>8FA6</td>
+<td class="instruction">JP NZ,<a href="8F9A.html#9031">N_HERE</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FA9"></span>8FA9</td>
+<td class="instruction">LD DE,$0281</td>
+<td class="comment-1" rowspan="2">Add $0281 to address to get corresponding entry in <a href="E2A0.html">fifth_map_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FAC"></span>8FAC</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FAD"></span>8FAD</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">Load entry from <a href="E2A0.html">fifth_map_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FAE"></span>8FAE</td>
+<td class="instruction">OR A</td>
+<td class="comment-1" rowspan="2">If zero jump to <a href="8F9A.html#9031">N_HERE</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FAF"></span>8FAF</td>
+<td class="instruction">JP Z,<a href="8F9A.html#9031">N_HERE</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FB2"></span>8FB2</td>
+<td class="instruction">LD (<a href="A172.html">STRENG</a>),A</td>
+<td class="comment-1" rowspan="1">Store in <a href="A172.html">STRENG</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FB5"></span>8FB5</td>
+<td class="instruction">CALL <a href="904B.html">RANDY</a></td>
+<td class="comment-1" rowspan="1">Get a random number from 0 to 9.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FB8"></span>8FB8</td>
+<td class="instruction">CP $04</td>
+<td class="comment-1" rowspan="2">If greater than 4 jump to <a href="8F9A.html#9031">N_HERE</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FBA"></span>8FBA</td>
+<td class="instruction">JP P,<a href="8F9A.html#9031">N_HERE</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FBD"></span>8FBD</td>
+<td class="instruction">LD A,(<a href="A172.html">STRENG</a>)</td>
+<td class="comment-1" rowspan="3">Else subtract 41 from value in <a href="A172.html">STRENG</a> to get wizard number and store result in <a href="AC0E.html">current_player</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FC0"></span>8FC0</td>
+<td class="instruction">SUB $29</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FC2"></span>8FC2</td>
+<td class="instruction">LD (<a href="AC0E.html">current_player</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FC5"></span>8FC5</td>
+<td class="instruction">LD A,$46</td>
+<td class="comment-1" rowspan="5">Set ATTR-T to $46 (bright yellow on black) and print message <a href="8859.html#894F">M_16</a> at coordinates (0,22).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FC7"></span>8FC7</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FCA"></span>8FCA</td>
+<td class="instruction">LD A,$0F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FCC"></span>8FCC</td>
+<td class="instruction">LD BC,$1600</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FCF"></span>8FCF</td>
+<td class="instruction">CALL <a href="87EF.html">M2PRIN</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FD2"></span>8FD2</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">Increment column coordinate to leave a space.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FD3"></span>8FD3</td>
+<td class="instruction">LD A,(<a href="A172.html">STRENG</a>)</td>
+<td class="comment-1" rowspan="2">Print wizard name.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FD6"></span>8FD6</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FD9"></span>8FD9</td>
+<td class="instruction">LD HL,<a href="903E.html">S61</a></td>
+<td class="comment-1" rowspan="2">Play <a href="903E.html">S61</a> sound effect.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FDC"></span>8FDC</td>
+<td class="instruction">CALL <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FDF"></span>8FDF</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="1">Enable interrupts.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FE0"></span>8FE0</td>
+<td class="instruction">LD B,$0A</td>
+<td class="comment-1" rowspan="1">Set B to 10 as a loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">WAYLOO</td>
+<td class="address-2"><span id="8FE2"></span>8FE2</td>
+<td class="instruction">CALL <a href="96E6.html">PAUSER</a></td>
+<td class="comment-1" rowspan="2">Call <a href="96E6.html">PAUSER</a> ten times to pause for approximately 1.5 seconds.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FE5"></span>8FE5</td>
+<td class="instruction">DJNZ <a href="8F9A.html#8FE2">WAYLOO</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FE7"></span>8FE7</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-1" rowspan="1">Clear bottom row.</td>
+</tr>
+<tr>
+<td class="asm-label">RUNDY</td>
+<td class="address-2"><span id="8FEA"></span>8FEA</td>
+<td class="instruction">CALL <a href="904B.html">RANDY</a></td>
+<td class="comment-1" rowspan="1">Get a random number with lower nibble less than 10 in <a href="907A.html">RANUM</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FED"></span>8FED</td>
+<td class="instruction">LD A,(<a href="907A.html">RANUM</a>)</td>
+<td class="comment-1" rowspan="5">Jump back to <a href="8F9A.html#8FEA">RUNDY</a> if <a href="907A.html">RANUM</a> is less than $02 or greater than $41.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FF0"></span>8FF0</td>
+<td class="instruction">CP $02</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FF2"></span>8FF2</td>
+<td class="instruction">JP M,<a href="8F9A.html#8FEA">RUNDY</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FF5"></span>8FF5</td>
+<td class="instruction">CP $41</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FF7"></span>8FF7</td>
+<td class="instruction">JP P,<a href="8F9A.html#8FEA">RUNDY</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FFA"></span>8FFA</td>
+<td class="instruction">LD (<a href="937B.html">CURSP</a>),A</td>
+<td class="comment-1" rowspan="1">Else store in <a href="937B.html">CURSP</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8FFD"></span>8FFD</td>
+<td class="instruction">CALL <a href="92AA.html">GETHIS</a></td>
+<td class="comment-1" rowspan="1">Calculate address of spell table for player.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9000"></span>9000</td>
+<td class="instruction">LD HL,(<a href="9154.html">HISPEL</a>)</td>
+<td class="comment-1" rowspan="1">Load address of first spell into HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9003"></span>9003</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Add two to skip over first spell (always Disbelieve).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9004"></span>9004</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9005"></span>9005</td>
+<td class="instruction">LD B,$13</td>
+<td class="comment-1" rowspan="1">Set B to 19 as a loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">PRILOO</td>
+<td class="address-2"><span id="9007"></span>9007</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">If spell number is 0 jump to <a href="8F9A.html#900F">INITGO</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9008"></span>9008</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9009"></span>9009</td>
+<td class="instruction">JR Z,<a href="8F9A.html#900F">INITGO</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="900B"></span>900B</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Else move address on to next spell.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="900C"></span>900C</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="900D"></span>900D</td>
+<td class="instruction">DJNZ <a href="8F9A.html#9007">PRILOO</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="8F9A.html#9007">PRILOO</a> for 19 iterations.</td>
+</tr>
+<tr>
+<td class="asm-label">INITGO</td>
+<td class="address-2"><span id="900F"></span>900F</td>
+<td class="instruction">LD A,(<a href="937B.html">CURSP</a>)</td>
+<td class="comment-1" rowspan="2">Store <a href="937B.html">CURSP</a> at the address in HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9012"></span>9012</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9013"></span>9013</td>
+<td class="instruction">LD A,(<a href="A172.html">STRENG</a>)</td>
+<td class="comment-1" rowspan="1">Load <a href="A172.html">STRENG</a> into A ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9016"></span>9016</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="2">Store at current position in <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9019"></span>9019</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="901A"></span>901A</td>
+<td class="instruction">LD DE,$0281</td>
+<td class="comment-1" rowspan="2">Add $0281 to address to get corresponding entry in <a href="E2A0.html">fifth_map_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="901D"></span>901D</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="901E"></span>901E</td>
+<td class="instruction">LD (HL),$00</td>
+<td class="comment-1" rowspan="1">Set entry to zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9020"></span>9020</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="3">Add $01E1 to address of current position in <a href="E01F.html">map_object_table</a> to get corresponding entry in <a href="E200.html">map_object_properties_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9023"></span>9023</td>
+<td class="instruction">LD DE,$01E1</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9026"></span>9026</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9027"></span>9027</td>
+<td class="instruction">LD A,(<a href="A172.html">STRENG</a>)</td>
+<td class="comment-1" rowspan="3">Subtract 41 from <a href="A172.html">STRENG</a> to get wizard number and store in <a href="E200.html">map_object_properties_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="902A"></span>902A</td>
+<td class="instruction">SUB $29</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="902C"></span>902C</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="902D"></span>902D</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="C0DD.html">routine50</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9030"></span>9030</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="1">Wait for next interrupt.</td>
+</tr>
+<tr>
+<td class="asm-label">N_HERE</td>
+<td class="address-2"><span id="9031"></span>9031</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9032"></span>9032</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="3">Increment position in <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9035"></span>9035</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9036"></span>9036</td>
+<td class="instruction">LD (<a href="AC12.html">object_table_entry_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9039"></span>9039</td>
+<td class="instruction">DEC B</td>
+<td class="comment-1" rowspan="3">Jump back to <a href="8F9A.html#8FA2">TRFILO</a> for 159 iterations then return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="903A"></span>903A</td>
+<td class="instruction">JP NZ,<a href="8F9A.html#8FA2">TRFILO</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="903D"></span>903D</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="8F8B.html">8F8B</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8F9A">Map</a></td>
+<td class="next">
+Next: <a href="903E.html">903E</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8F9A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:17 GMT -->
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8357.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+<head>
+<title>Chaos: Routine at 8357</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="834B.html">834B</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8357">Map</a></td>
+<td class="next">
+Next: <a href="836A.html">836A</a>
+</td>
+</tr>
+</table>
+<div class="description">8357: routine04</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="836A.html">magic_armour_spell</a>, <a href="839C.html">magic_sword_spell</a>, <a href="83D0.html">magic_knife_spell</a>, <a href="8404.html">magic_shield_spell</a>, <a href="8438.html">magic_wings_spell</a>, <a href="846A.html">magic_bow_spell</a> and <a href="84C0.html">shadow_form_spell</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine04</td>
+<td class="address-2"><span id="8357"></span>8357</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-1" rowspan="4">If player is human, display wizard name, spell being cast, and spell casting range.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="835A"></span>835A</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="835B"></span>835B</td>
+<td class="instruction">JR Z,<a href="8357.html#8360">routine04_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="835D"></span>835D</td>
+<td class="instruction">CALL <a href="967A.html">display_wizard_spell_range</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine04_0</td>
+<td class="address-2"><span id="8360"></span>8360</td>
+<td class="instruction">CALL <a href="9760.html">routine09</a></td>
+<td class="comment-1" rowspan="1">Call <a href="9760.html">routine09</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8363"></span>8363</td>
+<td class="instruction">CALL <a href="97D1.html">routine12</a></td>
+<td class="comment-1" rowspan="1">Call <a href="97D1.html">routine12</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8366"></span>8366</td>
+<td class="instruction">CALL <a href="A18A.html">routine20</a></td>
+<td class="comment-1" rowspan="2">Call <a href="A18A.html">routine20</a> ??? and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8369"></span>8369</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="834B.html">834B</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#8357">Map</a></td>
+<td class="next">
+Next: <a href="836A.html">836A</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/8357.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:21 GMT -->
+</html>
