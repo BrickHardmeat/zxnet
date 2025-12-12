@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/E160.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:56 GMT -->
+<head>
+<title>Chaos: Game status buffer entry at E160</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-g">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Game variable</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="E0C0.html">E0C0</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#E160">Map</a></td>
+<td class="next">
+Next: <a href="E200.html">E200</a>
+</td>
+</tr>
+</table>
+<div class="description">E160: map_animation_frame_table</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Table is 16 columns by 10 rows. This holds the current animation frame for each map position.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">map_animation_frame_table</td>
+<td class="address-1"><span id="E160"></span>E160</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$01</td>
+<td class="comment-1" rowspan="20">Frame numbers $00 to $03, or $04 for dead.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E168"></span>E168</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E170"></span>E170</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E178"></span>E178</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E180"></span>E180</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E188"></span>E188</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E190"></span>E190</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E198"></span>E198</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1A0"></span>E1A0</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$04,$02</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1A8"></span>E1A8</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1B0"></span>E1B0</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$03,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1B8"></span>E1B8</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1C0"></span>E1C0</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1C8"></span>E1C8</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1D0"></span>E1D0</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1D8"></span>E1D8</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1E0"></span>E1E0</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1E8"></span>E1E8</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$00,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1F0"></span>E1F0</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E1F8"></span>E1F8</td>
+<td class="instruction">DEFB $01,$01,$01,$01,$01,$01,$01,$00</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="E0C0.html">E0C0</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#E160">Map</a></td>
+<td class="next">
+Next: <a href="E200.html">E200</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/E160.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:56 GMT -->
+</html>

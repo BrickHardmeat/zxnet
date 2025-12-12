@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/D392.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:35 GMT -->
+<head>
+<title>Chaos: Routine at D392</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="D391.html">D391</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#D392">Map</a></td>
+<td class="next">
+Next: <a href="D3F0.html">D3F0</a>
+</td>
+</tr>
+</table>
+<div class="description">D392: Highlight objects belonging to <a href="D391.html">temp_wizard_number</a>.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="AC36.html">routine21</a> and <a href="BC96.html">routine41</a>.
+</div>
+<div class="paragraph">
+Objects are inverted by printing solid block characters using the ROM print routine with OVER flag set.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">highlight_objects</td>
+<td class="address-2"><span id="D392"></span>D392</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="5">Disable interrupts and preserve registers.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D393"></span>D393</td>
+<td class="instruction">PUSH AF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D394"></span>D394</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D395"></span>D395</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D396"></span>D396</td>
+<td class="instruction">PUSH HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D397"></span>D397</td>
+<td class="instruction">LD HL,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-1" rowspan="1">Set HL to address of <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D39A"></span>D39A</td>
+<td class="instruction">LD B,$9F</td>
+<td class="comment-1" rowspan="1">Set B to 195 as loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label">highlight_objects_loop</td>
+<td class="address-2"><span id="D39C"></span>D39C</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="2">Preserve address and loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D39D"></span>D39D</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D39E"></span>D39E</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">If object number is zero jump to <a href="D392.html#D3BE">ignore_object</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D39F"></span>D39F</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3A0"></span>D3A0</td>
+<td class="instruction">JR Z,<a href="D392.html#D3BE">ignore_object</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3A2"></span>D3A2</td>
+<td class="instruction">LD DE,$0141</td>
+<td class="comment-1" rowspan="2">Else add $0141 to get corresponding entry in <a href="E160.html">map_animation_frame_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3A5"></span>D3A5</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3A6"></span>D3A6</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">If animation frame is $04 (dead sprite) jump to <a href="D392.html#D3BE">ignore_object</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3A7"></span>D3A7</td>
+<td class="instruction">CP $04</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3A9"></span>D3A9</td>
+<td class="instruction">JR Z,<a href="D392.html#D3BE">ignore_object</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3AB"></span>D3AB</td>
+<td class="instruction">LD DE,$00A0</td>
+<td class="comment-1" rowspan="2">Else add $00A0 to get corresponding entry in <a href="E200.html">map_object_properties_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3AE"></span>D3AE</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3AF"></span>D3AF</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">Read entry into A.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3B0"></span>D3B0</td>
+<td class="instruction">LD DE,$01E1</td>
+<td class="comment-1" rowspan="2">Subtract $01E1 to get corresponding entry in <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3B3"></span>D3B3</td>
+<td class="instruction">SBC HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3B5"></span>D3B5</td>
+<td class="instruction">AND $07</td>
+<td class="comment-1" rowspan="5">If low three bits (wizard number) of object properties equal <a href="D391.html">temp_wizard_number</a> jump to <a href="D392.html#D3C8">owner_matches</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3B7"></span>D3B7</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3B8"></span>D3B8</td>
+<td class="instruction">LD A,(<a href="D391.html">temp_wizard_number</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3BB"></span>D3BB</td>
+<td class="instruction">CP E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3BC"></span>D3BC</td>
+<td class="instruction">JR Z,<a href="D392.html#D3C8">owner_matches</a></td>
+</tr>
+<tr>
+<td class="asm-label">ignore_object</td>
+<td class="address-2"><span id="D3BE"></span>D3BE</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="2">Restore loop counter and address in <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3BF"></span>D3BF</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3C0"></span>D3C0</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">Increment address and loop back to <a href="D392.html#D39C">highlight_objects_loop</a> for 160 iterations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3C1"></span>D3C1</td>
+<td class="instruction">DJNZ <a href="D392.html#D39C">highlight_objects_loop</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3C3"></span>D3C3</td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="5">Restore registers and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3C4"></span>D3C4</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3C5"></span>D3C5</td>
+<td class="instruction">POP BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3C6"></span>D3C6</td>
+<td class="instruction">POP AF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3C7"></span>D3C7</td>
+<td class="instruction">RET</td>
+</tr>
+<tr>
+<td class="asm-label">owner_matches</td>
+<td class="address-2"><span id="D3C8"></span>D3C8</td>
+<td class="instruction">LD (<a href="E005.html">temp_entry_pointer</a>),HL</td>
+<td class="comment-1" rowspan="1">Store address of object properties entry in <a href="E005.html">temp_entry_pointer</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3CB"></span>D3CB</td>
+<td class="instruction">LD A,$02</td>
+<td class="comment-1" rowspan="2">Call CHAN-OPEN in ROM to set output channel to 2 (Screen).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3CD"></span>D3CD</td>
+<td class="instruction">CALL $1601</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3D0"></span>D3D0</td>
+<td class="instruction">CALL <a href="E007.html">address_to_coordinate</a></td>
+<td class="comment-1" rowspan="1">Convert address of entry to coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3D3"></span>D3D3</td>
+<td class="instruction">LD A,$16</td>
+<td class="comment-1" rowspan="6">Use PRINT-A routine in ROM to print AT control code followed by coordinates H, L.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3D5"></span>D3D5</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3D6"></span>D3D6</td>
+<td class="instruction">LD A,H</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3D7"></span>D3D7</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3D8"></span>D3D8</td>
+<td class="instruction">LD A,L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3D9"></span>D3D9</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3DA"></span>D3DA</td>
+<td class="instruction">LD A,$8F</td>
+<td class="comment-1" rowspan="4">Print filled block twice to invert pixels.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3DC"></span>D3DC</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3DD"></span>D3DD</td>
+<td class="instruction">LD A,$8F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3DF"></span>D3DF</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3E0"></span>D3E0</td>
+<td class="instruction">LD A,$16</td>
+<td class="comment-1" rowspan="8">Print AT code followed by coordinates H+1, L.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3E2"></span>D3E2</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3E3"></span>D3E3</td>
+<td class="instruction">LD A,H</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3E4"></span>D3E4</td>
+<td class="instruction">INC A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3E5"></span>D3E5</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3E6"></span>D3E6</td>
+<td class="instruction">LD A,L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3E7"></span>D3E7</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3E8"></span>D3E8</td>
+<td class="instruction">LD A,$8F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3EA"></span>D3EA</td>
+<td class="instruction">RST $10</td>
+<td class="comment-1" rowspan="3">Print filled block twice to invert pixels.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3EB"></span>D3EB</td>
+<td class="instruction">LD A,$8F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3ED"></span>D3ED</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="D3EE"></span>D3EE</td>
+<td class="instruction">JR <a href="D392.html#D3BE">ignore_object</a></td>
+<td class="comment-1" rowspan="1">Jump back to <a href="D392.html#D3BE">ignore_object</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="D391.html">D391</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#D392">Map</a></td>
+<td class="next">
+Next: <a href="D3F0.html">D3F0</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/D392.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:35 GMT -->
+</html>

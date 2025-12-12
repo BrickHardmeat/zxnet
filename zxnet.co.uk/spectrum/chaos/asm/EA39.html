@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/EA39.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:20:12 GMT -->
+<head>
+<title>Chaos: Game status buffer entry at EA39</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-g">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Game variable</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="E440.html">E440</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#EA39">Map</a></td>
+<td class="next">
+Next: <a href="EB51.html">EB51</a>
+</td>
+</tr>
+</table>
+<div class="description">EA39: wizard data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+The first two names memory in the released tape were obviously written over existing strings. Based on Gollop's blog post about the origins of Chaos they were most likely JEVARELL and LARGEFART.
+</div>
+<div class="paragraph">
+This data is overwritten during character creation at the start of the game
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">wizard_0</td>
+<td class="address-1"><span id="EA39"></span>EA39</td>
+<td class="instruction">DEFM "JULIANLL     "</td>
+<td class="comment-1" rowspan="1">Wizard 0: &#74;&#85;&#76;&#73;&#65;&#78;</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA46"></span>EA46</td>
+<td class="instruction">DEFB $01,$00,$00,$01,$01,$03,$07,$0B,$00,$1E</td>
+<td class="comment-1" rowspan="1">Combat=1, Ranged combat=0, Range=0, Defence=1, Movement allowance=1, Manoeuvre rating=3, Magic resistance=7, Spells=11, Ability=0, Animation delay=30</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA50"></span>EA50</td>
+<td class="instruction">DEFW <a href="FD34.html">character_1_sprite</a></td>
+<td class="comment-1" rowspan="8"><img alt="wizard0coloured" src="../images/udgs/wizard0coloured.png" /> </td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA52"></span>EA52</td>
+<td class="instruction">DEFB $42</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA53"></span>EA53</td>
+<td class="instruction">DEFW <a href="FD34.html">character_1_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA55"></span>EA55</td>
+<td class="instruction">DEFB $42</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA56"></span>EA56</td>
+<td class="instruction">DEFW <a href="FD34.html">character_1_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA58"></span>EA58</td>
+<td class="instruction">DEFB $42</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA59"></span>EA59</td>
+<td class="instruction">DEFW <a href="FD34.html">character_1_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA5B"></span>EA5B</td>
+<td class="instruction">DEFB $42</td>
+</tr>
+<tr>
+<td class="asm-label">wizard_1</td>
+<td class="address-1"><span id="EA5C"></span>EA5C</td>
+<td class="instruction">DEFM "GANDALFRT    "</td>
+<td class="comment-1" rowspan="1">Wizard 1: &#71;&#65;&#78;&#68;&#65;&#76;&#70;</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA69"></span>EA69</td>
+<td class="instruction">DEFB $01,$00,$00,$01,$01,$03,$06,$0F,$00,$1E</td>
+<td class="comment-1" rowspan="1">Combat=1, Ranged combat=0, Range=0, Defence=1, Movement allowance=1, Manoeuvre rating=3, Magic resistance=6, Spells=15, Ability=0, Animation delay=30</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA73"></span>EA73</td>
+<td class="instruction">DEFW <a href="FD34.html#FD54">character_2_sprite</a></td>
+<td class="comment-1" rowspan="8"><img alt="wizard1coloured" src="../images/udgs/wizard1coloured.png" /> </td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA75"></span>EA75</td>
+<td class="instruction">DEFB $43</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA76"></span>EA76</td>
+<td class="instruction">DEFW <a href="FD34.html#FD54">character_2_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA78"></span>EA78</td>
+<td class="instruction">DEFB $43</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA79"></span>EA79</td>
+<td class="instruction">DEFW <a href="FD34.html#FD54">character_2_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA7B"></span>EA7B</td>
+<td class="instruction">DEFB $43</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA7C"></span>EA7C</td>
+<td class="instruction">DEFW <a href="FD34.html#FD54">character_2_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA7E"></span>EA7E</td>
+<td class="instruction">DEFB $43</td>
+</tr>
+<tr>
+<td class="asm-label">wizard_2</td>
+<td class="address-1"><span id="EA7F"></span>EA7F</td>
+<td class="instruction">DEFM "GREATFOGEY   "</td>
+<td class="comment-1" rowspan="1">Wizard 2: &#71;&#82;&#69;&#65;&#84;&#70;&#79;&#71;&#69;&#89;</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA8C"></span>EA8C</td>
+<td class="instruction">DEFB $03,$00,$00,$03,$01,$05,$06,$00,$00,$1E</td>
+<td class="comment-1" rowspan="1">Combat=3, Ranged combat=0, Range=0, Defence=3, Movement allowance=1, Manoeuvre rating=5, Magic resistance=6, Spells=0, Ability=0, Animation delay=30</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA96"></span>EA96</td>
+<td class="instruction">DEFW <a href="FD34.html#FD74">character_3_sprite</a></td>
+<td class="comment-1" rowspan="8"><img alt="wizard2coloured" src="../images/udgs/wizard2coloured.png" /> </td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA98"></span>EA98</td>
+<td class="instruction">DEFB $44</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA99"></span>EA99</td>
+<td class="instruction">DEFW <a href="FD34.html#FD74">character_3_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA9B"></span>EA9B</td>
+<td class="instruction">DEFB $44</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA9C"></span>EA9C</td>
+<td class="instruction">DEFW <a href="FD34.html#FD74">character_3_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA9E"></span>EA9E</td>
+<td class="instruction">DEFB $44</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EA9F"></span>EA9F</td>
+<td class="instruction">DEFW <a href="FD34.html#FD74">character_3_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAA1"></span>EAA1</td>
+<td class="instruction">DEFB $44</td>
+</tr>
+<tr>
+<td class="asm-label">wizard_3</td>
+<td class="address-1"><span id="EAA2"></span>EAA2</td>
+<td class="instruction">DEFM "DYERARTI     "</td>
+<td class="comment-1" rowspan="1">Wizard 3: &#68;&#89;&#69;&#82;&#65;&#82;&#84;&#73;</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAAF"></span>EAAF</td>
+<td class="instruction">DEFB $01,$00,$00,$02,$01,$06,$07,$00,$00,$1E</td>
+<td class="comment-1" rowspan="1">Combat=1, Ranged combat=0, Range=0, Defence=2, Movement allowance=1, Manoeuvre rating=6, Magic resistance=7, Spells=0, Ability=0, Animation delay=30</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAB9"></span>EAB9</td>
+<td class="instruction">DEFW <a href="FD34.html#FD94">character_4_sprite</a></td>
+<td class="comment-1" rowspan="8"><img alt="wizard3coloured" src="../images/udgs/wizard3coloured.png" /> </td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EABB"></span>EABB</td>
+<td class="instruction">DEFB $45</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EABC"></span>EABC</td>
+<td class="instruction">DEFW <a href="FD34.html#FD94">character_4_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EABE"></span>EABE</td>
+<td class="instruction">DEFB $45</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EABF"></span>EABF</td>
+<td class="instruction">DEFW <a href="FD34.html#FD94">character_4_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAC1"></span>EAC1</td>
+<td class="instruction">DEFB $45</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAC2"></span>EAC2</td>
+<td class="instruction">DEFW <a href="FD34.html#FD94">character_4_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAC4"></span>EAC4</td>
+<td class="instruction">DEFB $45</td>
+</tr>
+<tr>
+<td class="asm-label">wizard_4</td>
+<td class="address-1"><span id="EAC5"></span>EAC5</td>
+<td class="instruction">DEFM "GOWIN        "</td>
+<td class="comment-1" rowspan="1">Wizard 4: &#71;&#79;&#87;&#73;&#78;</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAD2"></span>EAD2</td>
+<td class="instruction">DEFB $02,$00,$00,$02,$01,$05,$00,$00,$00,$1E</td>
+<td class="comment-1" rowspan="1">Combat=2, Ranged combat=0, Range=0, Defence=2, Movement allowance=1, Manoeuvre rating=5, Magic resistance=0, Spells=0, Ability=0, Animation delay=30</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EADC"></span>EADC</td>
+<td class="instruction">DEFW <a href="FD34.html#FDB4">character_5_sprite</a></td>
+<td class="comment-1" rowspan="8"><img alt="wizard4coloured" src="../images/udgs/wizard4coloured.png" /> </td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EADE"></span>EADE</td>
+<td class="instruction">DEFB $46</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EADF"></span>EADF</td>
+<td class="instruction">DEFW <a href="FD34.html#FDB4">character_5_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAE1"></span>EAE1</td>
+<td class="instruction">DEFB $46</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAE2"></span>EAE2</td>
+<td class="instruction">DEFW <a href="FD34.html#FDB4">character_5_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAE4"></span>EAE4</td>
+<td class="instruction">DEFB $46</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAE5"></span>EAE5</td>
+<td class="instruction">DEFW <a href="FD34.html#FDB4">character_5_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAE7"></span>EAE7</td>
+<td class="instruction">DEFB $46</td>
+</tr>
+<tr>
+<td class="asm-label">wizard_5</td>
+<td class="address-1"><span id="EAE8"></span>EAE8</td>
+<td class="instruction">DEFM "MERLIN       "</td>
+<td class="comment-1" rowspan="1">Wizard 5: &#77;&#69;&#82;&#76;&#73;&#78;</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAF5"></span>EAF5</td>
+<td class="instruction">DEFB $01,$00,$00,$04,$01,$04,$00,$00,$00,$1E</td>
+<td class="comment-1" rowspan="1">Combat=1, Ranged combat=0, Range=0, Defence=4, Movement allowance=1, Manoeuvre rating=4, Magic resistance=0, Spells=0, Ability=0, Animation delay=30</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EAFF"></span>EAFF</td>
+<td class="instruction">DEFW <a href="FD34.html#FDD4">character_6_sprite</a></td>
+<td class="comment-1" rowspan="8"><img alt="wizard5coloured" src="../images/udgs/wizard5coloured.png" /> </td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB01"></span>EB01</td>
+<td class="instruction">DEFB $47</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB02"></span>EB02</td>
+<td class="instruction">DEFW <a href="FD34.html#FDD4">character_6_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB04"></span>EB04</td>
+<td class="instruction">DEFB $47</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB05"></span>EB05</td>
+<td class="instruction">DEFW <a href="FD34.html#FDD4">character_6_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB07"></span>EB07</td>
+<td class="instruction">DEFB $47</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB08"></span>EB08</td>
+<td class="instruction">DEFW <a href="FD34.html#FDD4">character_6_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB0A"></span>EB0A</td>
+<td class="instruction">DEFB $47</td>
+</tr>
+<tr>
+<td class="asm-label">wizard_6</td>
+<td class="address-1"><span id="EB0B"></span>EB0B</td>
+<td class="instruction">DEFM "ILIAN RANE   "</td>
+<td class="comment-1" rowspan="1">Wizard 6: &#73;&#76;&#73;&#65;&#78;&#32;&#82;&#65;&#78;&#69;</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB18"></span>EB18</td>
+<td class="instruction">DEFB $01,$00,$00,$02,$01,$04,$00,$00,$00,$1E</td>
+<td class="comment-1" rowspan="1">Combat=1, Ranged combat=0, Range=0, Defence=2, Movement allowance=1, Manoeuvre rating=4, Magic resistance=0, Spells=0, Ability=0, Animation delay=30</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB22"></span>EB22</td>
+<td class="instruction">DEFW <a href="FD34.html#FDF4">character_7_sprite</a></td>
+<td class="comment-1" rowspan="8"><img alt="wizard6coloured" src="../images/udgs/wizard6coloured.png" /> </td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB24"></span>EB24</td>
+<td class="instruction">DEFB $06</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB25"></span>EB25</td>
+<td class="instruction">DEFW <a href="FD34.html#FDF4">character_7_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB27"></span>EB27</td>
+<td class="instruction">DEFB $06</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB28"></span>EB28</td>
+<td class="instruction">DEFW <a href="FD34.html#FDF4">character_7_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB2A"></span>EB2A</td>
+<td class="instruction">DEFB $06</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB2B"></span>EB2B</td>
+<td class="instruction">DEFW <a href="FD34.html#FDF4">character_7_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB2D"></span>EB2D</td>
+<td class="instruction">DEFB $06</td>
+</tr>
+<tr>
+<td class="asm-label">wizard_7</td>
+<td class="address-1"><span id="EB2E"></span>EB2E</td>
+<td class="instruction">DEFM "ASIMONO ZARK "</td>
+<td class="comment-1" rowspan="1">Wizard 7: &#65;&#83;&#73;&#77;&#79;&#78;&#79;&#32;&#90;&#65;&#82;&#75;</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB3B"></span>EB3B</td>
+<td class="instruction">DEFB $03,$00,$00,$02,$01,$06,$00,$00,$00,$1E</td>
+<td class="comment-1" rowspan="1">Combat=3, Ranged combat=0, Range=0, Defence=2, Movement allowance=1, Manoeuvre rating=6, Magic resistance=0, Spells=0, Ability=0, Animation delay=30</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB45"></span>EB45</td>
+<td class="instruction">DEFW <a href="FD34.html#FE14">character_8_sprite</a></td>
+<td class="comment-1" rowspan="8"><img alt="wizard7coloured" src="../images/udgs/wizard7coloured.png" /> </td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB47"></span>EB47</td>
+<td class="instruction">DEFB $05</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB48"></span>EB48</td>
+<td class="instruction">DEFW <a href="FD34.html#FE14">character_8_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB4A"></span>EB4A</td>
+<td class="instruction">DEFB $05</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB4B"></span>EB4B</td>
+<td class="instruction">DEFW <a href="FD34.html#FE14">character_8_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB4D"></span>EB4D</td>
+<td class="instruction">DEFB $05</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB4E"></span>EB4E</td>
+<td class="instruction">DEFW <a href="FD34.html#FE14">character_8_sprite</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="EB50"></span>EB50</td>
+<td class="instruction">DEFB $05</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="E440.html">E440</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#EA39">Map</a></td>
+<td class="next">
+Next: <a href="EB51.html">EB51</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/EA39.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:20:14 GMT -->
+</html>

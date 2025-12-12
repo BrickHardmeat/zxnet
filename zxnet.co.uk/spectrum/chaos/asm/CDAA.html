@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/CDAA.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:35 GMT -->
+<head>
+<title>Chaos: Routine at CDAA</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="CD92.html">CD92</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#CDAA">Map</a></td>
+<td class="next">
+Next: <a href="CDB8.html">CDB8</a>
+</td>
+</tr>
+</table>
+<div class="description">CDAA: fill <a href="D3F2.html">INBUF</a> with $FF00</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="C7BC.html">EN_AN</a>, <a href="C825.html">routine56</a>, <a href="C8C7.html">routine59</a>, <a href="C955.html">routine60</a>, <a href="CA92.html">routine64</a> and <a href="CBC7.html">routine66</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">fill_inbuf</td>
+<td class="address-2"><span id="CDAA"></span>CDAA</td>
+<td class="instruction">LD HL,<a href="D3F2.html">INBUF</a></td>
+<td class="comment-1" rowspan="1">set HL to address of <a href="D3F2.html">INBUF</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CDAD"></span>CDAD</td>
+<td class="instruction">LD B,$9E</td>
+<td class="comment-1" rowspan="1">set loop counter to $9E</td>
+</tr>
+<tr>
+<td class="asm-label">fill_inbuf_0</td>
+<td class="address-2"><span id="CDAF"></span>CDAF</td>
+<td class="instruction">LD (HL),$00</td>
+<td class="comment-1" rowspan="4">store $FF00 at address in HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CDB1"></span>CDB1</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CDB2"></span>CDB2</td>
+<td class="instruction">LD (HL),$FF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CDB4"></span>CDB4</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CDB5"></span>CDB5</td>
+<td class="instruction">DJNZ <a href="CDAA.html#CDAF">fill_inbuf_0</a></td>
+<td class="comment-1" rowspan="2">loop back to <a href="CDAA.html#CDAF">fill_inbuf_0</a> for 158 iterations and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CDB7"></span>CDB7</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="CD92.html">CD92</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#CDAA">Map</a></td>
+<td class="next">
+Next: <a href="CDB8.html">CDB8</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/CDAA.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:35 GMT -->
+</html>

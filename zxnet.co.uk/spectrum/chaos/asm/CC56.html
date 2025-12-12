@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/CC56.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:35 GMT -->
+<head>
+<title>Chaos: Routine at CC56</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="CC55.html">CC55</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#CC56">Map</a></td>
+<td class="next">
+Next: <a href="CCC3.html">CCC3</a>
+</td>
+</tr>
+</table>
+<div class="description">CC56: FIREON</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a> and <a href="B8DD.html">routine35</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">FIREON</td>
+<td class="address-2"><span id="CC56"></span>CC56</td>
+<td class="instruction">LD HL,(<a href="AC14.html">D_ADD</a>)</td>
+<td class="comment-1" rowspan="2">copy <a href="AC14.html">D_ADD</a> variable into <a href="C78B.html">TEMADD</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC59"></span>CC59</td>
+<td class="instruction">LD (<a href="C78B.html">TEMADD</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC5C"></span>CC5C</td>
+<td class="instruction">LD A,$3C</td>
+<td class="comment-1" rowspan="3">set <a href="CC55.html">unknown64</a> variable to $3C and call <a href="C825.html">routine56</a> ??</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC5E"></span>CC5E</td>
+<td class="instruction">LD (<a href="CC55.html">unknown64</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC61"></span>CC61</td>
+<td class="instruction">CALL <a href="C825.html">routine56</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC64"></span>CC64</td>
+<td class="instruction">LD A,$20</td>
+<td class="comment-1" rowspan="2">set <a href="CC55.html">unknown64</a> variable to $20 ?? space character?</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC66"></span>CC66</td>
+<td class="instruction">LD (<a href="CC55.html">unknown64</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC69"></span>CC69</td>
+<td class="instruction">LD HL,(<a href="C649.html">X_ADD</a>)</td>
+<td class="comment-1" rowspan="2">copy <a href="C649.html">X_ADD</a> variable into <a href="AC14.html">D_ADD</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC6C"></span>CC6C</td>
+<td class="instruction">LD (<a href="AC14.html">D_ADD</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC6F"></span>CC6F</td>
+<td class="instruction">LD HL,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-1" rowspan="2">set <a href="AC12.html">object_table_entry_pointer</a> pointer to point at first entry in <a href="E01F.html">map_object_table</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC72"></span>CC72</td>
+<td class="instruction">LD (<a href="AC12.html">object_table_entry_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC75"></span>CC75</td>
+<td class="instruction">LD A,$09</td>
+<td class="comment-1" rowspan="2">set <a href="C7BB.html">SRTCNT</a> variable to $09</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC77"></span>CC77</td>
+<td class="instruction">LD (<a href="C7BB.html">SRTCNT</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC7A"></span>CC7A</td>
+<td class="instruction">LD B,$9E</td>
+<td class="comment-1" rowspan="1">set B register to $9E as loop counter</td>
+</tr>
+<tr>
+<td class="asm-label">FIREON_loop</td>
+<td class="address-2"><span id="CC7C"></span>CC7C</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">preserve loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC7D"></span>CC7D</td>
+<td class="instruction">CALL <a href="C67A.html">routine52</a></td>
+<td class="comment-1" rowspan="1">call <a href="C67A.html">routine52</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC80"></span>CC80</td>
+<td class="instruction">OR A</td>
+<td class="comment-1" rowspan="2">if byte returned in A equals zero then jump forwards to <a href="CC56.html#CC9E">LCC9E</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC81"></span>CC81</td>
+<td class="instruction">JR Z,<a href="CC56.html#CC9E">LCC9E</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC83"></span>CC83</td>
+<td class="instruction">LD HL,(<a href="CD86.html">BUFPNT</a>)</td>
+<td class="comment-1" rowspan="3">copy byte from the address in <a href="CD86.html">BUFPNT</a> to <a href="AC12.html">object_table_entry_pointer</a> variable</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC86"></span>CC86</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC87"></span>CC87</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC8A"></span>CC8A</td>
+<td class="instruction">AND A</td>
+<td class="comment-1" rowspan="1">ensure carry flag is clear</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC8B"></span>CC8B</td>
+<td class="instruction">LD DE,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-1" rowspan="2">subtract <a href="E01F.html">map_object_table</a> from address in <a href="CD86.html">BUFPNT</a> to get offset</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC8E"></span>CC8E</td>
+<td class="instruction">SBC HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC90"></span>CC90</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-1" rowspan="4">increment address in <a href="CD86.html">BUFPNT</a> and store offset at resulting address</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC91"></span>CC91</td>
+<td class="instruction">LD HL,(<a href="CD86.html">BUFPNT</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC94"></span>CC94</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC95"></span>CC95</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC96"></span>CC96</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">increment address again and store result back in <a href="CD86.html">BUFPNT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC97"></span>CC97</td>
+<td class="instruction">LD (<a href="CD86.html">BUFPNT</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC9A"></span>CC9A</td>
+<td class="instruction">LD HL,<a href="C7BB.html">SRTCNT</a></td>
+<td class="comment-1" rowspan="2">increment <a href="C7BB.html">SRTCNT</a> variable</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CC9D"></span>CC9D</td>
+<td class="instruction">INC (HL)</td>
+</tr>
+<tr>
+<td class="asm-label">LCC9E</td>
+<td class="address-2"><span id="CC9E"></span>CC9E</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="3">increment <a href="AC12.html">object_table_entry_pointer</a> pointer</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCA1"></span>CCA1</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCA2"></span>CCA2</td>
+<td class="instruction">LD (<a href="AC12.html">object_table_entry_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCA5"></span>CCA5</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCA6"></span>CCA6</td>
+<td class="instruction">DJNZ <a href="CC56.html#CC7C">FIREON_loop</a></td>
+<td class="comment-1" rowspan="1">execute loop 158 times</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCA8"></span>CCA8</td>
+<td class="instruction">LD HL,<a href="D3F2.html">INBUF</a></td>
+<td class="comment-1" rowspan="3">call <a href="C64C.html">SORT</a> with <a href="D3F2.html">INBUF</a> in HL and <a href="C7BB.html">SRTCNT</a> in A ??</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCAB"></span>CCAB</td>
+<td class="instruction">LD A,(<a href="C7BB.html">SRTCNT</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCAE"></span>CCAE</td>
+<td class="instruction">CALL <a href="C64C.html">SORT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCB1"></span>CCB1</td>
+<td class="instruction">LD HL,$D3F3</td>
+<td class="comment-1" rowspan="2">set <a href="CD86.html">BUFPNT</a> to second byte of <a href="D3F2.html">INBUF</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCB4"></span>CCB4</td>
+<td class="instruction">LD (<a href="CD86.html">BUFPNT</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCB7"></span>CCB7</td>
+<td class="instruction">LD HL,(<a href="C78B.html">TEMADD</a>)</td>
+<td class="comment-1" rowspan="2">copy <a href="C78B.html">TEMADD</a> to <a href="AC14.html">D_ADD</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCBA"></span>CCBA</td>
+<td class="instruction">LD (<a href="AC14.html">D_ADD</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCBD"></span>CCBD</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="3">set <a href="CC55.html">unknown64</a> to zero and return</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCBF"></span>CCBF</td>
+<td class="instruction">LD (<a href="CC55.html">unknown64</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="CCC2"></span>CCC2</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="CC55.html">CC55</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#CC56">Map</a></td>
+<td class="next">
+Next: <a href="CCC3.html">CCC3</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/CC56.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:35 GMT -->
+</html>

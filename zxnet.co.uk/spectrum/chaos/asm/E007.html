@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/E007.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:56 GMT -->
+<head>
+<title>Chaos: Routine at E007</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="E005.html">E005</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#E007">Map</a></td>
+<td class="next">
+Next: <a href="E01F.html">E01F</a>
+</td>
+</tr>
+</table>
+<div class="description">E007: Calculate Spectrum screen coordinates for an entry in <a href="E01F.html">map_object_table</a>.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="99F1.html">disbelieve_spell</a>, <a href="9C59.html">lightning_spell</a>, <a href="A18A.html">routine20</a>, <a href="B375.html">routine26</a>, <a href="B3C9.html">WIZKIL</a>, <a href="B8DD.html">routine35</a>, <a href="BABE.html">routine36</a>, <a href="C703.html">routine53</a>, <a href="D392.html">highlight_objects</a>, <a href="D763.html">routine80</a> and <a href="DF72.html">update_animation</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">address_to_coordinate</td>
+<td class="address-2"><span id="E007"></span>E007</td>
+<td class="instruction">LD HL,(<a href="E005.html">temp_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="1">Load <a href="E005.html">temp_entry_pointer</a> into HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E00A"></span>E00A</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1">Clear carry flag.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E00B"></span>E00B</td>
+<td class="instruction">LD DE,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-1" rowspan="2">Subtract address of <a href="E01F.html">map_object_table</a> to get position in table.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E00E"></span>E00E</td>
+<td class="instruction">SBC HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E010"></span>E010</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-1" rowspan="2">Multiply offset by 2 and mask bits to get column and store in L.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E011"></span>E011</td>
+<td class="instruction">AND $F0</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E013"></span>E013</td>
+<td class="instruction">RRCA</td>
+<td class="comment-1" rowspan="8">Divide by 8 to get row and store in H.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E014"></span>E014</td>
+<td class="instruction">RRCA</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E015"></span>E015</td>
+<td class="instruction">RRCA</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E016"></span>E016</td>
+<td class="instruction">LD H,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E017"></span>E017</td>
+<td class="instruction">LD A,L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E018"></span>E018</td>
+<td class="instruction">RLA</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E019"></span>E019</td>
+<td class="instruction">AND $1E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E01B"></span>E01B</td>
+<td class="instruction">LD L,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E01C"></span>E01C</td>
+<td class="instruction">INC H</td>
+<td class="comment-1" rowspan="3">Increment both coordinates to account for border and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E01D"></span>E01D</td>
+<td class="instruction">INC L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="E01E"></span>E01E</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="E005.html">E005</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#E007">Map</a></td>
+<td class="next">
+Next: <a href="E01F.html">E01F</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/E007.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:56 GMT -->
+</html>

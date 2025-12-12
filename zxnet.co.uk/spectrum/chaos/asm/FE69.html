@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/FE69.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:20:47 GMT -->
+<head>
+<title>Chaos: Routine at FE69</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="FE67.html">FE67</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#FE69">Map</a></td>
+<td class="next">
+Next: <a href="FE71.html">FE71</a>
+</td>
+</tr>
+</table>
+<div class="description">FE69: interrupt service routine</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">ISR</td>
+<td class="address-2"><span id="FE69"></span>FE69</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">disable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="FE6A"></span>FE6A</td>
+<td class="instruction">CALL <a href="DF0C.html">routine86</a></td>
+<td class="comment-1" rowspan="1">call <a href="DF0C.html">routine86</a> which executes a jump to <a href="DF72.html">update_animation</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="FE6D"></span>FE6D</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="1">enable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="FE6E"></span>FE6E</td>
+<td class="instruction">JP $0038</td>
+<td class="comment-1" rowspan="1">jump to $0038 in ROM (the IM1 interrupt service routine)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="FE67.html">FE67</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#FE69">Map</a></td>
+<td class="next">
+Next: <a href="FE71.html">FE71</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/FE69.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:20:47 GMT -->
+</html>

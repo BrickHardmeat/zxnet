@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/DF4E.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:56 GMT -->
+<head>
+<title>Chaos: Routine at DF4E</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="DF4C.html">DF4C</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#DF4E">Map</a></td>
+<td class="next">
+Next: <a href="DF72.html">DF72</a>
+</td>
+</tr>
+</table>
+<div class="description">DF4E: P_CHAR</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="90F0.html">PR_CHR</a>, <a href="99F1.html">disbelieve_spell</a>, <a href="9C59.html">lightning_spell</a>, <a href="A18A.html">routine20</a>, <a href="B375.html">routine26</a>, <a href="B3C9.html">WIZKIL</a>, <a href="B8DD.html">routine35</a>, <a href="BABE.html">routine36</a>, <a href="D763.html">routine80</a> and <a href="DF72.html">update_animation</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">P_CHAR</td>
+<td class="address-2"><span id="DF4E"></span>DF4E</td>
+<td class="instruction">LD HL,(<a href="DF4A.html">C_DATA</a>)</td>
+<td class="comment-1" rowspan="3">set CHARS variable to address in <a href="DF4A.html">C_DATA</a> minus 256</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF51"></span>DF51</td>
+<td class="instruction">DEC H</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF52"></span>DF52</td>
+<td class="instruction">LD ($5C36),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF55"></span>DF55</td>
+<td class="instruction">LD BC,(<a href="DF4C.html">LC_POS</a>)</td>
+<td class="comment-1" rowspan="1">read <a href="DF4C.html">LC_POS</a> into BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF59"></span>DF59</td>
+<td class="instruction">LD A,$20</td>
+<td class="comment-1" rowspan="2">call <a href="DF0F.html">print_8x8_graphic</a> to print character $20 (top left block of sprite)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF5B"></span>DF5B</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF5E"></span>DF5E</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">move one character position right</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF5F"></span>DF5F</td>
+<td class="instruction">LD A,$21</td>
+<td class="comment-1" rowspan="2">call <a href="DF0F.html">print_8x8_graphic</a> to print character $21 (top right block of sprite)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF61"></span>DF61</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF64"></span>DF64</td>
+<td class="instruction">DEC C</td>
+<td class="comment-1" rowspan="2">move one character position left and one character row down</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF65"></span>DF65</td>
+<td class="instruction">INC B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF66"></span>DF66</td>
+<td class="instruction">LD A,$22</td>
+<td class="comment-1" rowspan="2">call <a href="DF0F.html">print_8x8_graphic</a> to print character $22 (bottom left block of sprite)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF68"></span>DF68</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF6B"></span>DF6B</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">move one character position right</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF6C"></span>DF6C</td>
+<td class="instruction">LD A,$23</td>
+<td class="comment-1" rowspan="3">call <a href="DF0F.html">print_8x8_graphic</a> to print character $23 (bottom right block of sprite) then return</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF6E"></span>DF6E</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="DF71"></span>DF71</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="DF4C.html">DF4C</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#DF4E">Map</a></td>
+<td class="next">
+Next: <a href="DF72.html">DF72</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/DF4E.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:56 GMT -->
+</html>
