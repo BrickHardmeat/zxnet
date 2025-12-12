@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BAFB.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at BAFB</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BAEE.html">BAEE</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BAFB">Map</a></td>
+<td class="next">
+Next: <a href="BB15.html">BB15</a>
+</td>
+</tr>
+</table>
+<div class="description">BAFB: MPRINT</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="89F9.html">main_routine</a>, <a href="8F9A.html">TREPUT</a>, <a href="9168.html">CAST_S</a>, <a href="9385.html">select_spell</a>, <a href="94A7.html">display_spell_info</a>, <a href="967A.html">display_wizard_spell_range</a>, <a href="97A3.html">routine11</a>, <a href="981A.html">routine13</a>, <a href="9C59.html">lightning_spell</a>, <a href="AC36.html">routine21</a>, <a href="ACED.html">routine23</a>, <a href="AECC.html">COUNTL</a>, <a href="B0A8.html">routine24</a>, <a href="B168.html">routine25</a>, <a href="B8DD.html">routine35</a>, <a href="BC96.html">routine41</a>, <a href="BEB2.html">routine47</a>, <a href="BED7.html">clear_bottom_row</a>, <a href="C3B3.html">display_object_info</a>, <a href="C5FC.html">print_spell_property</a>, <a href="C612.html">print_creature_attribute</a>, <a href="D52E.html">routine72</a> and <a href="D588.html">routine73</a>.
+</div>
+<div class="paragraph">
+print a message from <a href="CDD3.html">game messages table 1</a>.
+</div>
+</div>
+<table class="input">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Message number</td>
+</tr>
+<tr>
+<td class="register">BC</td>
+<td class="register-desc">Coordinates</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label">MPRINT</td>
+<td class="address-2"><span id="BAFB"></span>BAFB</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="3">preserve HL, DE, and BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAFC"></span>BAFC</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAFD"></span>BAFD</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAFE"></span>BAFE</td>
+<td class="instruction">LD H,$00</td>
+<td class="comment-1" rowspan="2">set HL to value in A (message number)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB00"></span>BB00</td>
+<td class="instruction">LD L,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB01"></span>BB01</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-1" rowspan="2">multiply HL by four because each row is 4 bytes</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB02"></span>BB02</td>
+<td class="instruction">ADD HL,HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB03"></span>BB03</td>
+<td class="instruction">LD DE,<a href="CDD3.html">game_messages_1</a></td>
+<td class="comment-1" rowspan="2">add address of <a href="CDD3.html">game messages table 1</a> to get address of desired row in game messages table</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB06"></span>BB06</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB07"></span>BB07</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-1" rowspan="3">load address of message into DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB08"></span>BB08</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB09"></span>BB09</td>
+<td class="instruction">LD D,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB0A"></span>BB0A</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="2">load message length into C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB0B"></span>BB0B</td>
+<td class="instruction">LD C,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB0C"></span>BB0C</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-1" rowspan="1">swap DE into HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB0D"></span>BB0D</td>
+<td class="instruction">LD E,C</td>
+<td class="comment-1" rowspan="1">copy length into E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB0E"></span>BB0E</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore coordinates in BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB0F"></span>BB0F</td>
+<td class="instruction">CALL <a href="BAEE.html">print_string_loop</a></td>
+<td class="comment-1" rowspan="1">call routine at <a href="BAEE.html">print_string_loop</a> to print string</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB12"></span>BB12</td>
+<td class="instruction">POP DE</td>
+<td class="comment-1" rowspan="2">restore DE and HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB13"></span>BB13</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB14"></span>BB14</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BAEE.html">BAEE</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BAFB">Map</a></td>
+<td class="next">
+Next: <a href="BB15.html">BB15</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BAFB.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

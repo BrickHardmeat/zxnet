@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/C2F6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:32 GMT -->
+<head>
+<title>Chaos: Routine at C2F6</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C2F5.html">C2F5</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#C2F6">Map</a></td>
+<td class="next">
+Next: <a href="C33A.html">C33A</a>
+</td>
+</tr>
+</table>
+<div class="description">C2F6: play_sound_effect_pointer</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="99F1.html">disbelieve_spell</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="9F50.html">INTERO</a>, <a href="A18A.html">routine20</a>, <a href="B8DD.html">routine35</a> and <a href="D763.html">routine80</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">play_sound_effect_pointer</td>
+<td class="address-2"><span id="C2F6"></span>C2F6</td>
+<td class="instruction">LD HL,(<a href="C2F3.html">sound_effect_pointer</a>)</td>
+<td class="comment-1" rowspan="1">load sound_effect_pointer into HL as address to copy sound data from</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="C2F9"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="84F7.html">subversion_spell</a>, <a href="85F6.html">raise_dead_spell</a>, <a href="89B0.html">CHONUM</a>, <a href="89F9.html">main_routine</a>, <a href="8F9A.html">TREPUT</a>, <a href="9168.html">CAST_S</a>, <a href="9385.html">select_spell</a>, <a href="94A7.html">display_spell_info</a>, <a href="96D1.html">routine07</a>, <a href="981A.html">routine13</a>, <a href="99F1.html">disbelieve_spell</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="9F50.html">INTERO</a>, <a href="ACC6.html">routine22</a>, <a href="ACED.html">routine23</a>, <a href="AECC.html">COUNTL</a>, <a href="B0A8.html">routine24</a>, <a href="B168.html">routine25</a>, <a href="B375.html">routine26</a>, <a href="B3C9.html">WIZKIL</a>, <a href="B8DD.html">routine35</a>, <a href="BEB2.html">routine47</a>, <a href="C3B3.html">display_object_info</a>, <a href="D52E.html">routine72</a> and <a href="D702.html">routine78</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">play_sound_effect_in_HL</td>
+<td class="address-2"><span id="C2F9"></span>C2F9</td>
+<td class="instruction">LD DE,<a href="C2E8.html">sound_effect_temp</a></td>
+<td class="comment-1" rowspan="3">copy ten bytes from address in HL to <a href="C2E8.html">sound_effect_temp</a> (sound effect playback data)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C2FC"></span>C2FC</td>
+<td class="instruction">LD BC,$000A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C2FF"></span>C2FF</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="C301"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="99F1.html">disbelieve_spell</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="A18A.html">routine20</a>, <a href="B375.html">routine26</a>, <a href="B3C9.html">WIZKIL</a>, <a href="B7FD.html">routine31</a>, <a href="B81C.html">routine32</a>, <a href="B8DD.html">routine35</a> and <a href="D763.html">routine80</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">sound_effect_playback</td>
+<td class="address-2"><span id="C301"></span>C301</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">disable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C302"></span>C302</td>
+<td class="instruction">LD HL,<a href="C2E8.html">sound_effect_temp</a></td>
+<td class="comment-1" rowspan="2">load first byte of sound effect playback data into B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C305"></span>C305</td>
+<td class="instruction">LD B,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label">outer_sound_loop</td>
+<td class="address-2"><span id="C306"></span>C306</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">preserve BC (outer loop counter)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C307"></span>C307</td>
+<td class="instruction">LD HL,<a href="C2E8.html#C2E9">$C2E9</a></td>
+<td class="comment-1" rowspan="2">load second byte of <a href="C2E8.html">sound_effect_temp</a> data into B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C30A"></span>C30A</td>
+<td class="instruction">LD B,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label">middle_sound_loop</td>
+<td class="address-2"><span id="C30B"></span>C30B</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">preserve BC (middle loop counter)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C30C"></span>C30C</td>
+<td class="instruction">LD B,$04</td>
+<td class="comment-1" rowspan="1">set B to four as loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C30E"></span>C30E</td>
+<td class="instruction">LD HL,<a href="C2E8.html#C2EA">$C2EA</a></td>
+<td class="comment-1" rowspan="1">set HL to third byte of <a href="C2E8.html">sound_effect_temp</a> data</td>
+</tr>
+<tr>
+<td class="asm-label">inner_sound_loop</td>
+<td class="address-2"><span id="C311"></span>C311</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">preserve inner loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C312"></span>C312</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="1">preserve HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C313"></span>C313</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-1" rowspan="1">load byte at HL into B as delay</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C314"></span>C314</td>
+<td class="instruction">CALL <a href="C33A.html">sound_playback_delay_routine</a></td>
+<td class="comment-1" rowspan="1">call sound_playback_delay_routine</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C317"></span>C317</td>
+<td class="instruction">LD A,(<a href="C2F2.html">port_FE_output_byte</a>)</td>
+<td class="comment-1" rowspan="1">load port_FE_output_byte into A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C31A"></span>C31A</td>
+<td class="instruction">XOR $30</td>
+<td class="comment-1" rowspan="1">XOR with 00110000 (flip bits 4 and 5)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C31C"></span>C31C</td>
+<td class="instruction">LD (<a href="C2F2.html">port_FE_output_byte</a>),A</td>
+<td class="comment-1" rowspan="1">write result back to port_FE_output_byte</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C31F"></span>C31F</td>
+<td class="instruction">OUT ($FE),A</td>
+<td class="comment-1" rowspan="1">output value to port $FE (ULA sound and border)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C321"></span>C321</td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="1">restore HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C322"></span>C322</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="1">increment HL to point to the next byte in the data block</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C323"></span>C323</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore inner loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C324"></span>C324</td>
+<td class="instruction">DJNZ <a href="C2F6.html#C311">inner_sound_loop</a></td>
+<td class="comment-1" rowspan="1">loop back to inner_sound_loop for 4 iterations</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C326"></span>C326</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore middle loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C327"></span>C327</td>
+<td class="instruction">DJNZ <a href="C2F6.html#C30B">middle_sound_loop</a></td>
+<td class="comment-1" rowspan="1">loop back to middle_sound_loop</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C329"></span>C329</td>
+<td class="instruction">LD B,$04</td>
+<td class="comment-1" rowspan="1">set B to four</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C32B"></span>C32B</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-1" rowspan="1">swap HL and DE (so DE = <a href="C2E8.html#C2EE">C2EE</a>)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C32C"></span>C32C</td>
+<td class="instruction">LD HL,<a href="C2E8.html#C2EA">$C2EA</a></td>
+<td class="comment-1" rowspan="1">set HL to <a href="C2E8.html#C2EA">C2EA</a></td>
+</tr>
+<tr>
+<td class="asm-label">sound_delay_addition_loop</td>
+<td class="address-2"><span id="C32F"></span>C32F</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-1" rowspan="3">add byte at address in HL to byte at address in DE and store result at address in HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C330"></span>C330</td>
+<td class="instruction">ADD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C331"></span>C331</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C332"></span>C332</td>
+<td class="instruction">INC DE</td>
+<td class="comment-1" rowspan="2">increment DE and HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C333"></span>C333</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C334"></span>C334</td>
+<td class="instruction">DJNZ <a href="C2F6.html#C32F">sound_delay_addition_loop</a></td>
+<td class="comment-1" rowspan="1">loop back to sound_delay_addition_loop three times</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C336"></span>C336</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore outer loop counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C337"></span>C337</td>
+<td class="instruction">DJNZ <a href="C2F6.html#C306">outer_sound_loop</a></td>
+<td class="comment-1" rowspan="1">loop back to outer_sound_loop</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C339"></span>C339</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C2F5.html">C2F5</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#C2F6">Map</a></td>
+<td class="next">
+Next: <a href="C33A.html">C33A</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/C2F6.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:32 GMT -->
+</html>

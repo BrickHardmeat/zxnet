@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BDD1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BDD1</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BDA5.html">BDA5</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BDD1">Map</a></td>
+<td class="next">
+Next: <a href="BDE7.html">BDE7</a>
+</td>
+</tr>
+</table>
+<div class="description">BDD1: Get address of entry in <a href="E01F.html">map_object_table</a>.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="ACED.html">routine23</a>, <a href="BC96.html">routine41</a> and <a href="BE52.html">routine46</a>.
+</div>
+<div class="paragraph">
+Calculate address of entry in <a href="E01F.html">map_object_table</a> from coordinates in BC and return in HL.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">coordinate_to_address</td>
+<td class="address-2"><span id="BDD1"></span>BDD1</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDD2"></span>BDD2</td>
+<td class="instruction">DEC B</td>
+<td class="comment-1" rowspan="2">Decrement each coordinate to get zero-based value.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDD3"></span>BDD3</td>
+<td class="instruction">DEC C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDD4"></span>BDD4</td>
+<td class="instruction">SLA B</td>
+<td class="comment-1" rowspan="6">Multiply row by 16 and add column as table offset.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDD6"></span>BDD6</td>
+<td class="instruction">SLA B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDD8"></span>BDD8</td>
+<td class="instruction">SLA B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDDA"></span>BDDA</td>
+<td class="instruction">SLA B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDDC"></span>BDDC</td>
+<td class="instruction">LD A,B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDDD"></span>BDDD</td>
+<td class="instruction">ADD A,C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDDE"></span>BDDE</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-1" rowspan="4">Set HL to address of <a href="E01F.html">map_object_table</a> and add offset.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDDF"></span>BDDF</td>
+<td class="instruction">LD B,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDE1"></span>BDE1</td>
+<td class="instruction">LD HL,<a href="E01F.html">map_object_table</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDE4"></span>BDE4</td>
+<td class="instruction">ADD HL,BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDE5"></span>BDE5</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="2">Restore coordinates and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDE6"></span>BDE6</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BDA5.html">BDA5</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BDD1">Map</a></td>
+<td class="next">
+Next: <a href="BDE7.html">BDE7</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BDD1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

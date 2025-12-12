@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BBB0.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BBB0</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BB57.html">BB57</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BBB0">Map</a></td>
+<td class="next">
+Next: <a href="BBCC.html">BBCC</a>
+</td>
+</tr>
+</table>
+<div class="description">BBB0: wait for a key and set SEED based on how long no key is pressed</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="94A7.html">display_spell_info</a>, <a href="95C7.html">routine06</a>, <a href="981A.html">routine13</a>, <a href="9C59.html">lightning_spell</a>, <a href="AC36.html">routine21</a>, <a href="B0A8.html">routine24</a>, <a href="B168.html">routine25</a>, <a href="B8DD.html">routine35</a>, <a href="C3B3.html">display_object_info</a>, <a href="D52E.html">routine72</a> and <a href="D588.html">routine73</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">wait_key_seed</td>
+<td class="address-2"><span id="BBB0"></span>BBB0</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="3">preserve HL, DE, BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBB1"></span>BBB1</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBB2"></span>BBB2</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBB3"></span>BBB3</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-1" rowspan="3">skip to end of routine if current player is not human</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBB6"></span>BBB6</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBB7"></span>BBB7</td>
+<td class="instruction">JR NZ,<a href="BBB0.html#BBC8">wait_key_seed_1</a></td>
+</tr>
+<tr>
+<td class="asm-label">wait_key_seed_0</td>
+<td class="address-2"><span id="BBB9"></span>BBB9</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">preserve BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBBA"></span>BBBA</td>
+<td class="instruction">CALL $028E</td>
+<td class="comment-1" rowspan="1">call KEY-SCAN in ROM to see if a key was pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBBD"></span>BBBD</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">restore BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBBE"></span>BBBE</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">increment counter (used to set SEED later)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBBF"></span>BBBF</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-1" rowspan="4">loop back to <a href="BBB0.html#BBB9">wait_key_seed_0</a> if no key was pressed</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBC0"></span>BBC0</td>
+<td class="instruction">INC A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBC1"></span>BBC1</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBC2"></span>BBC2</td>
+<td class="instruction">JR Z,<a href="BBB0.html#BBB9">wait_key_seed_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBC4"></span>BBC4</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-1" rowspan="2">set SEED to the value of the counter</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBC5"></span>BBC5</td>
+<td class="instruction">LD ($5C76),A</td>
+</tr>
+<tr>
+<td class="asm-label">wait_key_seed_1</td>
+<td class="address-2"><span id="BBC8"></span>BBC8</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="3">restore BC, DE, HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBC9"></span>BBC9</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBCA"></span>BBCA</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBCB"></span>BBCB</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BB57.html">BB57</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BBB0">Map</a></td>
+<td class="next">
+Next: <a href="BBCC.html">BBCC</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BBB0.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

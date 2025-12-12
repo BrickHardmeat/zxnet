@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BEEF.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BEEF</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BEEE.html">BEEE</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BEEF">Map</a></td>
+<td class="next">
+Next: <a href="BF37.html">BF37</a>
+</td>
+</tr>
+</table>
+<div class="description">BEEF: Calculate the distance between two pairs of coordinates.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="9786.html">routine10</a>, <a href="B0A8.html">routine24</a>, <a href="B8DD.html">routine35</a>, <a href="C67A.html">routine52</a>, <a href="C7BC.html">EN_AN</a>, <a href="C8C7.html">routine59</a>, <a href="C955.html">routine60</a>, <a href="CA7C.html">routine63</a> and <a href="CBC7.html">routine66</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="BEEF"></span>
+<div class="comments">
+<div class="paragraph">
+The result is stored in <a href="BEE8.html">total_distance</a>. The value in the A register is compared with the result.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">calculate_distance</td>
+<td class="address-2"><span id="BEEF"></span>BEEF</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="4">Preserve registers.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEF0"></span>BEF0</td>
+<td class="instruction">PUSH HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEF1"></span>BEF1</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEF2"></span>BEF2</td>
+<td class="instruction">PUSH AF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEF3"></span>BEF3</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1">Clear A and flags. This is unnecessary.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEF4"></span>BEF4</td>
+<td class="instruction">LD HL,(<a href="BEE9.html">unknown75</a>)</td>
+<td class="comment-1" rowspan="1">Load <a href="BEE9.html">unknown75</a> into HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEF7"></span>BEF7</td>
+<td class="instruction">LD DE,(<a href="BEEB.html">unknown76</a>)</td>
+<td class="comment-1" rowspan="1">Load <a href="BEEB.html">unknown76</a> into DE.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEFB"></span>BEFB</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-1" rowspan="6">If y-coordinate of <a href="BEEB.html">unknown76</a> is greater than or equal to y-coordinate of <a href="BEE9.html">unknown75</a>, store D-H in <a href="BEEE.html">y_difference</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEFC"></span>BEFC</td>
+<td class="instruction">CP H</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEFD"></span>BEFD</td>
+<td class="instruction">JP M,<a href="BEEF.html#BF06">D_less_than_H</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF00"></span>BF00</td>
+<td class="instruction">SUB H</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF01"></span>BF01</td>
+<td class="instruction">LD (<a href="BEEE.html">y_difference</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF04"></span>BF04</td>
+<td class="instruction">JR <a href="BEEF.html#BF0B">calculate_distance_0</a></td>
+</tr>
+<tr>
+<td class="asm-label">D_less_than_H</td>
+<td class="address-2"><span id="BF06"></span>BF06</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-1" rowspan="3">Else store H-D in <a href="BEEE.html">y_difference</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF07"></span>BF07</td>
+<td class="instruction">SUB D</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF08"></span>BF08</td>
+<td class="instruction">LD (<a href="BEEE.html">y_difference</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label">calculate_distance_0</td>
+<td class="address-2"><span id="BF0B"></span>BF0B</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-1" rowspan="6">If x-coordinate of <a href="BEEB.html">unknown76</a> is greater than or equal to y-coordinate of <a href="BEE9.html">unknown75</a>, store E-L in <a href="BEED.html">x_difference</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF0C"></span>BF0C</td>
+<td class="instruction">CP L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF0D"></span>BF0D</td>
+<td class="instruction">JP M,<a href="BEEF.html#BF16">E_less_than_L</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF10"></span>BF10</td>
+<td class="instruction">SUB L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF11"></span>BF11</td>
+<td class="instruction">LD (<a href="BEED.html">x_difference</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF14"></span>BF14</td>
+<td class="instruction">JR <a href="BEEF.html#BF1B">done_x_diff</a></td>
+</tr>
+<tr>
+<td class="asm-label">E_less_than_L</td>
+<td class="address-2"><span id="BF16"></span>BF16</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-1" rowspan="3">Else store L-E in <a href="BEED.html">x_difference</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF17"></span>BF17</td>
+<td class="instruction">SUB E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF18"></span>BF18</td>
+<td class="instruction">LD (<a href="BEED.html">x_difference</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label">done_x_diff</td>
+<td class="address-2"><span id="BF1B"></span>BF1B</td>
+<td class="instruction">LD HL,(<a href="BEED.html">x_difference</a>)</td>
+<td class="comment-1" rowspan="2">Load <a href="BEEE.html">y_difference</a> into H and <a href="BEED.html">x_difference</a> into L.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF1E"></span>BF1E</td>
+<td class="instruction">LD A,H</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF1F"></span>BF1F</td>
+<td class="instruction">CP L</td>
+<td class="comment-1" rowspan="6">If <a href="BEEE.html">y_difference</a> is greater than or equal to <a href="BEED.html">x_difference</a>, double it and add <a href="BEED.html">x_difference</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF20"></span>BF20</td>
+<td class="instruction">JP M,<a href="BEEF.html#BF29">y_diff_less</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF23"></span>BF23</td>
+<td class="instruction">SLA H</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF25"></span>BF25</td>
+<td class="instruction">LD A,H</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF26"></span>BF26</td>
+<td class="instruction">ADD A,L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF27"></span>BF27</td>
+<td class="instruction">JR <a href="BEEF.html#BF2D">done_difference</a></td>
+</tr>
+<tr>
+<td class="asm-label">y_diff_less</td>
+<td class="address-2"><span id="BF29"></span>BF29</td>
+<td class="instruction">SLA L</td>
+<td class="comment-1" rowspan="3">Else double <a href="BEED.html">x_difference</a> and add <a href="BEEE.html">y_difference</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF2B"></span>BF2B</td>
+<td class="instruction">LD A,L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF2C"></span>BF2C</td>
+<td class="instruction">ADD A,H</td>
+</tr>
+<tr>
+<td class="asm-label">done_difference</td>
+<td class="address-2"><span id="BF2D"></span>BF2D</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-1" rowspan="2">Store result in <a href="BEE8.html">total_distance</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF2E"></span>BF2E</td>
+<td class="instruction">LD (<a href="BEE8.html">total_distance</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF31"></span>BF31</td>
+<td class="instruction">POP AF</td>
+<td class="comment-1" rowspan="2">Restore A register and compare with result.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF32"></span>BF32</td>
+<td class="instruction">CP E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF33"></span>BF33</td>
+<td class="instruction">POP DE</td>
+<td class="comment-1" rowspan="4">Restore remaining registers and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF34"></span>BF34</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF35"></span>BF35</td>
+<td class="instruction">POP BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BF36"></span>BF36</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BEEE.html">BEEE</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BEEF">Map</a></td>
+<td class="next">
+Next: <a href="BF37.html">BF37</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BEEF.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

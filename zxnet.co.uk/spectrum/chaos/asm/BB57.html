@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BB57.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BB57</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BB55.html">BB55</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BB57">Map</a></td>
+<td class="next">
+Next: <a href="BBB0.html">BBB0</a>
+</td>
+</tr>
+</table>
+<div class="description">BB57: ZRDR_P</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="89F9.html">main_routine</a>, <a href="9168.html">CAST_S</a>, <a href="94A7.html">display_spell_info</a>, <a href="B8DD.html">routine35</a>, <a href="C0DD.html">routine50</a> and <a href="C3B3.html">display_object_info</a>.
+</div>
+<div class="paragraph">
+Print border around game area.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">ZRDR_P</td>
+<td class="address-2"><span id="BB57"></span>BB57</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="4">Preserve registers.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB58"></span>BB58</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB59"></span>BB59</td>
+<td class="instruction">PUSH HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB5A"></span>BB5A</td>
+<td class="instruction">PUSH AF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB5B"></span>BB5B</td>
+<td class="instruction">LD HL,(<a href="BB55.html">border_graphics_pointer</a>)</td>
+<td class="comment-1" rowspan="2">Load address of border graphics from <a href="BB55.html">border_graphics_pointer</a> and store in CHARS.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB5E"></span>BB5E</td>
+<td class="instruction">LD ($5C36),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB61"></span>BB61</td>
+<td class="instruction">LD E,$14</td>
+<td class="comment-1" rowspan="1">Set E to 20 as loop counter and row coordinate.</td>
+</tr>
+<tr>
+<td class="asm-label">vertical_border_loop</td>
+<td class="address-2"><span id="BB63"></span>BB63</td>
+<td class="instruction">LD A,$00</td>
+<td class="comment-1" rowspan="5">Print character $00 (left border) in column 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB65"></span>BB65</td>
+<td class="instruction">LD C,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB67"></span>BB67</td>
+<td class="instruction">LD B,E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB68"></span>BB68</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB69"></span>BB69</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB6C"></span>BB6C</td>
+<td class="instruction">LD C,$1F</td>
+<td class="comment-1" rowspan="4">Print character $01 (right border) in column 31.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB6E"></span>BB6E</td>
+<td class="instruction">LD A,$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB70"></span>BB70</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB73"></span>BB73</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB74"></span>BB74</td>
+<td class="instruction">DEC E</td>
+<td class="comment-1" rowspan="2">Loop back to <a href="BB57.html#BB63">vertical_border_loop</a> for 20 rows.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB75"></span>BB75</td>
+<td class="instruction">JR NZ,<a href="BB57.html#BB63">vertical_border_loop</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB77"></span>BB77</td>
+<td class="instruction">LD E,$1E</td>
+<td class="comment-1" rowspan="1">Set E to 30 as loop counter and column coordinate.</td>
+</tr>
+<tr>
+<td class="asm-label">horizontal_border_loop</td>
+<td class="address-2"><span id="BB79"></span>BB79</td>
+<td class="instruction">LD A,$02</td>
+<td class="comment-1" rowspan="5">Print character $02 (top border) in row 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB7B"></span>BB7B</td>
+<td class="instruction">LD B,$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB7D"></span>BB7D</td>
+<td class="instruction">LD C,E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB7E"></span>BB7E</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB7F"></span>BB7F</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB82"></span>BB82</td>
+<td class="instruction">LD B,$15</td>
+<td class="comment-1" rowspan="4">Print character $03 (bottom border) in row 21.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB84"></span>BB84</td>
+<td class="instruction">LD A,$03</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB86"></span>BB86</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB89"></span>BB89</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB8A"></span>BB8A</td>
+<td class="instruction">DEC E</td>
+<td class="comment-1" rowspan="2">Loop back to <a href="BB57.html#BB79">horizontal_border_loop</a> for 30 columns.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB8B"></span>BB8B</td>
+<td class="instruction">JR NZ,<a href="BB57.html#BB79">horizontal_border_loop</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB8D"></span>BB8D</td>
+<td class="instruction">LD A,$04</td>
+<td class="comment-1" rowspan="3">Print character $04 (top-left corner) at coordinate (0,0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB8F"></span>BB8F</td>
+<td class="instruction">LD BC,$0000</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB92"></span>BB92</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB95"></span>BB95</td>
+<td class="instruction">LD A,$05</td>
+<td class="comment-1" rowspan="3">Print character $05 (top-right corner) at coordinate (31,0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB97"></span>BB97</td>
+<td class="instruction">LD C,$1F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB99"></span>BB99</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB9C"></span>BB9C</td>
+<td class="instruction">LD A,$06</td>
+<td class="comment-1" rowspan="3">Print character $06 (bottom-left corner) at coordinate (0,21).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BB9E"></span>BB9E</td>
+<td class="instruction">LD BC,$1500</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBA1"></span>BBA1</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBA4"></span>BBA4</td>
+<td class="instruction">LD C,$1F</td>
+<td class="comment-1" rowspan="3">Print character $07 (bottom-right corner) at coordinate (31,21).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBA6"></span>BBA6</td>
+<td class="instruction">LD A,$07</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBA8"></span>BBA8</td>
+<td class="instruction">CALL <a href="DF0F.html">print_8x8_graphic</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBAB"></span>BBAB</td>
+<td class="instruction">POP AF</td>
+<td class="comment-1" rowspan="5">Restore registers and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBAC"></span>BBAC</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBAD"></span>BBAD</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBAE"></span>BBAE</td>
+<td class="instruction">POP BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBAF"></span>BBAF</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BB55.html">BB55</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BB57">Map</a></td>
+<td class="next">
+Next: <a href="BBB0.html">BBB0</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BB57.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

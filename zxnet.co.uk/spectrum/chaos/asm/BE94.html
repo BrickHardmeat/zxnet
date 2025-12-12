@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BE94.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BE94</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BE52.html">BE52</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BE94">Map</a></td>
+<td class="next">
+Next: <a href="BEB2.html">BEB2</a>
+</td>
+</tr>
+</table>
+<div class="description">BE94: Generate a random number from 0 to 9</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="95C7.html">routine06</a>, <a href="9760.html">routine09</a>, <a href="9975.html">creature_cast_spell</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="9F50.html">INTERO</a>, <a href="ACED.html">routine23</a>, <a href="B168.html">routine25</a> and <a href="D686.html">routine77</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">get_random</td>
+<td class="address-2"><span id="BE94"></span>BE94</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="2">preserve HL and DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE95"></span>BE95</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label">get_random_0</td>
+<td class="address-2"><span id="BE96"></span>BE96</td>
+<td class="instruction">LD A,R</td>
+<td class="comment-1" rowspan="2">copy value of R register into E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE98"></span>BE98</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE99"></span>BE99</td>
+<td class="instruction">LD HL,$E0B5</td>
+<td class="comment-1" rowspan="1">set HL to address of <a href="E01F.html">map_object_table</a>+$96</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE9C"></span>BE9C</td>
+<td class="instruction">LD D,$00</td>
+<td class="comment-1" rowspan="1">add byte in E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE9E"></span>BE9E</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-1" rowspan="3">load byte from resulting address into E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE9F"></span>BE9F</td>
+<td class="instruction">LD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEA0"></span>BEA0</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEA1"></span>BEA1</td>
+<td class="instruction">LD A,R</td>
+<td class="comment-1" rowspan="2">add value of R register</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEA3"></span>BEA3</td>
+<td class="instruction">ADD A,E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEA4"></span>BEA4</td>
+<td class="instruction">LD HL,$5C76</td>
+<td class="comment-1" rowspan="2">add value of SEED system variable</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEA7"></span>BEA7</td>
+<td class="instruction">ADD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEA8"></span>BEA8</td>
+<td class="instruction">AND $0F</td>
+<td class="comment-1" rowspan="1">select lower four bits</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEAA"></span>BEAA</td>
+<td class="instruction">CP $0A</td>
+<td class="comment-1" rowspan="2">jump back to <a href="BE94.html#BE96">get_random_0</a> if A is greater than 9</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEAC"></span>BEAC</td>
+<td class="instruction">JP P,<a href="BE94.html#BE96">get_random_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEAF"></span>BEAF</td>
+<td class="instruction">POP DE</td>
+<td class="comment-1" rowspan="3">restore DE and HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEB0"></span>BEB0</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEB1"></span>BEB1</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BE52.html">BE52</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BE94">Map</a></td>
+<td class="next">
+Next: <a href="BEB2.html">BEB2</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BE94.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

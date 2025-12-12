@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BAEE.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+<head>
+<title>Chaos: Routine at BAEE</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BAD6.html">BAD6</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BAEE">Map</a></td>
+<td class="next">
+Next: <a href="BAFB.html">BAFB</a>
+</td>
+</tr>
+</table>
+<div class="description">BAEE: Print string loop</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="87EF.html">M2PRIN</a> and <a href="BAFB.html">MPRINT</a>.
+</div>
+</div>
+<table class="input">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Address</td>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">length</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label">print_string_loop</td>
+<td class="address-2"><span id="BAEE"></span>BAEE</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">load byte from address in HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAEF"></span>BAEF</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="2">preserve HL and DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAF0"></span>BAF0</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAF1"></span>BAF1</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+<td class="comment-1" rowspan="1">call <a href="BAD6.html">DH_P</a> to print character in A at coordinates in BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAF4"></span>BAF4</td>
+<td class="instruction">POP DE</td>
+<td class="comment-1" rowspan="2">restore DE and HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAF5"></span>BAF5</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAF6"></span>BAF6</td>
+<td class="instruction">DEC E</td>
+<td class="comment-1" rowspan="1">decrement E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAF7"></span>BAF7</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="1">increment HL to point at the next character in string</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAF8"></span>BAF8</td>
+<td class="instruction">JR NZ,<a href="BAEE.html#BAEE">print_string_loop</a></td>
+<td class="comment-1" rowspan="1">loop back to <a href="BAEE.html">print_string_loop</a> until E = 0</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BAFA"></span>BAFA</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BAD6.html">BAD6</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BAEE">Map</a></td>
+<td class="next">
+Next: <a href="BAFB.html">BAFB</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BAEE.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:26 GMT -->
+</html>

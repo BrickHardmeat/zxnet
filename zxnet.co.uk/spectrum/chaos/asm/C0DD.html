@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/C0DD.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:32 GMT -->
+<head>
+<title>Chaos: Routine at C0DD</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C0D8.html">C0D8</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#C0DD">Map</a></td>
+<td class="next">
+Next: <a href="C123.html">C123</a>
+</td>
+</tr>
+</table>
+<div class="description">C0DD: routine50</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="836A.html">magic_armour_spell</a>, <a href="839C.html">magic_sword_spell</a>, <a href="83D0.html">magic_knife_spell</a>, <a href="8404.html">magic_shield_spell</a>, <a href="8438.html">magic_wings_spell</a>, <a href="846A.html">magic_bow_spell</a>, <a href="86C3.html">RAISDO</a>, <a href="8741.html">TUR_DO</a>, <a href="8F9A.html">TREPUT</a>, <a href="92BE.html">examine_board</a>, <a href="95C7.html">routine06</a>, <a href="981A.html">routine13</a>, <a href="98DB.html">routine14</a>, <a href="99F1.html">disbelieve_spell</a>, <a href="9ADD.html">trees_castles_spell</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="9F50.html">INTERO</a>, <a href="A18A.html">routine20</a>, <a href="AC36.html">routine21</a>, <a href="ACC6.html">routine22</a>, <a href="B3C9.html">WIZKIL</a>, <a href="B8DD.html">routine35</a>, <a href="BC96.html">routine41</a>, <a href="C3B3.html">display_object_info</a>, <a href="C710.html">routine54</a>, <a href="D52E.html">routine72</a>, <a href="D5EC.html">routine74</a>, <a href="D763.html">routine80</a> and <a href="D82D.html">routine83</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine50</td>
+<td class="address-2"><span id="C0DD"></span>C0DD</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">Disable interrupts.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0DE"></span>C0DE</td>
+<td class="instruction">LD B,$A0</td>
+<td class="comment-1" rowspan="1">Set B to 160 as loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0E0"></span>C0E0</td>
+<td class="instruction">LD HL,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-1" rowspan="1">Set HL to address of <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label">routine50_0</td>
+<td class="address-2"><span id="C0E3"></span>C0E3</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">If object is not zero jump to <a href="C0DD.html#C0FF">routine50_1</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0E4"></span>C0E4</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0E5"></span>C0E5</td>
+<td class="instruction">JR NZ,<a href="C0DD.html#C0FF">routine50_1</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0E7"></span>C0E7</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="1">Preserve address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0E8"></span>C0E8</td>
+<td class="instruction">LD DE,<a href="E01F.html">map_object_table</a></td>
+<td class="comment-1" rowspan="3">Get offset within <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0EB"></span>C0EB</td>
+<td class="instruction">SBC HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0ED"></span>C0ED</td>
+<td class="instruction">LD A,L</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0EE"></span>C0EE</td>
+<td class="instruction">INC A</td>
+<td class="comment-1" rowspan="2">Increment and select low nibble to get next column number.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0EF"></span>C0EF</td>
+<td class="instruction">AND $0F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0F1"></span>C0F1</td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="1">Restore address.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0F2"></span>C0F2</td>
+<td class="instruction">JR Z,<a href="C0DD.html#C0FF">routine50_1</a></td>
+<td class="comment-1" rowspan="1">If next column is zero jump to <a href="C0DD.html#C0FF">routine50_1</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0F4"></span>C0F4</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-1" rowspan="2">Else set entry in <a href="E01F.html">map_object_table</a> to $01.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0F6"></span>C0F6</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0F7"></span>C0F7</td>
+<td class="instruction">LD DE,$0141</td>
+<td class="comment-1" rowspan="5">Set corresponding entry in <a href="E160.html">map_animation_frame_table</a> to zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0FA"></span>C0FA</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0FB"></span>C0FB</td>
+<td class="instruction">XOR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0FC"></span>C0FC</td>
+<td class="instruction">LD (HL),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C0FD"></span>C0FD</td>
+<td class="instruction">SBC HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label">routine50_1</td>
+<td class="address-2"><span id="C0FF"></span>C0FF</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="1">Increment address to next entry in <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C100"></span>C100</td>
+<td class="instruction">DJNZ <a href="C0DD.html#C0E3">routine50_0</a></td>
+<td class="comment-1" rowspan="1">Loop for 160 iterations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C102"></span>C102</td>
+<td class="instruction">LD HL,<a href="E0C0.html">map_animation_timeout_table</a></td>
+<td class="comment-1" rowspan="5">Fill <a href="E0C0.html">map_animation_timeout_table</a> with $01 ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C105"></span>C105</td>
+<td class="instruction">LD DE,$E0C1</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C108"></span>C108</td>
+<td class="instruction">LD BC,$009F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C10B"></span>C10B</td>
+<td class="instruction">LD (HL),$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C10D"></span>C10D</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C10F"></span>C10F</td>
+<td class="instruction">LD A,(<a href="C0D7.html">unknown06</a>)</td>
+<td class="comment-1" rowspan="3">If <a href="C0D7.html">unknown06</a> is clear jump to <a href="C0DD.html#C11D">routine50_2</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C112"></span>C112</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C113"></span>C113</td>
+<td class="instruction">JR NZ,<a href="C0DD.html#C11D">routine50_2</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C115"></span>C115</td>
+<td class="instruction">LD A,$41</td>
+<td class="comment-1" rowspan="3">Else set ATTR-T to bright blue on black and draw border.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C117"></span>C117</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C11A"></span>C11A</td>
+<td class="instruction">CALL <a href="BB57.html">ZRDR_P</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine50_2</td>
+<td class="address-2"><span id="C11D"></span>C11D</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="2">Clear <a href="C0D7.html">unknown06</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C11E"></span>C11E</td>
+<td class="instruction">LD (<a href="C0D7.html">unknown06</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C121"></span>C121</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="2">Enable interrupts and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C122"></span>C122</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C0D8.html">C0D8</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#C0DD">Map</a></td>
+<td class="next">
+Next: <a href="C123.html">C123</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/C0DD.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:32 GMT -->
+</html>

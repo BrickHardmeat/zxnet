@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BC72.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BC72</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BC6C.html">BC6C</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BC72">Map</a></td>
+<td class="next">
+Next: <a href="BC7D.html">BC7D</a>
+</td>
+</tr>
+</table>
+<div class="description">BC72: cursor_down</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="BBE7.html">move_cursor</a>.
+</div>
+<div class="paragraph">
+Move cursor down and prevent from going into border.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">cursor_down</td>
+<td class="address-2"><span id="BC72"></span>BC72</td>
+<td class="instruction">INC B</td>
+<td class="comment-1" rowspan="1">Increment y-coordinate.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC73"></span>BC73</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-1" rowspan="5">If 11 set back to 10.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC74"></span>BC74</td>
+<td class="instruction">LD A,B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC75"></span>BC75</td>
+<td class="instruction">CP $0B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC77"></span>BC77</td>
+<td class="instruction">JR NZ,<a href="BC72.html#BC7A">cursor_down_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC79"></span>BC79</td>
+<td class="instruction">DEC B</td>
+</tr>
+<tr>
+<td class="asm-label">cursor_down_0</td>
+<td class="address-2"><span id="BC7A"></span>BC7A</td>
+<td class="instruction">POP AF</td>
+<td class="comment-1" rowspan="2">Jump to return instruction at <a href="BC83.html#BC8C">cursor_right_1</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC7B"></span>BC7B</td>
+<td class="instruction">JR <a href="BC83.html#BC8C">cursor_right_1</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BC6C.html">BC6C</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BC72">Map</a></td>
+<td class="next">
+Next: <a href="BC7D.html">BC7D</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BC72.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

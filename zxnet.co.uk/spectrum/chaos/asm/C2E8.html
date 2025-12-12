@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/C2E8.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:32 GMT -->
+<head>
+<title>Chaos: Game status buffer entry at C2E8</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-g">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Game variable</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C2E3.html">C2E3</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#C2E8">Map</a></td>
+<td class="next">
+Next: <a href="C2F2.html">C2F2</a>
+</td>
+</tr>
+</table>
+<div class="description">C2E8: sound effect data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Sound effects are copied here by <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a> and the bytes read directly to save calculating offsets at the original location.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">sound_effect_temp</td>
+<td class="address-1"><span id="C2E8"></span>C2E8</td>
+<td class="instruction">DEFB $3F</td>
+<td class="comment-1" rowspan="1">Outer loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C2E9"></span>C2E9</td>
+<td class="instruction">DEFB $04</td>
+<td class="comment-1" rowspan="1">Middle loop counter.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C2EA"></span>C2EA</td>
+<td class="instruction">DEFB $FD,$FD,$C6,$93</td>
+<td class="comment-1" rowspan="1">Delay counters.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="C2EE"></span>C2EE</td>
+<td class="instruction">DEFB $04,$04,$E2,$B0</td>
+<td class="comment-1" rowspan="1">Values to add to delay.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C2E3.html">C2E3</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#C2E8">Map</a></td>
+<td class="next">
+Next: <a href="C2F2.html">C2F2</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/C2E8.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:32 GMT -->
+</html>

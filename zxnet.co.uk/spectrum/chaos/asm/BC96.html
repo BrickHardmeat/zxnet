@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BC96.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BC96</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BC94.html">BC94</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BC96">Map</a></td>
+<td class="next">
+Next: <a href="BDA5.html">BDA5</a>
+</td>
+</tr>
+</table>
+<div class="description">BC96: routine41</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="84F7.html">subversion_spell</a>, <a href="85F6.html">raise_dead_spell</a>, <a href="92BE.html">examine_board</a>, <a href="981A.html">routine13</a>, <a href="99F1.html">disbelieve_spell</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="ACC6.html">routine22</a>, <a href="B0A8.html">routine24</a>, <a href="B8DD.html">routine35</a>, <a href="D52E.html">routine72</a> and <a href="D702.html">routine78</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine41</td>
+<td class="address-2"><span id="BC96"></span>BC96</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-1" rowspan="1">Call KEYBOARD in ROM.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC99"></span>BC99</td>
+<td class="instruction">CP $49</td>
+<td class="comment-1" rowspan="3">If decoded key is 'I' call <a href="C3B3.html">display_object_info</a> to display information about the object at the current cursor position.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC9B"></span>BC9B</td>
+<td class="instruction">JR NZ,<a href="BC96.html#BCA3">not_I</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC9D"></span>BC9D</td>
+<td class="instruction">CALL <a href="C3B3.html">display_object_info</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCA0"></span>BCA0</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="2">On return wait for next interrupt, then jump to <a href="BC96.html#BCE5">test_cursor_key</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCA1"></span>BCA1</td>
+<td class="instruction">JR <a href="BC96.html#BCE5">test_cursor_key</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_I</td>
+<td class="address-2"><span id="BCA3"></span>BCA3</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-1" rowspan="1">Call KEYBOARD in ROM.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCA6"></span>BCA6</td>
+<td class="instruction">CP $39</td>
+<td class="comment-1" rowspan="4">If decoded key is greater than '8' or less than '1' jump to <a href="BC96.html#BCE5">test_cursor_key</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCA8"></span>BCA8</td>
+<td class="instruction">JP P,<a href="BC96.html#BCE5">test_cursor_key</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCAB"></span>BCAB</td>
+<td class="instruction">CP $31</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCAD"></span>BCAD</td>
+<td class="instruction">JP M,<a href="BC96.html#BCE5">test_cursor_key</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCB0"></span>BCB0</td>
+<td class="instruction">SUB $31</td>
+<td class="comment-1" rowspan="1">Subtract $31 to convert key code into player number.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCB2"></span>BCB2</td>
+<td class="instruction">LD HL,<a href="AC0F.html">NO_PLA</a></td>
+<td class="comment-1" rowspan="3">If value is greater than or equal to <a href="AC0F.html">NO_PLA</a> jump to <a href="BC96.html#BCE5">test_cursor_key</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCB5"></span>BCB5</td>
+<td class="instruction">CP (HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCB6"></span>BCB6</td>
+<td class="instruction">JP P,<a href="BC96.html#BCE5">test_cursor_key</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCB9"></span>BCB9</td>
+<td class="instruction">LD (<a href="D391.html">temp_wizard_number</a>),A</td>
+<td class="comment-1" rowspan="1">Else store number in <a href="D391.html">temp_wizard_number</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCBC"></span>BCBC</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C0DD.html">routine50</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCBF"></span>BCBF</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="2">Wait for next interrupt then call <a href="D392.html">highlight_objects</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label">routine41_0</td>
+<td class="address-2"><span id="BCC0"></span>BCC0</td>
+<td class="instruction">CALL <a href="D392.html">highlight_objects</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCC3"></span>BCC3</td>
+<td class="instruction">LD A,(<a href="D391.html">temp_wizard_number</a>)</td>
+<td class="comment-1" rowspan="2">Load <a href="D391.html">temp_wizard_number</a> into A and add $29 as offset to wizards in <a href="CDD3.html">game messages table 1</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCC6"></span>BCC6</td>
+<td class="instruction">ADD A,$29</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCC8"></span>BCC8</td>
+<td class="instruction">LD BC,$1600</td>
+<td class="comment-1" rowspan="3">Set BC to coordinates (0,22) and set ATTR-T to $46 (bright yellow on black).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCCB"></span>BCCB</td>
+<td class="instruction">LD HL,$5C8F</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCCE"></span>BCCE</td>
+<td class="instruction">LD (HL),$46</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCD0"></span>BCD0</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+<td class="comment-1" rowspan="1">Print wizard name.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCD3"></span>BCD3</td>
+<td class="instruction">LD A,$5F</td>
+<td class="comment-1" rowspan="2">Print <a href="CFCB.html#D274">s_creations_string</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCD5"></span>BCD5</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCD8"></span>BCD8</td>
+<td class="instruction">CALL $028E</td>
+<td class="comment-1" rowspan="1">Call KEY-SCAN routine in ROM to see if a key was pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCDB"></span>BCDB</td>
+<td class="instruction">INC E</td>
+<td class="comment-1" rowspan="2">If E is not $FF jump back to <a href="BC96.html#BCC0">routine41_0</a>. This prints messages and flashes the wizard and his creatures again while key is held down.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCDC"></span>BCDC</td>
+<td class="instruction">JR NZ,<a href="BC96.html#BCC0">routine41_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCDE"></span>BCDE</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-1" rowspan="1">Clear bottom of screen.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCE1"></span>BCE1</td>
+<td class="instruction">CALL <a href="C0DD.html">routine50</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C0DD.html">routine50</a> ???</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCE4"></span>BCE4</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="1">Wait for next interrupt.</td>
+</tr>
+<tr>
+<td class="asm-label">test_cursor_key</td>
+<td class="address-2"><span id="BCE5"></span>BCE5</td>
+<td class="instruction">LD BC,(<a href="BC94.html">cursor_coordinates</a>)</td>
+<td class="comment-1" rowspan="2">Load <a href="BC94.html">cursor coordinates</a> into BC and preserve on the stack.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCE9"></span>BCE9</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCEA"></span>BCEA</td>
+<td class="instruction">CALL <a href="BBE7.html">move_cursor</a></td>
+<td class="comment-1" rowspan="1">Call <a href="BBE7.html">move_cursor</a> to move cursor depending on direction key pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCED"></span>BCED</td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="1">Restore old cursor coordinates into HL.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCEE"></span>BCEE</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve new cursor coordinates on stack.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCEF"></span>BCEF</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1">Clear carry flag.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCF0"></span>BCF0</td>
+<td class="instruction">SBC HL,BC</td>
+<td class="comment-1" rowspan="2">If cursor coordinates have changed call <a href="BED7.html">clear_bottom_row</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCF2"></span>BCF2</td>
+<td class="instruction">CALL NZ,<a href="BED7.html">clear_bottom_row</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCF5"></span>BCF5</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="2">Restore new cursor coordinates and store in <a href="BC94.html">cursor_coordinates</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCF6"></span>BCF6</td>
+<td class="instruction">LD (<a href="BC94.html">cursor_coordinates</a>),BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCFA"></span>BCFA</td>
+<td class="instruction">CALL <a href="BDA5.html">print_cursor</a></td>
+<td class="comment-1" rowspan="1">Call <a href="BDA5.html">print_cursor</a> to print cursor sprite at cursor coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BCFD"></span>BCFD</td>
+<td class="instruction">CALL <a href="BDD1.html">coordinate_to_address</a></td>
+<td class="comment-1" rowspan="2">Set <a href="AC12.html">object_table_entry_pointer</a> to address of new coordinates in <a href="E01F.html">map_object_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD00"></span>BD00</td>
+<td class="instruction">LD (<a href="AC12.html">object_table_entry_pointer</a>),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD03"></span>BD03</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="1">Read value back pointlessly.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD06"></span>BD06</td>
+<td class="instruction">LD DE,$01E1</td>
+<td class="comment-1" rowspan="2">Add $01E1 to get corresponding address in <a href="E200.html">map_object_properties_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD09"></span>BD09</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD0A"></span>BD0A</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="2">Copy entry into <a href="AC10.html">unknown27</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD0B"></span>BD0B</td>
+<td class="instruction">LD (<a href="AC10.html">unknown27</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD0E"></span>BD0E</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="1">Load address in <a href="E01F.html">map_object_table</a> again.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD11"></span>BD11</td>
+<td class="instruction">LD A,$45</td>
+<td class="comment-1" rowspan="2">Set ATTR-T to bright cyan on black.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD13"></span>BD13</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD16"></span>BD16</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">If object number is zero (nothing) jump to <a href="BC96.html#BD88">routine41_5</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD17"></span>BD17</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD18"></span>BD18</td>
+<td class="instruction">JR Z,<a href="BC96.html#BD88">routine41_5</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD1A"></span>BD1A</td>
+<td class="instruction">LD BC,$1600</td>
+<td class="comment-1" rowspan="2">Else print the current object name at coordinates (0,22).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD1D"></span>BD1D</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD20"></span>BD20</td>
+<td class="instruction">LD A,$44</td>
+<td class="comment-1" rowspan="2">Set ATTR-T to bright green on black.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD22"></span>BD22</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD25"></span>BD25</td>
+<td class="instruction">LD A,(<a href="AC10.html">unknown27</a>)</td>
+<td class="comment-1" rowspan="5">If bit 3 of <a href="AC10.html">unknown27</a> is set print <a href="CFCB.html#CFEA">asleep_string</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD28"></span>BD28</td>
+<td class="instruction">BIT 3,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD2A"></span>BD2A</td>
+<td class="instruction">JR Z,<a href="BC96.html#BD33">routine41_1</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD2C"></span>BD2C</td>
+<td class="instruction">LD A,$31</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD2E"></span>BD2E</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD31"></span>BD31</td>
+<td class="instruction">JR Z,<a href="BC96.html#BD88">routine41_5</a></td>
+<td class="comment-1" rowspan="1">On return jump to <a href="BC96.html#BD88">routine41_5</a> (Z flag is always set).</td>
+</tr>
+<tr>
+<td class="asm-label">routine41_1</td>
+<td class="address-2"><span id="BD33"></span>BD33</td>
+<td class="instruction">LD DE,$0141</td>
+<td class="comment-1" rowspan="2">Else Add $0141 to address to get corresponding entry in <a href="E160.html">map_animation_frame_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD36"></span>BD36</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD37"></span>BD37</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="6">If animation frame is 4 print <a href="CFCB.html#CFF3">dead_string</a> and jump to <a href="BC96.html#BD88">routine41_5</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD38"></span>BD38</td>
+<td class="instruction">CP $04</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD3A"></span>BD3A</td>
+<td class="instruction">JR NZ,<a href="BC96.html#BD43">routine41_2</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD3C"></span>BD3C</td>
+<td class="instruction">LD A,$32</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD3E"></span>BD3E</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD41"></span>BD41</td>
+<td class="instruction">JR <a href="BC96.html#BD88">routine41_5</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine41_2</td>
+<td class="address-2"><span id="BD43"></span>BD43</td>
+<td class="instruction">LD DE,$0140</td>
+<td class="comment-1" rowspan="2">Else Add $0140 to address to get corresponding entry in <a href="E2A0.html">fifth_map_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD46"></span>BD46</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD47"></span>BD47</td>
+<td class="instruction">LD A,$47</td>
+<td class="comment-1" rowspan="2">Set ATTR-T to bright white on black.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD49"></span>BD49</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD4C"></span>BD4C</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">If entry is not zero ??? jump to <a href="BC96.html#BD5D">routine41_3</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD4D"></span>BD4D</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD4E"></span>BD4E</td>
+<td class="instruction">JR NZ,<a href="BC96.html#BD5D">routine41_3</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD50"></span>BD50</td>
+<td class="instruction">LD DE,$00A0</td>
+<td class="comment-1" rowspan="2">Else add $00A0 to address to get corresponding entry in <a href="E340.html">sixth_map_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD53"></span>BD53</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD54"></span>BD54</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="3">If entry is zero ??? jump to <a href="BC96.html#BD62">routine41_4</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD55"></span>BD55</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD56"></span>BD56</td>
+<td class="instruction">JR Z,<a href="BC96.html#BD62">routine41_4</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD58"></span>BD58</td>
+<td class="instruction">LD A,$43</td>
+<td class="comment-1" rowspan="2">Else set ATTR-T to bright magenta on black.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD5A"></span>BD5A</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label">routine41_3</td>
+<td class="address-2"><span id="BD5D"></span>BD5D</td>
+<td class="instruction">LD A,$23</td>
+<td class="comment-1" rowspan="2">Print '#' character.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD5F"></span>BD5F</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine41_4</td>
+<td class="address-2"><span id="BD62"></span>BD62</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="4">If the object is a wizard jump to <a href="BC96.html#BD88">routine41_5</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD65"></span>BD65</td>
+<td class="instruction">LD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD66"></span>BD66</td>
+<td class="instruction">CP $29</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD68"></span>BD68</td>
+<td class="instruction">JP P,<a href="BC96.html#BD88">routine41_5</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD6B"></span>BD6B</td>
+<td class="instruction">LD DE,$01E1</td>
+<td class="comment-1" rowspan="2">Else get address of entry in <a href="E200.html">map_object_properties_table</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD6E"></span>BD6E</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD6F"></span>BD6F</td>
+<td class="instruction">LD A,$46</td>
+<td class="comment-1" rowspan="2">Set ATTR-T to bright yellow on black.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD71"></span>BD71</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD74"></span>BD74</td>
+<td class="instruction">LD A,$28</td>
+<td class="comment-1" rowspan="4">Print '(' character.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD76"></span>BD76</td>
+<td class="instruction">PUSH HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD77"></span>BD77</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD7A"></span>BD7A</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD7B"></span>BD7B</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="2">Read entry from <a href="E200.html">map_object_properties_table</a> and mask bits to get wizard number.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD7C"></span>BD7C</td>
+<td class="instruction">AND $07</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD7E"></span>BD7E</td>
+<td class="instruction">ADD A,$29</td>
+<td class="comment-1" rowspan="2">Convert wizard number to object number and print the wizard name.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD80"></span>BD80</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD83"></span>BD83</td>
+<td class="instruction">LD A,$29</td>
+<td class="comment-1" rowspan="2">Print ')' character.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD85"></span>BD85</td>
+<td class="instruction">CALL <a href="BAD6.html">DH_P</a></td>
+</tr>
+<tr>
+<td class="asm-label">routine41_5</td>
+<td class="address-2"><span id="BD88"></span>BD88</td>
+<td class="instruction">LD B,$3C</td>
+<td class="comment-1" rowspan="6">Perform a busy wait delay.</td>
+</tr>
+<tr>
+<td class="asm-label">wait_outer_loop</td>
+<td class="address-2"><span id="BD8A"></span>BD8A</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD8B"></span>BD8B</td>
+<td class="instruction">LD B,$F8</td>
+</tr>
+<tr>
+<td class="asm-label">wait_inner_loop</td>
+<td class="address-2"><span id="BD8D"></span>BD8D</td>
+<td class="instruction">DJNZ <a href="BC96.html#BD8D">wait_inner_loop</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD8F"></span>BD8F</td>
+<td class="instruction">POP BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD90"></span>BD90</td>
+<td class="instruction">DJNZ <a href="BC96.html#BD8A">wait_outer_loop</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD92"></span>BD92</td>
+<td class="instruction">CALL <a href="BDA5.html">print_cursor</a></td>
+<td class="comment-1" rowspan="1">Call <a href="BDA5.html">print_cursor</a> to print cursor sprite at cursor coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD95"></span>BD95</td>
+<td class="instruction">LD HL,(<a href="AC12.html">object_table_entry_pointer</a>)</td>
+<td class="comment-1" rowspan="4">Return if object number at cursor position is zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD98"></span>BD98</td>
+<td class="instruction">LD A,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD99"></span>BD99</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD9A"></span>BD9A</td>
+<td class="instruction">RET Z</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD9B"></span>BD9B</td>
+<td class="instruction">HALT</td>
+<td class="comment-1" rowspan="7">Else wait for three frames and set corresponding entry in <a href="E0C0.html">map_animation_timeout_table</a> to $01 then return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD9C"></span>BD9C</td>
+<td class="instruction">HALT</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD9D"></span>BD9D</td>
+<td class="instruction">HALT</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BD9E"></span>BD9E</td>
+<td class="instruction">LD DE,$00A1</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDA1"></span>BDA1</td>
+<td class="instruction">ADD HL,DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDA2"></span>BDA2</td>
+<td class="instruction">LD (HL),$01</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDA4"></span>BDA4</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BC94.html">BC94</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BC96">Map</a></td>
+<td class="next">
+Next: <a href="BDA5.html">BDA5</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BC96.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

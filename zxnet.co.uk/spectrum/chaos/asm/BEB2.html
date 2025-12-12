@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BEB2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BEB2</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BE94.html">BE94</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BEB2">Map</a></td>
+<td class="next">
+Next: <a href="BED7.html">BED7</a>
+</td>
+</tr>
+</table>
+<div class="description">BEB2: routine47</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="ACED.html">routine23</a> and <a href="AECC.html">COUNTL</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">routine47</td>
+<td class="address-2"><span id="BEB2"></span>BEB2</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-1" rowspan="2">preserve AF, BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEB3"></span>BEB3</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEB4"></span>BEB4</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="2">set <a href="AC03.html">unknown18</a> to zero</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEB5"></span>BEB5</td>
+<td class="instruction">LD (<a href="AC03.html">unknown18</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEB8"></span>BEB8</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-1" rowspan="2">set <a href="AC07.html">unknown21</a> to one</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEBA"></span>BEBA</td>
+<td class="instruction">LD (<a href="AC07.html">unknown21</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEBD"></span>BEBD</td>
+<td class="instruction">LD A,$46</td>
+<td class="comment-1" rowspan="2">set ATTR-T to bright yellow on black</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEBF"></span>BEBF</td>
+<td class="instruction">LD ($5C8F),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEC2"></span>BEC2</td>
+<td class="instruction">LD A,$34</td>
+<td class="comment-1" rowspan="1">set A to message $34</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEC4"></span>BEC4</td>
+<td class="instruction">LD BC,$1600</td>
+<td class="comment-1" rowspan="1">set BC to coordinates (0,22)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEC7"></span>BEC7</td>
+<td class="instruction">CALL <a href="BED7.html">clear_bottom_row</a></td>
+<td class="comment-1" rowspan="1">call <a href="BED7.html">clear_bottom_row</a> to clear line 22</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BECA"></span>BECA</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+<td class="comment-1" rowspan="1">Print <a href="CFCB.html#D01A">engaged_string</a> at coordinates (0,22)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BECD"></span>BECD</td>
+<td class="instruction">LD HL,<a href="C289.html">engaged_sound_effect</a></td>
+<td class="comment-1" rowspan="2">Play <a href="C289.html">engaged_sound_effect</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BED0"></span>BED0</td>
+<td class="instruction">CALL <a href="C2F6.html#C2F9">play_sound_effect_in_HL</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BED3"></span>BED3</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="1">re-enable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BED4"></span>BED4</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="2">restore BC, AF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BED5"></span>BED5</td>
+<td class="instruction">POP AF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BED6"></span>BED6</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BE94.html">BE94</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BEB2">Map</a></td>
+<td class="next">
+Next: <a href="BED7.html">BED7</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BEB2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

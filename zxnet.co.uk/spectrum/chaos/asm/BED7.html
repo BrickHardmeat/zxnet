@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BED7.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BED7</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BEB2.html">BEB2</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BED7">Map</a></td>
+<td class="next">
+Next: <a href="BEE8.html">BEE8</a>
+</td>
+</tr>
+</table>
+<div class="description">BED7: clear bottom of screen by printing 32 spaces on line 22</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="84F7.html">subversion_spell</a>, <a href="85F6.html">raise_dead_spell</a>, <a href="8F9A.html">TREPUT</a>, <a href="9385.html">select_spell</a>, <a href="95C7.html">routine06</a>, <a href="96F3.html">routine08</a>, <a href="97A3.html">routine11</a>, <a href="981A.html">routine13</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="AC36.html">routine21</a>, <a href="ACC6.html">routine22</a>, <a href="ACED.html">routine23</a>, <a href="AECC.html">COUNTL</a>, <a href="B0A8.html">routine24</a>, <a href="B168.html">routine25</a>, <a href="B8DD.html">routine35</a>, <a href="BC96.html">routine41</a>, <a href="BEB2.html">routine47</a>, <a href="D52E.html">routine72</a> and <a href="D588.html">routine73</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">clear_bottom_row</td>
+<td class="address-2"><span id="BED7"></span>BED7</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-1" rowspan="4">preserve AF, DE, HL, BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BED8"></span>BED8</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BED9"></span>BED9</td>
+<td class="instruction">PUSH HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEDA"></span>BEDA</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEDB"></span>BEDB</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-1" rowspan="3">Print <a href="CFCB.html">blank_line_string</a> at coordinates (0,22)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEDD"></span>BEDD</td>
+<td class="instruction">LD BC,$1600</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEE0"></span>BEE0</td>
+<td class="instruction">CALL <a href="BAFB.html">MPRINT</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEE3"></span>BEE3</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="4">restore BC, HL, DE, AF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEE4"></span>BEE4</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEE5"></span>BEE5</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEE6"></span>BEE6</td>
+<td class="instruction">POP AF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BEE7"></span>BEE7</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BEB2.html">BEB2</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BED7">Map</a></td>
+<td class="next">
+Next: <a href="BEE8.html">BEE8</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BED7.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

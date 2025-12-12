@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BBE7.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BBE7</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BBCC.html">BBCC</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BBE7">Map</a></td>
+<td class="next">
+Next: <a href="BC6C.html">BC6C</a>
+</td>
+</tr>
+</table>
+<div class="description">BBE7: Move cursor on screen depending on direction key pressed</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="ACED.html">routine23</a> and <a href="BC96.html">routine41</a>.
+</div>
+<div class="paragraph">
+Movement points variable holds the number of points multiplied by two. It is set to 2 for non-diagonal movement, and 3 for diagonal movement.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">move_cursor</td>
+<td class="address-2"><span id="BBE7"></span>BBE7</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="2">Preserve registers.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBE8"></span>BBE8</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBE9"></span>BBE9</td>
+<td class="instruction">LD A,$08</td>
+<td class="comment-1" rowspan="2">Set CAPS mode.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBEB"></span>BBEB</td>
+<td class="instruction">LD ($5C6A),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBEE"></span>BBEE</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Preserve cursor coordinates</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBEF"></span>BBEF</td>
+<td class="instruction">LD A,(<a href="AC2E.html">computer_player_flag</a>)</td>
+<td class="comment-1" rowspan="3">Jump to <a href="CDC0.html">routine70</a> if player is computer controlled.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBF2"></span>BBF2</td>
+<td class="instruction">OR A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBF3"></span>BBF3</td>
+<td class="instruction">JP NZ,<a href="CDC0.html">routine70</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBF6"></span>BBF6</td>
+<td class="instruction">CALL $02BF</td>
+<td class="comment-1" rowspan="1">Call KEYBOARD routine in ROM.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="BBF9"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="CDC0.html">routine70</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">move_cursor_0</td>
+<td class="address-2"><span id="BBF9"></span>BBF9</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore cursor coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBFA"></span>BBFA</td>
+<td class="instruction">LD (<a href="AC32.html">unknown31</a>),A</td>
+<td class="comment-1" rowspan="1">Store value of A (key pressed) in <a href="AC32.html">unknown31</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBFD"></span>BBFD</td>
+<td class="instruction">CP $57</td>
+<td class="comment-1" rowspan="5">If 'W' key pressed set movement points to 2 and decrement y coordinate.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BBFF"></span>BBFF</td>
+<td class="instruction">JR NZ,<a href="BBE7.html#BC09">not_W_pressed</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC01"></span>BC01</td>
+<td class="instruction">LD A,$02</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC03"></span>BC03</td>
+<td class="instruction">LD (<a href="AC02.html">movement_x2</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC06"></span>BC06</td>
+<td class="instruction">CALL <a href="BC6C.html">cursor_up</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_W_pressed</td>
+<td class="address-2"><span id="BC09"></span>BC09</td>
+<td class="instruction">CP $58</td>
+<td class="comment-1" rowspan="5">If 'X' key pressed set movement points to 2 and increment y coordinate.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC0B"></span>BC0B</td>
+<td class="instruction">JR NZ,<a href="BBE7.html#BC15">not_X_pressed</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC0D"></span>BC0D</td>
+<td class="instruction">LD A,$02</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC0F"></span>BC0F</td>
+<td class="instruction">LD (<a href="AC02.html">movement_x2</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC12"></span>BC12</td>
+<td class="instruction">CALL <a href="BC72.html">cursor_down</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_X_pressed</td>
+<td class="address-2"><span id="BC15"></span>BC15</td>
+<td class="instruction">CP $41</td>
+<td class="comment-1" rowspan="5">If 'A' key pressed set movement points to 2 and decrement x coordinate.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC17"></span>BC17</td>
+<td class="instruction">JR NZ,<a href="BBE7.html#BC21">not_A_pressed</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC19"></span>BC19</td>
+<td class="instruction">LD A,$02</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC1B"></span>BC1B</td>
+<td class="instruction">LD (<a href="AC02.html">movement_x2</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC1E"></span>BC1E</td>
+<td class="instruction">CALL <a href="BC7D.html">cursor_left</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_A_pressed</td>
+<td class="address-2"><span id="BC21"></span>BC21</td>
+<td class="instruction">CP $44</td>
+<td class="comment-1" rowspan="5">If 'D' key pressed set movement points to 2 and increment x coordinate.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC23"></span>BC23</td>
+<td class="instruction">JR NZ,<a href="BBE7.html#BC2D">not_D_pressed</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC25"></span>BC25</td>
+<td class="instruction">LD A,$02</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC27"></span>BC27</td>
+<td class="instruction">LD (<a href="AC02.html">movement_x2</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC2A"></span>BC2A</td>
+<td class="instruction">CALL <a href="BC83.html">cursor_right</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_D_pressed</td>
+<td class="address-2"><span id="BC2D"></span>BC2D</td>
+<td class="instruction">CP $51</td>
+<td class="comment-1" rowspan="6">If 'Q' key pressed set movement points to 3 and decrement x and y coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC2F"></span>BC2F</td>
+<td class="instruction">JR NZ,<a href="BBE7.html#BC3C">not_Q_pressed</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC31"></span>BC31</td>
+<td class="instruction">LD A,$03</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC33"></span>BC33</td>
+<td class="instruction">LD (<a href="AC02.html">movement_x2</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC36"></span>BC36</td>
+<td class="instruction">CALL <a href="BC7D.html">cursor_left</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC39"></span>BC39</td>
+<td class="instruction">CALL <a href="BC6C.html">cursor_up</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_Q_pressed</td>
+<td class="address-2"><span id="BC3C"></span>BC3C</td>
+<td class="instruction">CP $45</td>
+<td class="comment-1" rowspan="6">If 'E' key pressed set movement points to 3, increment x, and decrement y coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC3E"></span>BC3E</td>
+<td class="instruction">JR NZ,<a href="BBE7.html#BC4B">not_E_pressed</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC40"></span>BC40</td>
+<td class="instruction">LD A,$03</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC42"></span>BC42</td>
+<td class="instruction">LD (<a href="AC02.html">movement_x2</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC45"></span>BC45</td>
+<td class="instruction">CALL <a href="BC83.html">cursor_right</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC48"></span>BC48</td>
+<td class="instruction">CALL <a href="BC6C.html">cursor_up</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_E_pressed</td>
+<td class="address-2"><span id="BC4B"></span>BC4B</td>
+<td class="instruction">CP $5A</td>
+<td class="comment-1" rowspan="6">If 'Z' key pressed set movement points to 3, increment y, and decrement x coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC4D"></span>BC4D</td>
+<td class="instruction">JR NZ,<a href="BBE7.html#BC5A">not_Z_pressed</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC4F"></span>BC4F</td>
+<td class="instruction">LD A,$03</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC51"></span>BC51</td>
+<td class="instruction">LD (<a href="AC02.html">movement_x2</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC54"></span>BC54</td>
+<td class="instruction">CALL <a href="BC72.html">cursor_down</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC57"></span>BC57</td>
+<td class="instruction">CALL <a href="BC7D.html">cursor_left</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_Z_pressed</td>
+<td class="address-2"><span id="BC5A"></span>BC5A</td>
+<td class="instruction">CP $43</td>
+<td class="comment-1" rowspan="6">If 'C' key pressed set movement points to 3 and increment x and y coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC5C"></span>BC5C</td>
+<td class="instruction">JR NZ,<a href="BBE7.html#BC69">not_C_pressed</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC5E"></span>BC5E</td>
+<td class="instruction">LD A,$03</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC60"></span>BC60</td>
+<td class="instruction">LD (<a href="AC02.html">movement_x2</a>),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC63"></span>BC63</td>
+<td class="instruction">CALL <a href="BC83.html">cursor_right</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC66"></span>BC66</td>
+<td class="instruction">CALL <a href="BC72.html">cursor_down</a></td>
+</tr>
+<tr>
+<td class="asm-label">not_C_pressed</td>
+<td class="address-2"><span id="BC69"></span>BC69</td>
+<td class="instruction">POP DE</td>
+<td class="comment-1" rowspan="3">Restore registers and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC6A"></span>BC6A</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC6B"></span>BC6B</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BBCC.html">BBCC</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BBE7">Map</a></td>
+<td class="next">
+Next: <a href="BC6C.html">BC6C</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BBE7.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

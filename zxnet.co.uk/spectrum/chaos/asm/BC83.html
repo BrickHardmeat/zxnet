@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BC83.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BC83</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BC7D.html">BC7D</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BC83">Map</a></td>
+<td class="next">
+Next: <a href="BC8D.html">BC8D</a>
+</td>
+</tr>
+</table>
+<div class="description">BC83: cursor_right</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="BBE7.html">move_cursor</a>.
+</div>
+<div class="paragraph">
+Move cursor right and prevent from going into border.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">cursor_right</td>
+<td class="address-2"><span id="BC83"></span>BC83</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">Increment x-coordinate.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC84"></span>BC84</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-1" rowspan="6">If 16 set back to 15.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC85"></span>BC85</td>
+<td class="instruction">LD A,C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC86"></span>BC86</td>
+<td class="instruction">CP $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC88"></span>BC88</td>
+<td class="instruction">JR NZ,<a href="BC83.html#BC8B">cursor_right_0</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BC8A"></span>BC8A</td>
+<td class="instruction">DEC C</td>
+</tr>
+<tr>
+<td class="asm-label">cursor_right_0</td>
+<td class="address-2"><span id="BC8B"></span>BC8B</td>
+<td class="instruction">POP AF</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="BC8C"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="BC6C.html">cursor_up</a>, <a href="BC72.html">cursor_down</a> and <a href="BC7D.html">cursor_left</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">cursor_right_1</td>
+<td class="address-2"><span id="BC8C"></span>BC8C</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BC7D.html">BC7D</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BC83">Map</a></td>
+<td class="next">
+Next: <a href="BC8D.html">BC8D</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BC83.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

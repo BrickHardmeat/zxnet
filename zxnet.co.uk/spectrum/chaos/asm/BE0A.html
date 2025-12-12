@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BE0A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BE0A</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BDE7.html">BDE7</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BE0A">Map</a></td>
+<td class="next">
+Next: <a href="BE21.html">BE21</a>
+</td>
+</tr>
+</table>
+<div class="description">BE0A: GETCHR</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="84F7.html">subversion_spell</a>, <a href="92F9.html">CHAN_C</a>, <a href="9C59.html">lightning_spell</a>, <a href="9DE0.html">dark_power_spell</a>, <a href="9F50.html">INTERO</a>, <a href="ACED.html">routine23</a>, <a href="AECC.html">COUNTL</a>, <a href="B168.html">routine25</a>, <a href="C3B3.html">display_object_info</a>, <a href="C612.html">print_creature_attribute</a> and <a href="CBB9.html">routine65</a>.
+</div>
+<div class="paragraph">
+enter with object number in D and offset in object data entry in E
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">GETCHR</td>
+<td class="address-2"><span id="BE0A"></span>BE0A</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="2">preserve HL and BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE0B"></span>BE0B</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE0C"></span>BE0C</td>
+<td class="instruction">LD HL,<a href="E3E0.html">nothing_pointer</a></td>
+<td class="comment-1" rowspan="1">set HL to address of first entry in object address table</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE0F"></span>BE0F</td>
+<td class="instruction">LD B,$00</td>
+<td class="comment-1" rowspan="2">set BC to value in D (row number in object address table)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE11"></span>BE11</td>
+<td class="instruction">LD C,D</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE12"></span>BE12</td>
+<td class="instruction">DEC C</td>
+<td class="comment-1" rowspan="3">decrement C, then double it and add result to HL as an offset in object address table</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE13"></span>BE13</td>
+<td class="instruction">SLA C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE15"></span>BE15</td>
+<td class="instruction">ADD HL,BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE16"></span>BE16</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-1" rowspan="3">load address of object data from the table into BC</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE17"></span>BE17</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE18"></span>BE18</td>
+<td class="instruction">LD B,(HL)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE19"></span>BE19</td>
+<td class="instruction">LD H,$00</td>
+<td class="comment-1" rowspan="2">set HL to value in E (offset in object data table entry)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE1B"></span>BE1B</td>
+<td class="instruction">LD L,E</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE1C"></span>BE1C</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-1" rowspan="1">add to the object address in BC to get offset within object data</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE1D"></span>BE1D</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">load byte from object data into A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE1E"></span>BE1E</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="2">restore BC, HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE1F"></span>BE1F</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BE20"></span>BE20</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BDE7.html">BDE7</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BE0A">Map</a></td>
+<td class="next">
+Next: <a href="BE21.html">BE21</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BE0A.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>

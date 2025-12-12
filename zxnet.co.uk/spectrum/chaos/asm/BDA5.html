@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BDA5.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+<head>
+<title>Chaos: Routine at BDA5</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-zxnet.css" />
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="https://zxnet.co.uk/spectrum/chaos/index.html"><img alt="Chaos" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BC96.html">BC96</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BDA5">Map</a></td>
+<td class="next">
+Next: <a href="BDD1.html">BDD1</a>
+</td>
+</tr>
+</table>
+<div class="description">BDA5: Print cursor sprite.</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="BC96.html">routine41</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">print_cursor</td>
+<td class="address-2"><span id="BDA5"></span>BDA5</td>
+<td class="instruction">LD A,$02</td>
+<td class="comment-1" rowspan="2">Call CHAN-OPEN in ROM to set output channel to 2 (Screen).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDA7"></span>BDA7</td>
+<td class="instruction">CALL $1601</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDAA"></span>BDAA</td>
+<td class="instruction">LD BC,(<a href="BC94.html">cursor_coordinates</a>)</td>
+<td class="comment-1" rowspan="2">Load <a href="BC94.html">cursor coordinates</a> into BC and convert to Spectrum screen coordinates.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDAE"></span>BDAE</td>
+<td class="instruction">CALL <a href="BC8D.html">GET_LC</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDB1"></span>BDB1</td>
+<td class="instruction">LD A,$16</td>
+<td class="comment-1" rowspan="2">Use PRINT-A routine in ROM to print AT control code.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDB3"></span>BDB3</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDB4"></span>BDB4</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-1" rowspan="4">Output the coordinates B,C using PRINT-A.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDB5"></span>BDB5</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDB6"></span>BDB6</td>
+<td class="instruction">LD A,C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDB7"></span>BDB7</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDB8"></span>BDB8</td>
+<td class="instruction">LD A,$90</td>
+<td class="comment-1" rowspan="2">Print the first User Defined Graphic character.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDBA"></span>BDBA</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDBB"></span>BDBB</td>
+<td class="instruction">LD A,$91</td>
+<td class="comment-1" rowspan="2">Print the second User Defined Graphic character.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDBD"></span>BDBD</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDBE"></span>BDBE</td>
+<td class="instruction">INC B</td>
+<td class="comment-1" rowspan="1">Increment B coordinate to move down a row.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDBF"></span>BDBF</td>
+<td class="instruction">LD A,$16</td>
+<td class="comment-1" rowspan="6">Print AT control code followed by coordinates B,C.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDC1"></span>BDC1</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDC2"></span>BDC2</td>
+<td class="instruction">LD A,B</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDC3"></span>BDC3</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDC4"></span>BDC4</td>
+<td class="instruction">LD A,C</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDC5"></span>BDC5</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDC6"></span>BDC6</td>
+<td class="instruction">LD A,$92</td>
+<td class="comment-1" rowspan="4">Print third and fourth User Defined Graphic characters.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDC8"></span>BDC8</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDC9"></span>BDC9</td>
+<td class="instruction">LD A,$93</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDCB"></span>BDCB</td>
+<td class="instruction">RST $10</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDCC"></span>BDCC</td>
+<td class="instruction">LD BC,(<a href="BC94.html">cursor_coordinates</a>)</td>
+<td class="comment-1" rowspan="2">Load <a href="BC94.html">cursor coordinates</a> into BC and return.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="BDD0"></span>BDD0</td>
+<td class="instruction">RET</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BC96.html">BC96</a>
+</td>
+<td class="up">Up: <a href="https://zxnet.co.uk/spectrum/chaos/maps/all.html#BDA5">Map</a></td>
+<td class="next">
+Next: <a href="BDD1.html">BDD1</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&#169; Games Workshop 1985. Disassembly by Guesser and szeliga &#169; 2022</div>
+<div class="created">Created using <a href="https://skoolkit.ca/">SkoolKit</a> 8.6.</div>
+</footer>
+</body>
+
+<!-- Mirrored from zxnet.co.uk/spectrum/chaos/asm/BDA5.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Dec 2025 09:19:28 GMT -->
+</html>
